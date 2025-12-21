@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+</head>
+<body>
+    <h1>Survey Form</h1>
+    <form>
+        <!-- Personal Details -->
+        <fieldset>
+            <legend>Personal Details</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone"><br><br>
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address"></textarea><br><br>
+        </fieldset>
+
+        <!-- Education -->
+        <fieldset>
+            <legend>Education</legend>
+            <label for="qualification">Highest Qualification:</label>
+            <select id="qualification" name="qualification">
+                <option value="highschool">High School</option>
+                <option value="diploma">Diploma</option>
+                <option value="bachelors">Bachelor's Degree</option>
+                <option value="masters">Master's Degree</option>
+                <option value="phd">Ph.D.</option>
+            </select><br><br>
+            <label for="fieldofstudy">Field of Study:</label>
+            <input type="text" id="fieldofstudy" name="fieldofstudy"><br><br>
+        </fieldset>
+
+        <!-- Preferences -->
+        <fieldset>
+            <legend>Preferences</legend>
+            <label>What are your interests?</label><br>
+            <input type="checkbox" id="reading" name="interest" value="reading">
+            <label for="reading">Reading</label><br>
+            <input type="checkbox" id="gaming" name="interest" value="gaming">
+            <label for="gaming">Gaming</label><br>
+            <input type="checkbox" id="traveling" name="interest" value="traveling">
+            <label for="traveling">Traveling</label><br>
+            <input type="checkbox" id="sports" name="interest" value="sports">
+            <label for="sports">Sports</label><br>
+            <input type="checkbox" id="music" name="interest" value="music">
+            <label for="music">Music</label><br><br>
+        </fieldset>
+
+        <!-- Feedback -->
+        <fieldset>
+            <legend>Feedback</legend>
+            <label>How did you hear about us?</label><br>
+            <input type="radio" id="socialmedia" name="source" value="socialmedia">
+            <label for="socialmedia">Social Media</label><br>
+            <input type="radio" id="friend" name="source" value="friend">
+            <label for="friend">Friend</label><br>
+            <input type="radio" id="other" name="source" value="other">
+            <label for="other">Other</label><br><br>
+            <label for="comments">Additional Comments:</label><br>
+            <textarea id="comments" name="comments"></textarea><br><br>
+        </fieldset>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+  <footer style="text-align:center;">
+    <p>Thank you for participating in our survey!
+        <p>
+        &copy; 2024 Survey Company All rights reserved. 
+        </p>
+    </footer>
+</body>
+</html>

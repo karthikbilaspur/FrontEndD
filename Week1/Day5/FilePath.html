@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> File Path </title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		h1, h2, h3 {
+			color: #00698f;
+		}
+		code {
+			background-color: #f0f0f0;
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			display: block;
+			margin: 10px 0;
+		}
+	</style>
+</head>
+<body>
+	<h1>File Paths</h1>
+
+	<h2>What are File Paths?</h2>
+	<p>A file path is a string of characters that specifies the location of a file or directory in a computer's file system.</p>
+
+	<h2>Types of File Paths</h2>
+	<p>There are two main types of file paths:</p>
+	<ul>
+		<li><strong>Absolute Path</strong>: An absolute path is a complete path from the root directory to the file or directory.</li>
+		<li><strong>Relative Path</strong>: A relative path is a path relative to the current working directory.</li>
+	</ul>
+
+	<h2>Examples:</h2>
+	<h3>Absolute Paths:</h3>
+	<code>C:\Users\username\Documents\file.txt (Windows)</code>
+	<code>/home/username/Documents/file.txt (Unix/Linux)</code>
+
+	<h3>Relative Paths:</h3>
+	<code>file.txt (current directory)</code>
+	<code>./file.txt (current directory)</code>
+	<code>../file.txt (parent directory)</code>
+	<code>./dir/file.txt (subdirectory)</code>
+
+	<h2>File Path Notation</h2>
+	<ul>
+		<li><strong>.</strong> : Current directory</li>
+		<li><strong>..</strong> : Parent directory</li>
+		<li><strong>/</strong> : Root directory (Unix/Linux)</li>
+		<li><strong>\</strong> : Directory separator (Windows)</li>
+	</ul>
+
+	<h2>Best Practices</h2>
+	<ul>
+		<li>Use relative paths whenever possible</li>
+		<li>Use forward slashes (/) as directory separators</li>
+		<li>Avoid using absolute paths</li>
+		<li>Use lowercase letters for file names and directories</li>
+	</ul>
+</body>
+</html>

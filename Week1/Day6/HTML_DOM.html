@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML DOM Explanation</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		code {
+			background-color: #f0f0f0;
+			padding: 2px 4px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+		}
+	</style>
+</head>
+<body>
+	<h1>What is HTML DOM?</h1>
+	<p>The HTML Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the structure of a document as a tree of objects, allowing developers to interact with and manipulate the document's content and layout.</p>
+
+	<h2>Types of HTML DOM</h2>
+	<ul>
+		<li><strong>Core DOM</strong>: The core DOM is the base model for all types of documents.</li>
+		<li><strong>XML DOM</strong>: The XML DOM is used for XML documents.</li>
+		<li><strong>HTML DOM</strong>: The HTML DOM is used for HTML documents.</li>
+	</ul>
+
+	<h2>Examples</h2>
+	<h3>1. Accessing an Element by ID</h3>
+	<code>
+		// Get the element with the ID "myElement"<br>
+		var element = document.getElementById("myElement");<br>
+		console.log(element);
+	</code>
+
+	<h3>2. Changing an Element's Text Content</h3>
+	<code>
+		// Get the element with the ID "myElement"<br>
+		var element = document.getElementById("myElement");<br>
+		// Change the text content of the element<br>
+		element.textContent = "New text content!";
+	</code>
+
+	<h3>3. Adding an Event Listener</h3>
+	<code>
+		// Get the element with the ID "myButton"<br>
+		var button = document.getElementById("myButton");<br>
+		// Add an event listener to the button<br>
+		button.addEventListener("click", function() {<br>
+			console.log("Button clicked!");<br>
+		});
+	</code>
+
+	<h3>4. Creating a New Element</h3>
+	<code>
+		// Create a new paragraph element<br>
+		var paragraph = document.createElement("p");<br>
+		// Set the text content of the paragraph<br>
+		paragraph.textContent = "This is a new paragraph!";<br>
+		// Add the paragraph to the document body<br>
+		document.body.appendChild(paragraph);
+	</code>
+</body>
+</html>

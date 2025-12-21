@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Forms</title>
+</head>
+<body>
+<h1>HTML Forms</h1>
+<p>An HTML form is a section of a document that contains controls for collecting user input.</p>
+Code
+<h2>Related Tags</h2>
+<ul>
+    <li><strong>&lt;form&gt;</strong>: defines a form</li>
+    <li><strong>&lt;input&gt;</strong>: defines an input field</li>
+    <li><strong>&lt;textarea&gt;</strong>: defines a textarea</li>
+    <li><strong>&lt;select&gt;</strong>: defines a dropdown list</li>
+    <li><strong>&lt;button&gt;</strong>: defines a button</li>
+    <li><strong>&lt;label&gt;</strong>: defines a label for a form control</li>
+</ul>
+
+<h2>Example 1: Simple Form</h2>
+<code>
+    &lt;form&gt;
+        &lt;label for="name"&gt;Name:&lt;/label&gt;
+        &lt;input type="text" id="name" name="name"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;input type="submit" value="Submit"&gt;
+    &lt;/form&gt;
+</code>
+
+<h2>Example 2: Form with Select and Textarea</h2>
+<code>
+    &lt;form&gt;
+        &lt;label for="color"&gt;Favorite Color:&lt;/label&gt;
+        &lt;select id="color" name="color"&gt;
+            &lt;option value="red"&gt;Red&lt;/option&gt;
+            &lt;option value="green"&gt;Green&lt;/option&gt;
+            &lt;option value="blue"&gt;Blue&lt;/option&gt;
+        &lt;/select&gt;&lt;br&gt;&lt;br&gt;
+        &lt;label for="message"&gt;Message:&lt;/label&gt;
+        &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+        &lt;input type="submit" value="Submit"&gt;
+    &lt;/form&gt;
+</code>
+
+<h2>Example 3: Form with Radio Buttons and Checkboxes</h2>
+<code>
+    &lt;form&gt;
+        &lt;label&gt;Gender:&lt;/label&gt;
+        &lt;input type="radio" id="male" name="gender" value="male"&gt;
+        &lt;label for="male"&gt;Male&lt;/label&gt;
+        &lt;input type="radio" id="female" name="gender" value="female"&gt;
+        &lt;label for="female"&gt;Female&lt;/label&gt;&lt;br&gt;&lt;br&gt;
+        &lt;label&gt;Hobbies:&lt;/label&gt;
+        &lt;input type="checkbox" id="reading" name="hobbies" value="reading"&gt;
+        &lt;label for="reading"&gt;Reading&lt;/label&gt;
+        &lt;input type="checkbox" id="gaming" name="hobbies" value="gaming"&gt;
+        &lt;label for="gaming"&gt;Gaming&lt;/label&gt;&lt;br&gt;&lt;br&gt;
+        &lt;input type="submit" value="Submit"&gt;
+    &lt;/form&gt;
+</code>
+</body>
+</html>

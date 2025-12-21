@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Table</title>
+</head>
+<body>
+<h1>HTML Table</h1>
+<p>An HTML table is a way to display data in a tabular format using rows and columns.</p>
+<code>
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Header 1&lt;/th&gt;
+            &lt;th&gt;Header 2&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Data 1&lt;/td&gt;
+            &lt;td&gt;Data 2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+</code>
+<h2>Related Tags</h2>
+<ul>
+    <li><strong>&lt;table&gt;</strong>: defines a table</li>
+    <li><strong>&lt;tr&gt;</strong>: defines a table row</li>
+    <li><strong>&lt;th&gt;</strong>: defines a table header cell</li>
+    <li><strong>&lt;td&gt;</strong>: defines a table data cell</li>
+    <li><strong>&lt;caption&gt;</strong>: defines a table caption</li>
+</ul>
+
+<h2>Example 1: Simple Table</h2>
+<code>
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Age&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;John&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Jane&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+</code>
+
+<h2>Example 2: Table with Caption and Colspan</h2>
+<code>
+    &lt;table&gt;
+        &lt;caption&gt;Employee Information&lt;/caption&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Age&lt;/th&gt;
+            &lt;th&gt;Department&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;John&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+            &lt;td rowspan="2"&gt;Sales&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Jane&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+</code>
+</body>
+</html>

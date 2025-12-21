@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNS (Domain Name System)</title>
+    <meta name="description" content="Learn about DNS (Domain Name System)">
+    <meta name="keywords" content="DNS, Domain Name System, types of DNS, advantages of DNS, disadvantages of DNS">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Navigation links can be added here -->
+        </nav>
+    </header>
+    <main>
+        <h1>DNS (Domain Name System)</h1>
+        <p>DNS is a hierarchical and distributed naming system that translates domain names into IP addresses, allowing users to access websites and online resources using easy-to-remember domain names instead of difficult-to-remember IP addresses.</p>
+        <h2>How DNS Works</h2>
+        <ol>
+            <li>User enters a domain name into their browser.</li>
+            <li>Browser checks local cache for IP address.</li>
+            <li>If not found, request is sent to DNS resolver.</li>
+            <li>DNS resolver queries root DNS server, which responds with TLD server IP.</li>
+            <li>TLD server responds with authoritative DNS server IP.</li>
+            <li>Authoritative DNS server responds with IP address of web server.</li>
+            <li>Browser connects to web server and loads webpage.</li>
+        </ol>
+        <h2>Types of DNS</h2>
+        <ul>
+            <li><b>Recursive DNS:</b> A recursive DNS server is responsible for resolving a domain name into an IP address.</li>
+            <li><b>Authoritative DNS:</b> An authoritative DNS server is responsible for providing the IP address of a domain name.</li>
+            <li><b>Public DNS:</b> A public DNS server is a DNS server that is open to the public and can be used by anyone.</li>
+            <li><b>Private DNS:</b> A private DNS server is a DNS server that is only accessible within a private network.</li>
+        </ul>
+        <h2>Types of DNS Queries</h2>
+        <ul>
+            <li><b>Recursive Query:</b> In this query, the DNS client wants the DNS server to respond with the requested resource record or an error message.</li>
+            <li><b>Iterative Query:</b> In this query, the DNS client wants the best possible answer from the DNS server.</li>
+            <li><b>Non-Recursive Query:</b> In this query, the DNS resolver queries a DNS server for a record that exists in its cache.</li>
+        </ul>
+        <h2>DNS Caching and TTL (Time-to-Live)</h2>
+        <p>DNS caching stores DNS records locally to reduce network traffic. TTL is the time a DNS record is cached before expiring.</p>
+        <h2>Types of DNS Records</h2>
+        <ul>
+            <li><b>A Record (Address Record):</b> Maps a domain name to an IP address.</li>
+            <li><b>AAAA Record (IPv6 Address Record):</b> Maps a domain name to an IPv6 address.</li>
+            <li><b>MX Records (Mail Exchange Records):</b> Specifies the mail server for a domain.</li>
+            <li><b>CNAME Records (Canonical Name Records):</b> Maps an alias to a canonical domain name.</li>
+            <li><b>TXT Record (Text Record):</b> Stores text-based data for a domain.</li>
+            <li><b>NS Record (Name Server Record):</b> Specifies the name servers for a domain.</li>
+            <li><b>SRV Record (Service Record):</b> Specifies the location of a service.</li>
+            <li><b>PTR Record (Pointer Record):</b> Maps an IP address to a domain name.</li>
+        </ul>
+        <h2>Advantages of DNS</h2>
+        <ul>
+            <li>Easy to remember domain names</li>
+            <li>Flexibility in changing IP addresses</li>
+            <li>Scalability in handling large traffic</li>
+        </ul>
+        <h2>Disadvantages of DNS</h2>
+        <ul>
+            <li>Security risks (DNS spoofing, DNS tunneling)</li>
+            <li>Performance issues (latency, caching)</li>
+            <li>Dependence on DNS servers</li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2025 DNS (Domain Name System). All rights reserved.</p>
+    </footer>
+</body>
+</html>

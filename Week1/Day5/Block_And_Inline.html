@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Block and Inline Elements in HTML5</title>
+	<style>
+		div, p, h1 {
+			border: 1px solid black;
+			margin: 10px;
+		}
+		span, a, strong {
+			background-color: lightblue;
+		}
+	</style>
+</head>
+<body>
+	<h1>Block and Inline Elements in HTML5</h1>
+
+	<h2>What are Block Elements?</h2>
+	<p>Block elements are HTML elements that occupy the full width available, and they start on a new line. They have a rectangular shape and can contain other block-level elements or inline elements.</p>
+
+	<h2>What are Inline Elements?</h2>
+	<p>Inline elements, on the other hand, occupy only the space needed for their content and do not start on a new line. They are typically used within block-level elements.</p>
+
+	<h2>Examples:</h2>
+	<h3>Block Elements:</h3>
+	<code>
+		&lt;div&gt;This is a block element&lt;/div&gt;<br>
+		&lt;p&gt;This is a paragraph, also a block element&lt;/p&gt;<br>
+		&lt;h1&gt;This is a heading, a block element too&lt;/h1&gt;
+	</code>
+
+	<h3>Inline Elements:</h3>
+	<code>
+		&lt;span&gt;This is an inline element&lt;/span&gt;<br>
+		&lt;a href="#"&gt;This is a link, an inline element&lt;/a&gt;<br>
+		&lt;strong&gt;This text is strong, an inline element&lt;/strong&gt;
+	</code>
+
+	<h2>You can see the difference in how they are rendered:</h2>
+	<div>This is a block element</div>
+	<p>This is a paragraph, also a block element</p>
+	<h1>This is a heading, a block element too</h1>
+	<span>This is an inline element</span>
+	<a href="#">This is a link, an inline element</a>
+	<strong>This text is strong, an inline element</strong>
+
+	<h2>Here's a simple HTML5 page demonstrating block and inline elements:</h2>
+	<code>
+		&lt;!DOCTYPE html&gt;<br>
+		&lt;html&gt;<br>
+		&lt;head&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Block and Inline Elements&lt;/title&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&lt;style&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div, p, h1 {<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid black;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin: 10px;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;span, a, strong {<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: lightblue;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&lt;/style&gt;<br>
+		&lt;/head&gt;<br>
+		&lt;body&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Block Elements&lt;/h1&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;This is a block element&lt;/div&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a paragraph, also a block element&lt;/p&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;This is a heading, a block element too&lt;/h1&gt;<br>
+		<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Inline Elements&lt;/h1&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a &lt;span&gt;inline element&lt;/span&gt; within a paragraph.&lt;/p&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a &lt;a href="#"&gt;link, an inline element&lt;/a&gt; within a paragraph.&lt;/p&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This text is &lt;strong&gt;strong, an inline element&lt;/strong&gt; within a paragraph.&lt;/p&gt;<br>
+		&lt;/body&gt;<br>
+		&lt;/html&gt;
+	</code>
+</body>
+</html>

@@ -1,0 +1,10 @@
+Week 1: Course Overview
+This week covers the basics of web development, including how the internet works, frontend and backend development, and client-server communication.
+Daily Topics:
+Day 1: Introduction to web development, understanding websites, and exploring frontend and backend development
+Day 2: Web hosting, domain names, and setting up Visual Studio Code (VS Code)
+Day 3: Version control with Git and GitHub, and introduction to HTML
+Day 4: HTML fundamentals, including headings, paragraphs, images, links, and lists
+Day 5: HTML intermediate level, covering tables, forms, and input fields
+Day 6: HTML advanced level, exploring semantic HTML and advanced structure elements
+Day 7: First mini project - building a personal bio page using HTML
