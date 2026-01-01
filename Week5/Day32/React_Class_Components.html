@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Class Components</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>React Class Components</h1>
+
+    <section>
+        <h2>Overview</h2>
+        <p>React class components are a fundamental part of building React applications. They're used to define reusable pieces of code that represent UI components.</p>
+    </section>
+
+    <section>
+        <h2>Structure</h2>
+        <pre><code>
+import React, { Component } from 'react';
+
+class MyComponent extends Component {
+  render() {
+    return &lt;div&gt;Hello, World!&lt;/div&gt;;
+  }
+}
+
+export default MyComponent;
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Types of Class Components</h2>
+        <ul>
+            <li><strong>Stateful Components</strong>: These components manage their own state using the <code>state</code> property.</li>
+            <li><strong>Stateless Components</strong>: These components don't manage their own state and rely on props passed from parent components.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Key Features</h2>
+        <ul>
+            <li><code>constructor()</code>: Initializes the component's state and binds event handlers.</li>
+            <li><code>render()</code>: Returns the JSX that defines the component's UI.</li>
+            <li><code>componentDidMount()</code>: Called after the component is rendered to the DOM.</li>
+            <li><code>componentWillUnmount()</code>: Called before the component is removed from the DOM.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Applications</h2>
+        <ul>
+            <li><strong>Complex UI Components</strong>: Class components are suitable for complex UI components that require state management and lifecycle methods.</li>
+            <li><strong>Legacy Code</strong>: Class components are often used in older React codebases.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Example Use Cases</h2>
+        <h3>Example 1: Simple Counter Component</h3>
+        <pre><code>
+import React, { Component } from 'react';
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;Count: {this.state.count}&lt;/p&gt;
+        &lt;button onClick={() => this.setState({ count: this.state.count + 1 })}&gt;
+          Increment
+        &lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default Counter;
+        </code></pre>
+
+        <h3>Example 2: Form Component with Validation</h3>
+        <pre><code>
+import React, { Component } from 'react';
+
+class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { name: '', email: '', errors: {} };
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    // Validate form data
+    const errors = {};
+    if (!this.state.name) errors.name = 'Name is required';
+    if (!this.state.email) errors.email = 'Email is required';
+    this.setState({ errors });
+  };
+
+  render() {
+    return (
+      &lt;form onSubmit={this.handleSubmit}&gt;
+        &lt;input
+          type="text"
+          value={this.state.name}
+          onChange={(event) => this.setState({ name: event.target.value })}
+        /&gt;
+        {this.state.errors.name && &lt;p style={{ color: 'red' }}&gt;{this.state.errors.name}&lt;/p&gt;}
+        &lt;input
+          type="email"
+          value={this.state.email}
+          onChange={(event) => this.setState({ email: event.target.value })}
+        /&gt;
+        {this.state.errors.email && &lt;p style={{ color: 'red' }}&gt;{this.state.errors.email}&lt;/p&gt;}
+        &lt;button type="submit"&gt;Submit&lt;/button&gt;
+      &lt;/form&gt;
+    );
+  }
+}
+
+export default Form;
+        </code></pre>
+    </section>
+</body>
+</html>

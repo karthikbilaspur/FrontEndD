@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>React JSX</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+background-color: #f5f5f5;
+}
+h1, h2 {
+color: #333;
+}
+section {
+margin-bottom: 30px;
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+pre {
+background-color: #f0f0f0;
+padding: 10px;
+border-radius: 4px;
+overflow-x: auto;
+}
+ul {
+list-style-type: none;
+padding: 0;
+}
+li {
+margin-bottom: 10px;
+}
+.highlight {
+color: #007bff;
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<h1>React JSX</h1>
+<section>
+<h2>What is JSX?</h2>
+<p><span class="highlight">JSX</span> (JavaScript XML) is a syntax extension for JavaScript used in React. It allows writing HTML-like code in JavaScript files.</p>
+<pre>const element = &lt;h1&gt;Hello, World!&lt;/h1&gt;;</pre>
+</section>
+<section>
+<h2>How JSX Works</h2>
+<ul>
+<li>JSX is converted to <span class="highlight">React.createElement()</span> calls by Babel.</li>
+<li>Creates React elements, which are plain objects describing the UI.</li>
+</ul>
+<pre>
+// JSX
+const element = &lt;h1&gt;Hello&lt;/h1&gt;;
+// Compiled to
+const element = React.createElement('h1', null, 'Hello');
+</pre>
+</section>
+<section>
+<h2>Implementation</h2>
+<ul>
+<li>Use JSX in React components to define UI.</li>
+<li>Wrap expressions in <span class="highlight">{}</span> to evaluate JavaScript.</li>
+</ul>
+<pre>
+function App() {
+const name = 'React';
+return &lt;h1&gt;Hello, {name}!&lt;/h1&gt;;
+}
+</pre>
+</section>
+<section>
+<h2>JSX Attributes</h2>
+<ul>
+<li>Use <span class="highlight">camelCase</span> for attributes (e.g., <span class="highlight">className</span>, <span class="highlight">onClick</span>).</li>
+<li>Pass props like HTML attributes.</li>
+</ul>
+<pre>
+function Button() {
+return &lt;button className="btn" onClick={() => alert('Clicked')}&gt;Click&lt;/button&gt;;
+}
+</pre>
+</section>
+<section>
+<h2>JSX Objects</h2>
+<p>JSX elements are treated as objects:</p>
+<pre>
+const element = {
+type: 'h1',
+props: {
+children: 'Hello'
+}
+};
+</pre>
+<p>Useful for conditional rendering:</p>
+<pre>
+const isAdmin = true;
+const element = isAdmin ? &lt;h1&gt;Welcome Admin&lt;/h1&gt; : &lt;p&gt;Not authorized&lt;/p&gt;;
+</pre>
+</section>
+<section>
+<h2>Key Points</h2>
+<ul>
+<li>JSX is optional but recommended for React.</li>
+<li>Gets compiled to <span class="highlight">React.createElement()</span>.</li>
+<li>Use <span class="highlight">{}</span> for JavaScript expressions.</li>
+</ul>
+</section>
+</body>
+</html>

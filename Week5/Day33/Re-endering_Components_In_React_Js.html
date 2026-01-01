@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re-Rendering Components in React JS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .example {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .tip {
+            background-color: #ffffcc;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Re-Rendering Components in React JS</h1>
+
+    <section>
+        <h2>Overview</h2>
+        <p>Re-rendering is the process of updating a React component's UI when its state or props change. React automatically handles re-rendering for you, but understanding how it works can help you optimize your app's performance.</p>
+    </section>
+
+    <section>
+        <h2>When Does Re-Rendering Happen?</h2>
+        <ul>
+            <li><strong>State Change</strong>: When a component's state changes using <code>setState</code> or <code>useState</code>.</li>
+            <li><strong>Props Change</strong>: When a component's props change.</li>
+            <li><strong>Parent Re-Render</strong>: When a parent component re-renders, its child components will also re-render.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>How to Prevent Unnecessary Re-Renders</h2>
+        <ul>
+            <li><strong>Use <code>React.memo</code></strong>: Wrap your component with <code>React.memo</code> to memoize it and prevent re-renders when props don't change.</li>
+            <li><strong>Use <code>useCallback</code></strong>: Memoize functions with <code>useCallback</code> to prevent them from changing on every render.</li>
+            <li><strong>Use <code>useMemo</code></strong>: Memoize values with <code>useMemo</code> to prevent expensive calculations on every render.</li>
+        </ul>
+        <div class="tip">
+            <strong>Tip:</strong> Use React DevTools to profile your app and identify performance bottlenecks.
+        </div>
+    </section>
+
+    <section>
+        <h2>Example Use Cases</h2>
+        <div class="example">
+            <h3>Example 1: Preventing Re-Renders with <code>React.memo</code></h3>
+            <pre><code>
+import React from 'react';
+
+const MyComponent = React.memo((props) => {
+  console.log('Rendered!');
+  return &lt;div&gt;Hello, {props.name}!&lt;/div&gt;;
+});
+            </code></pre>
+        </div>
+
+        <div class="example">
+            <h3>Example 2: Preventing Re-Renders with <code>useCallback</code></h3>
+            <pre><code>
+import React, { useState, useCallback } from 'react';
+
+function MyComponent() {
+  const [count, setCount] = useState(0);
+  const handleClick = useCallback(() => {
+    console.log('Button clicked!');
+  }, []);
+
+  return &lt;button onClick={handleClick}&gt;Click me ({count})&lt;/button&gt;;
+}
+            </code></pre>
+        </div>
+
+        <div class="example">
+            <h3>Example 3: Preventing Re-Renders with <code>useMemo</code></h3>
+            <pre><code>
+import React, { useState, useMemo } from 'react';
+
+function MyComponent() {
+  const [count, setCount] = useState(0);
+  const expensiveCalculation = useMemo(() => {
+    // expensive calculation here
+    return count * 2;
+  }, [count]);
+
+  return &lt;div&gt;Expensive calculation: {expensiveCalculation}&lt;/div&gt;;
+}
+            </code></pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Best Practices</h2>
+        <ul>
+            <li><strong>Avoid unnecessary re-renders</strong>: Use <code>React.memo</code>, <code>useCallback</code>, and <code>useMemo</code> to prevent unnecessary re-renders.</li>
+            <li><strong>Use immutable state</strong>: Avoid mutating state directly, and instead use <code>setState</code> or <code>useState</code> to update state.</li>
+            <li><strong>Profile your app</strong>: Use React DevTools to profile your app and identify performance bottlenecks.</li>
+        </ul>
+    </section>
+</body>
+</html>

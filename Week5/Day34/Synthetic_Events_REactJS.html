@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synthetic Events in React JS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        code {
+            background-color: #e6e6e6;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+        pre {
+            background-color: #e6e6e6;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .example {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Synthetic Events in React JS 😎</h1>
+        <p>Synthetic events in React are a cross-browser wrapper around the browser's native event system.</p>
+
+        <h2>What are Synthetic Events?</h2>
+        <p>Synthetic events are a way to handle events in a consistent and cross-browser compatible way. They provide a unified API for handling events, regardless of the browser being used.</p>
+
+        <h2>Benefits of Synthetic Events</h2>
+        <ul>
+            <li><b>Cross-browser compatibility</b>: Synthetic events provide a consistent API for handling events across different browsers.</li>
+            <li><b>Performance optimization</b>: Synthetic events are optimized for performance, reducing the overhead of event handling.</li>
+            <li><b>Unified event API</b>: Synthetic events provide a unified API for handling events, making it easier to write event handlers.</li>
+        </ul>
+
+        <h2>How Synthetic Events Work</h2>
+        <p>When an event occurs, React creates a synthetic event object and passes it to the event handler. The synthetic event object provides a consistent API for accessing event data, regardless of the browser being used.</p>
+        <pre><code class="language-jsx">
+import React from 'react';
+
+function handleClick(event) {
+  console.log(event); // Synthetic event object
+}
+
+function MyButton() {
+  return &lt;button onClick={handleClick}&gt;Click me!&lt;/button&gt;;
+}
+        </code></pre>
+
+        <h2>Synthetic Event Properties</h2>
+        <ul>
+            <li><b>target</b>: The element that triggered the event.</li>
+            <li><b>currentTarget</b>: The element that the event handler is attached to.</li>
+            <li><b>preventDefault()</b>: Prevents the default browser behavior.</li>
+            <li><b>stopPropagation()</b>: Stops the event from bubbling up the DOM.</li>
+        </ul>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Use synthetic events instead of native events for cross-browser compatibility.</li>
+            <li>Use the <code>event.persist()</code> method to access event properties asynchronously.</li>
+            <li>Avoid accessing event properties outside of the event handler.</li>
+        </ul>
+
+        <p>Want to know more about synthetic events in React? 😊</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Rendering</title>
+</head>
+<body>
+    <h1>Conditional Rendering in HTML5 (using JavaScript)</h1>
+    <p>Conditional rendering is a technique used to render different UI components or content based on certain conditions.</p>
+    <input id="username" type="text" placeholder="Enter username">
+    <button id="submit">Submit</button>
+    <div id="greeting"></div>
+
+    <script>
+        const usernameInput = document.getElementById('username');
+        const submitButton = document.getElementById('submit');
+        const greetingDiv = document.getElementById('greeting');
+
+        submitButton.addEventListener('click', () => {
+            const username = usernameInput.value.trim();
+            if (username) {
+                // Render greeting if username is provided
+                greetingDiv.innerHTML = `<h1>Hello, ${username}!</h1>`;
+            } else {
+                // Render error message if username is empty
+                greetingDiv.innerHTML = `<p style="color: red;">Please enter a username.</p>`;
+            }
+        });
+    </script>
+
+    <h2>How it works:</h2>
+    <ul>
+        <li>The user enters a username and clicks the submit button.</li>
+        <li>The JavaScript code checks if the username is not empty.</li>
+        <li>If the username is provided, it renders a greeting message with the username.</li>
+        <li>If the username is empty, it renders an error message.</li>
+    </ul>
+
+    <h2>Types of Conditional Rendering:</h2>
+    <ul>
+        <li><strong>If-Else:</strong> Render one component if the condition is true, otherwise render another.</li>
+        <li><strong>Ternary Operator:</strong> A shorthand for if-else statements.</li>
+        <li><strong>Logical AND (&&):</strong> Render a component if the condition is true, otherwise render nothing.</li>
+    </ul>
+
+    <h2>Example using Ternary Operator:</h2>
+    <script>
+        const isAdmin = true;
+        const greeting = isAdmin ? '<h1>Welcome, Admin!</h1>' : '<h1>Welcome, User!</h1>';
+        document.write(greeting);
+    </script>
+
+    <h2>Example using Logical AND (&&):</h2>
+    <script>
+        const isLoggedIn = true;
+        const greeting2 = isLoggedIn && '<h1>Welcome back!</h1>';
+        document.write(greeting2 || '<h1>Please log in.</h1>');
+    </script>
+</body>
+</html>

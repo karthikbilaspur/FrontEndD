@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>React Virtual DOM</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+background-color: #f5f5f5;
+}
+h1, h2 {
+color: #333;
+}
+section {
+margin-bottom: 30px;
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+pre {
+background-color: #f0f0f0;
+padding: 10px;
+border-radius: 4px;
+overflow-x: auto;
+}
+ul {
+list-style-type: none;
+padding: 0;
+}
+li {
+margin-bottom: 10px;
+}
+.highlight {
+color: #007bff;
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<h1>React Virtual DOM</h1>
+<section>
+<h2>What is Virtual DOM?</h2>
+<p>The <span class="highlight">Virtual DOM</span> is a lightweight in-memory representation of the real DOM. It's a programming concept used by React to optimize UI updates.</p>
+</section>
+<section>
+<h2>How Virtual DOM Works</h2>
+<ul>
+<li>When state changes, React updates the Virtual DOM.</li>
+<li>React compares the updated Virtual DOM with the previous one (<span class="highlight">diffing</span>).</li>
+<li>Calculates minimal changes needed to update the real DOM.</li>
+<li>Applies only those changes to the real DOM (<span class="highlight">reconciliation</span>).</li>
+</ul>
+<pre>
+State Change
+Update Virtual DOM
+Diffing
+Update Real DOM (minimal changes)
+</pre>
+</section>
+<section>
+<h2>Benefits</h2>
+<ul>
+<li><span class="highlight">Performance:</span> Minimizes costly DOM operations.</li>
+<li><span class="highlight">Efficiency:</span> Batch updates for better rendering.</li>
+<li><span class="highlight">Declarative UI:</span> Focus on what to render, not how.</li>
+</ul>
+</section>
+<section>
+<h2>Virtual DOM vs Real DOM</h2>
+<ul>
+<li><span class="highlight">Virtual DOM:</span> Lightweight, in-memory, fast diffing.</li>
+<li><span class="highlight">Real DOM:</span> Browser API, slower updates, heavy operations.</li>
+</ul>
+<pre>
+// Virtual DOM (simplified)
+const vDOM = {
+type: 'div',
+props: { id: 'app' },
+children: [...]
+};
+// Real DOM
+const element = document.createElement('div');
+element.id = 'app';
+</pre>
+</section>
+<section>
+<h2>Reconciliation (Diffing Algorithm)</h2>
+<ul>
+<li>Compares elements by <span class="highlight">type</span> and <span class="highlight">key</span>.</li>
+<li>Recursively updates children.</li>
+<li>Uses <span class="highlight">keys</span> to optimize list updates.</li>
+</ul>
+<pre>
+// Example with keys
+&lt;ul&gt;
+{items.map(item => &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;)}
+&lt;/ul&gt;
+</pre>
+</section>
+<section>
+<h2>When to Use Keys</h2>
+<ul>
+<li>Lists or dynamic elements.</li>
+<li>Ensure unique <span class="highlight">key</span> prop for siblings.</li>
+</ul>
+<pre>
+&lt;TodoItem key={todo.id} todo={todo} /&gt;
+</pre>
+</section>
+<section>
+<h2>Key Points</h2>
+<ul>
+<li>Virtual DOM optimizes updates.</li>
+<li>React handles diffing and reconciliation.</li>
+<li>Use <span class="highlight">keys</span> for efficient list rendering.</li>
+</ul>
+</section>
+</body>
+</html>

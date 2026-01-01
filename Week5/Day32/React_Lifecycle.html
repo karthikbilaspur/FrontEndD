@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Lifecycle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>React Lifecycle</h1>
+
+    <section>
+        <h2>Overview</h2>
+        <p>The React lifecycle refers to the series of methods that are called at different stages of a component's life, from its creation to its removal from the DOM.</p>
+    </section>
+
+    <section>
+        <h2>Phases of the React Lifecycle</h2>
+        <ul>
+            <li><strong>Mounting</strong>: The component is being created and added to the DOM.</li>
+            <li><strong>Updating</strong>: The component is being updated due to changes in props or state.</li>
+            <li><strong>Unmounting</strong>: The component is being removed from the DOM.</li>
+            <li><strong>Error Handling</strong>: The component encounters an error.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Mounting Phase</h2>
+        <ul>
+            <li><code>constructor()</code>: Initializes the component's state and props.</li>
+            <li><code>static getDerivedStateFromProps()</code>: Updates the state based on props changes.</li>
+            <li><code>render()</code>: Returns the JSX that defines the component's UI.</li>
+            <li><code>componentDidMount()</code>: Called after the component is rendered to the DOM.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Updating Phase</h2>
+        <ul>
+            <li><code>static getDerivedStateFromProps()</code>: Updates the state based on props changes.</li>
+            <li><code>shouldComponentUpdate()</code>: Determines whether the component should update.</li>
+            <li><code>render()</code>: Returns the JSX that defines the component's UI.</li>
+            <li><code>getSnapshotBeforeUpdate()</code>: Captures a snapshot of the component's state before updating.</li>
+            <li><code>componentDidUpdate()</code>: Called after the component is updated.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Unmounting Phase</h2>
+        <ul>
+            <li><code>componentWillUnmount()</code>: Called before the component is removed from the DOM.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Error Handling Phase</h2>
+        <ul>
+            <li><code>static getDerivedStateFromError()</code>: Updates the state when an error occurs.</li>
+            <li><code>componentDidCatch()</code>: Catches errors in the component tree.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Example Use Cases</h2>
+        <h3>Example 1: Logging Lifecycle Methods</h3>
+        <pre><code>
+import React, { Component } from 'react';
+
+class Logger extends Component {
+  constructor(props) {
+    super(props);
+    console.log('Constructor called');
+  }
+
+  static getDerivedStateFromProps() {
+    console.log('getDerivedStateFromProps called');
+    return null;
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount called');
+  }
+
+  shouldComponentUpdate() {
+    console.log('shouldComponentUpdate called');
+    return true;
+  }
+
+  getSnapshotBeforeUpdate() {
+    console.log('getSnapshotBeforeUpdate called');
+    return null;
+  }
+
+  componentDidUpdate() {
+    console.log('componentDidUpdate called');
+  }
+
+  componentWillUnmount() {
+    console.log('componentWillUnmount called');
+  }
+
+  render() {
+    console.log('render called');
+    return &lt;div&gt;Logger Component&lt;/div&gt;;
+  }
+}
+
+export default Logger;
+        </code></pre>
+    </section>
+</body>
+</html>

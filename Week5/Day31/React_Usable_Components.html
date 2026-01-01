@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reusable React Components</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>How to make Reusable React Components?</h1>
+    <p>React components are modular pieces of UI that take data via props to render dynamic and complex interfaces.</p>
+
+    <h2>Key Factors for Reusable Components</h2>
+    <ol>
+        <li><strong>Avoid side effects:</strong> Don't include logic that interacts with external data directly inside a reusable component.</li>
+        <li><strong>Use Props:</strong> Pass data and logic as props to customize the component's behavior and appearance.</li>
+    </ol>
+
+    <h2>Example: Bad Practice</h2>
+    <pre><code>const ButtonReusable = () => {
+  return &lt;button&gt; Click Me &lt;/button&gt;;
+}</code></pre>
+
+    <h2>Example: Good Practice</h2>
+    <pre><code>const ButtonReusable = ({ color, text }) => {
+  return &lt;button style={{ backgroundColor: color }}&gt;{text}&lt;/button&gt;;
+}</code></pre>
+
+    <h2>Optimizing Performance</h2>
+    <p>Use memoization to avoid unnecessary re-renders. React's <code>React.memo</code> and <code>useMemo</code> hooks can help.</p>
+
+    <h2>Example: Reusable Components</h2>
+    <pre><code>// src/App.js
+import React from 'react';
+import ProductList from './ProductList.js';
+
+const App = () => {
+  const products = [
+    { id: 1, name: 'Product 1', price: 10 },
+    { id: 2, name: 'Product 2', price: 20 },
+    { id: 3, name: 'Product 3', price: 30 },
+  ];
+
+  return (
+    &lt;div style={{ margin: '5px' }}&gt;
+      &lt;h2 style={{ color: 'green' }}&gt;
+        Reusable Components Example
+      &lt;/h2&gt;
+      &lt;ProductList products={products} /&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default App;</code></pre>
+</body>
+</html>

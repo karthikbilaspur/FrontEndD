@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Functional Components</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>React Functional Components</h1>
+    <p>Functional components are a way to define React components as functions. They're simple, lightweight, and easy to understand.</p>
+
+    <h2>Defining a Functional Component</h2>
+    <pre><code>import React from 'react';
+
+function Hello() {
+  return &lt;h1&gt;Hello, World!&lt;/h1&gt;;
+}
+
+export default Hello;</code></pre>
+
+    <h2>Passing Props</h2>
+    <p>Props are short for "properties" and are used to pass data from a parent component to a child component.</p>
+    <pre><code>import React from 'react';
+
+function Greeting(props) {
+  return &lt;h1&gt;Hello, {props.name}!&lt;/h1&gt;;
+}
+
+function App() {
+  return &lt;Greeting name="John" /&gt;;
+}</code></pre>
+
+    <h2>Destructuring Props</h2>
+    <p>You can destructure props to make your code cleaner.</p>
+    <pre><code>import React from 'react';
+
+function Greeting({ name }) {
+  return &lt;h1&gt;Hello, {name}!&lt;/h1&gt;;
+}
+
+function App() {
+  return &lt;Greeting name="John" /&gt;;
+}</code></pre>
+
+    <h2>Functional Components vs Class Components</h2>
+    <table>
+        <tr>
+            <th></th>
+            <th>Functional Components</th>
+            <th>Class Components</th>
+        </tr>
+        <tr>
+            <td><strong>Definition</strong></td>
+            <td>Defined as functions</td>
+            <td>Defined as classes that extend <code>React.Component</code></td>
+        </tr>
+        <tr>
+            <td><strong>Syntax</strong></td>
+            <td><code>function Component() { ... }</code></td>
+            <td><code>class Component extends React.Component { ... }</code></td>
+        </tr>
+        <tr>
+            <td><strong>State</strong></td>
+            <td>Use <code>useState</code> hook</td>
+            <td>Use <code>this.state</code></td>
+        </tr>
+        <tr>
+            <td><strong>Lifecycle Methods</strong></td>
+            <td>Use <code>useEffect</code> hook</td>
+            <td>Use lifecycle methods like <code>componentDidMount</code></td>
+        </tr>
+    </table>
+
+    <h2>When to Use Each</h2>
+    <ul>
+        <li>Use functional components when:
+            <ul>
+                <li>You don't need state or lifecycle methods.</li>
+                <li>You want a simple, lightweight component.</li>
+            </ul>
+        </li>
+        <li>Use class components when:
+            <ul>
+                <li>You need state or lifecycle methods.</li>
+                <li>You're working with legacy code that uses class components.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Example: Counter Component</h2>
+    <h3>Functional Component</h3>
+    <pre><code>import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt;
+      &lt;button onClick={() => setCount(count + 1)}&gt;Increment&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+
+    <h3>Class Component</h3>
+    <pre><code>import React, { Component } from 'react';
+
+class Counter extends Component {
+  state = { count: 0 };
+
+  increment = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;Count: {this.state.count}&lt;/p&gt;
+        &lt;button onClick={this.increment}&gt;Increment&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}</code></pre>
+</body>
+</html>

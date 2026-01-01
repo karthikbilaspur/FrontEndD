@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Functional Components</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .example {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>React Functional Components</h1>
+
+    <section>
+        <h2>Overview</h2>
+        <p>Functional components are a type of React component that uses a function to render JSX. They're a simpler way to write components, and are often preferred over class components for their conciseness and ease of use.</p>
+    </section>
+
+    <section>
+        <h2>Syntax</h2>
+        <pre><code>
+import React from 'react';
+
+function MyComponent(props) {
+  return &lt;div&gt;Hello, World!&lt;/div&gt;;
+}
+
+export default MyComponent;
+        </code></pre>
+        <p>Alternatively, you can use an arrow function:</p>
+        <pre><code>
+import React from 'react';
+
+const MyComponent = (props) => {
+  return &lt;div&gt;Hello, World!&lt;/div&gt;;
+};
+
+export default MyComponent;
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>No <code>this</code> keyword</strong>: Functional components don't have their own <code>this</code> context.</li>
+            <li><strong>No lifecycle methods</strong>: Functional components don't have lifecycle methods like <code>componentDidMount</code>. Instead, use Hooks like <code>useEffect</code>.</li>
+            <li><strong>State with Hooks</strong>: Use Hooks like <code>useState</code> to manage state in functional components.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Using Props</h2>
+        <pre><code>
+import React from 'react';
+
+function Greeting(props) {
+  return &lt;div&gt;Hello, {props.name}!&lt;/div&gt;;
+}
+
+export default Greeting;
+        </code></pre>
+        <p>You can also destructure props:</p>
+        <pre><code>
+import React from 'react';
+
+function Greeting({ name }) {
+  return &lt;div&gt;Hello, {name}!&lt;/div&gt;;
+}
+
+export default Greeting;
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Using Hooks</h2>
+        <pre><code>
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt;
+      &lt;button onClick={() => setCount(count + 1)}&gt;Increment&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Counter;
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Benefits</h2>
+        <ul>
+            <li><strong>Simpler code</strong>: Functional components are often more concise than class components.</li>
+            <li><strong>Easier to test</strong>: Functional components are easier to test because they don't have a complex lifecycle.</li>
+            <li><strong>Better performance</strong>: Functional components can be optimized by React for better performance.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Example Use Cases</h2>
+        <div class="example">
+            <h3>Example 1: Simple Greeting Component</h3>
+            <pre><code>
+import React from 'react';
+
+function Greeting({ name }) {
+  return &lt;div&gt;Hello, {name}!&lt;/div&gt;;
+}
+
+export default Greeting;
+            </code></pre>
+        </div>
+
+        <div class="example">
+            <h3>Example 2: Todo List Component</h3>
+            <pre><code>
+import React, { useState } from 'react';
+
+function TodoList() {
+  const [todos, setTodos] = useState([
+    { id: 1, text: 'Buy milk' },
+    { id: 2, text: 'Walk the dog' },
+  ]);
+
+  return (
+    &lt;ul&gt;
+      {todos.map((todo) => (
+        &lt;li key={todo.id}&gt;{todo.text}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+
+export default TodoList;
+            </code></pre>
+        </div>
+    </section>
+</body>
+</html>

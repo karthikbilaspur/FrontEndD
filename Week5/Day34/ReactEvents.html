@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        code {
+            background-color: #e6e6e6;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+        pre {
+            background-color: #e6e6e6;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>React Events 😎</h1>
+        <p>React events are handled similarly to regular HTML events, but with some key differences. They're <b>synthetic</b>, meaning they're a wrapper around native browser events, ensuring cross-browser compatibility and optimized performance.</p>
+
+        <h2>Key Features of React Events</h2>
+        <ul>
+            <li><b>Synthetic Events</b>: A unified layer over native browser events, providing consistent behavior across browsers.</li>
+            <li><b>CamelCase Naming</b>: Event names are camelCased (e.g., <code>onClick</code> instead of <code>onclick</code>).</li>
+            <li><b>Event Handlers as Props</b>: Event handlers are passed as props to components.</li>
+        </ul>
+
+        <h2>Common React Events</h2>
+        <ul>
+            <li><b>Mouse Events</b>: <code>onClick</code>, <code>onMouseDown</code>, <code>onMouseUp</code>, <code>onMouseEnter</code>, <code>onMouseLeave</code></li>
+            <li><b>Keyboard Events</b>: <code>onKeyDown</code>, <code>onKeyUp</code>, <code>onKeyPress</code></li>
+            <li><b>Focus Events</b>: <code>onFocus</code>, <code>onBlur</code></li>
+            <li><b>Form Events</b>: <code>onChange</code>, <code>onSubmit</code>, <code>onReset</code></li>
+        </ul>
+
+        <h2>Example</h2>
+        <pre><code class="language-jsx">
+import React from 'react';
+
+function handleClick() {
+  console.log('Button clicked!');
+}
+
+function MyButton() {
+  return &lt;button onClick={handleClick}&gt;Click me!&lt;/button&gt;;
+}
+        </code></pre>
+
+        <h2>Event Object</h2>
+        <p>The event object passed to event handlers is a synthetic event, with properties like <code>target</code>, <code>currentTarget</code>, <code>preventDefault()</code>, and <code>stopPropagation()</code>.</p>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Use <code>event.persist()</code> when accessing event properties asynchronously.</li>
+            <li>Memoize event handlers with <code>useCallback</code> to prevent unnecessary re-renders.</li>
+        </ul>
+
+        <p>Want to know more about handling events in specific scenarios, like forms or keyboard interactions? 😊</p>
+    </div>
+</body>
+</html>

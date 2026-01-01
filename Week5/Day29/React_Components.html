@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>React Components</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+background-color: #f5f5f5;
+}
+h1, h2 {
+color: #333;
+}
+section {
+margin-bottom: 30px;
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+pre {
+background-color: #f0f0f0;
+padding: 10px;
+border-radius: 4px;
+overflow-x: auto;
+}
+ul {
+list-style-type: none;
+padding: 0;
+}
+li {
+margin-bottom: 10px;
+}
+.highlight {
+color: #007bff;
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<h1>React Components</h1>
+<section>
+<h2>What are React Components?</h2>
+<p>Components are the building blocks of React apps. They're reusable pieces of UI that manage their own state and props.</p>
+<p>Example:</p>
+<pre>function Button() {
+return &lt;button&gt;Click me!&lt;/button&gt;;
+}</pre>
+</section>
+<section>
+<h2>Types of Components</h2>
+<ul>
+<li><span class="highlight">Functional Components</span> (recommended):
+<pre>function Button() {
+return &lt;button&gt;Click!&lt;/button&gt;;
+}</pre>
+</li>
+<li><span class="highlight">Class Components</span> (legacy):
+<pre>class Button extends React.Component {
+render() {
+return &lt;button&gt;Click!&lt;/button&gt;;
+}
+}</pre>
+</li>
+</ul>
+</section>
+<section>
+<h2>Component Best Practices</h2>
+<ul>
+<li><span class="highlight">Single Responsibility:</span> One component, one job.</li>
+<li><span class="highlight">Reusability:</span> Make components flexible with props.</li>
+<li><span class="highlight">Naming:</span> Use PascalCase (e.g., <span class="highlight">UserProfile</span>).</li>
+<li><span class="highlight">Props Validation:</span> Use <span class="highlight">propTypes</span> (optional).</li>
+<li><span class="highlight">State:</span> Use <span class="highlight">useState</span> hook in functional components.</li>
+<li><span class="highlight">Keep it simple:</span> Avoid complex logic in components.</li>
+</ul>
+</section>
+<section>
+<h2>Example: Functional Component with Props</h2>
+<pre>function Greeting({ name }) {
+return &lt;h1&gt;Hello, {name}!&lt;/h1&gt;;
+}
+// Usage:
+&lt;Greeting name="John" /&gt;</pre>
+</section>
+<section>
+<h2>Example: Component with State</h2>
+<pre>function Counter() {
+const [count, setCount] = useState(0);
+return (
+&lt;div&gt;
+&lt;p&gt;Count: {count}&lt;/p&gt;
+&lt;button onClick={() => setCount(count + 1)}&gt;+&lt;/button&gt;
+&lt;/div&gt;
+);
+}</pre>
+</section>
+<section>
+<h2>Next Steps</h2>
+<ul>
+<li>Learn about <span class="highlight">props</span> and <span class="highlight">state</span></li>
+<li>Explore <span class="highlight">hooks</span> like <span class="highlight">useEffect</span></li>
+<li>Build reusable components!</li>
+</ul>
+</section>
+</body>
+</html>

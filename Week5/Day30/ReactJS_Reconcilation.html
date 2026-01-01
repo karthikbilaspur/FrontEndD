@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReactJS Reconciliation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ReactJS Reconciliation</h1>
+    <p>Reconciliation is the process React uses to efficiently update the DOM when changes occur in the UI.</p>
+    
+    <h2>Key Benefits:</h2>
+    <ul>
+        <li><strong>Minimizes unnecessary updates:</strong> React only changes parts of the UI that need updates.</li>
+        <li><strong>Improves performance:</strong> Reduces DOM changes for better app speed.</li>
+        <li><strong>Ensures consistency:</strong> UI always matches the app state.</li>
+    </ul>
+
+    <h2>How it Works:</h2>
+    <ol>
+        <li><strong>Render Phase:</strong> React generates a new Virtual DOM.</li>
+        <li><strong>Diffing Algorithm:</strong> Compares old and new Virtual DOMs to find differences.</li>
+        <li><strong>Commit Phase:</strong> Applies updates to the real DOM efficiently.</li>
+    </ol>
+
+    <h2>Virtual DOM:</h2>
+    <p>A lightweight, in-memory representation of the actual DOM elements.</p>
+
+    <h2>Optimization Strategies:</h2>
+    <ul>
+        <li>Use <code>shouldComponentUpdate</code> in class components</li>
+        <li>Use <code>React.memo</code> for functional components</li>
+        <li>Use unique <code>key</code> prop in lists</li>
+        <li>Avoid inline functions/objects in JSX</li>
+        <li>Use <code>React.PureComponent</code></li>
+    </ul>
+
+    <footer style="margin-top: 20px; font-size: 0.9em;">
+        <p>Learn more about ReactJS reconciliation on <a href="https://geeksforgeeks.org">GeeksforGeeks</a></p>
+    </footer>
+</body>
+</html>
