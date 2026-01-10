@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>React Hooks</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+}
+h1, h2, h3 {
+color: #333;
+}
+code {
+background-color: #f0f0f0;
+padding: 2px 4px;
+border-radius: 2px;
+}
+pre {
+background-color: #f0f0f0;
+padding: 10px;
+border-radius: 5px;
+overflow-x: auto;
+}
+
+table {
+border-collapse: collapse;
+width: 100%;
+}
+th, td {
+border: 1px solid #ddd;
+padding: 8px;
+text-align: left;
+}
+th {
+background-color: #f0f0f0;
+}
+</style>
+</head>
+<body>
+<h1>What is React Hook?</h1>
+<p>React Hook is a feature in React that allows you to use state and other React features in functional components. Hooks were introduced in React 16.8 as a way to use state and other React features in functional components, which were previously only available in class components.</p>
+Code
+<h2>Types of React Hooks</h2>
+<ul>
+    <li><strong>State Hooks</strong>: <code>useState</code>, <code>useReducer</code></li>
+    <li><strong>Effect Hooks</strong>: <code>useEffect</code>, <code>useLayoutEffect</code></li>
+    <li><strong>Context Hooks</strong>: <code>useContext</code></li>
+    <li><strong>Ref Hooks</strong>: <code>useRef</code></li>
+    <li><strong>Performance Hooks</strong>: <code>useMemo</code>, <code>useCallback</code></li>
+    <li><strong>Custom Hooks</strong>: <code>useYourHookName</code></li>
+</ul>
+
+<h2>Major Functions of React Hooks</h2>
+<ul>
+    <li><code>useState</code>: Returns a state value and an update function to update the state.</li>
+    <li><code>useEffect</code>: Runs a function after rendering a component, and can be used to handle side effects.</li>
+    <li><code>useContext</code>: Returns the value of a context.</li>
+    <li><code>useRef</code>: Returns a reference to a DOM node or a value that persists across renders.</li>
+    <li><code>useMemo</code>: Memoizes a value so it's not recomputed on every render.</li>
+    <li><code>useCallback</code>: Memoizes a function so it's not recreated on every render.</li>
+</ul>
+
+<h2>Examples</h2>
+
+<h3><code>useState</code></h3>
+<pre>
+import React, { useState } from 'react';
+function Counter() {
+const [count, setCount] = useState(0);
+return (
+&lt;div&gt;
+&lt;p&gt;Count: {count}&lt;/p&gt;
+&lt;button onClick={() => setCount(count + 1)}&gt;Increment&lt;/button&gt;
+&lt;/div&gt;
+);
+}
+</pre>
+Code
+<h3><code>useEffect</code></h3>
+<pre>
+import React, { useState, useEffect } from 'react';
+function Timer() {
+const [seconds, setSeconds] = useState(0);
+useEffect(() => {
+const intervalId = setInterval(() => {
+setSeconds((prevSeconds) => prevSeconds + 1);
+}, 1000);
+Code
+return () => clearInterval(intervalId);
+}, []);
+return (
+&lt;div&gt;
+&lt;p&gt;Seconds: {seconds}&lt;/p&gt;
+&lt;/div&gt;
+);
+}
+</pre>
+Code
+<h3><code>useContext</code></h3>
+<pre>
+import React, { useContext } from 'react';
+import { ThemeContext } from './ThemeContext';
+function ThemeToggle() {
+const { theme, toggleTheme } = useContext(ThemeContext);
+return (
+&lt;button onClick={toggleTheme}&gt;
+Switch to {theme === 'light' ? 'dark' : 'light'} theme
+&lt;/button&gt;
+);
+}
+</pre>
+Code
+<h3><code>useRef</code></h3>
+<pre>
+import React, { useRef } from 'react';
+function FocusInput() {
+const inputRef = useRef(null);
+const handleFocus = () => {
+inputRef.current.focus();
+};
+return (
+&lt;div&gt;
+&lt;input ref={inputRef} type="text" /&gt;
+&lt;button onClick={handleFocus}&gt;Focus Input&lt;/button&gt;
+&lt;/div&gt;
+);
+}
+</pre>
+Code
+<h3><code>useMemo</code></h3>
+<pre>
+import React, { useMemo } from 'react';
+function ExpensiveCalculation() {
+const expensiveValue = useMemo(() => {
+// expensive calculation
+return 42;
+}, []);
+return (
+&lt;div&gt;
+&lt;p&gt;Expensive Value: {expensiveValue}&lt;/p&gt;
+&lt;/div&gt;
+);
+}
+</pre>
+Code
+<h3><code>useCallback</code></h3>
+<pre>
+import React, { useCallback } from 'react';
+function Button() {
+const handleClick = useCallback(() => {
+console.log('Button clicked!');
+}, []);
+return (
+&lt;button onClick={handleClick}&gt;Click Me&lt;/button&gt;
+);
+}
+</pre>
+
+<div style="width: 80%; margin: 40px auto;">
+<h1>Class Components vs Hooks</h1>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Class Components</th>
+<th>Hooks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td>Uses JavaScript classes and extends React.Component</td>
+<td>Uses functional components and React hooks</td>
+</tr>
+<tr>
+<td>State Management</td>
+<td>Uses this.state and this.setState</td>
+<td>Uses useState hook</td>
+</tr>
+<tr>
+<td>Lifecycle Methods</td>
+<td>Uses lifecycle methods like componentDidMount, componentDidUpdate, etc.</td>
+<td>Uses useEffect hook</td>
+</tr>
+<tr>
+<td>Context API</td>
+<td>Uses this.context and static contextType</td>
+<td>Uses useContext hook</td>
+</tr>
+<tr>
+<td>Reusability</td>
+<td>Less reusable due to tight coupling with class syntax</td>
+<td>More reusable due to functional syntax and hooks</td>
+</tr>
+<tr>
+<td>Complexity</td>
+<td>More complex due to class syntax and lifecycle methods</td>
+<td>Less complex due to functional syntax and hooks</td>
+</tr>
+<tr>
+<td>Optimization</td>
+<td>Requires manual optimization using shouldComponentUpdate</td>
+<td>Automatic optimization using React.memo and useCallback</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td>More difficult to test due to class syntax and lifecycle methods</td>
+<td>Easier to test due to functional syntax and hooks</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</body>
+</html>
+

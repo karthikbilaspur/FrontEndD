@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React-Redux Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .example {
+            background-color: #f7f7f7;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>React-Redux Overview</h1>
+        <p>React-Redux is a popular state management library that helps manage the application state in React applications. It helps manage an application's state in a centralized way, making it easier to maintain and debug, especially as the app grows in complexity.</p>
+        
+        <h2>Fundamental Principles</h2>
+        <ul>
+            <li><strong>Single Source of Truth:</strong> The entire application state is stored in a single JavaScript object called the store.</li>
+            <li><strong>State is Read-Only:</strong> The only way to change the state is by dispatching an action that describes the change.</li>
+            <li><strong>Changes are Made with Pure Functions:</strong> Changes to the state are made using reducers, which are pure functions that take the previous state and an action, and return the new state.</li>
+        </ul>
+        
+        <h2>Core Concepts of React-Redux</h2>
+        <h3>1. Store</h3>
+        <p>The store is a centralized object that holds the application state. It is the only place where the state can be modified.</p>
+        
+        <h3>2. Actions</h3>
+        <p>An action is a plain JavaScript object that describes a change in the application state. It must have a type property and can optionally include a payload.</p>
+        <div class="example">
+            <code>
+                const incrementAction = {<br>
+                &nbsp;&nbsp;type: 'INCREMENT',<br>
+                &nbsp;&nbsp;payload: 1<br>
+                };
+            </code>
+        </div>
+        
+        <h3>3. Reducers</h3>
+        <p>A reducer is a pure function that specifies how the application’s state changes in response to an action.</p>
+        <div class="example">
+            <code>
+                const counterReducer = (state = 0, action) => {<br>
+                &nbsp;&nbsp;switch (action.type) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;case 'INCREMENT':<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return state + action.payload;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;case 'DECREMENT':<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return state - action.payload;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;default:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return state;<br>
+                &nbsp;&nbsp;}<br>
+                };
+            </code>
+        </div>
+        
+        <h3>4. Dispatch</h3>
+        <p>The dispatch function is used to send an action to the Redux store, triggering the reducer to process the state change.</p>
+        <div class="example">
+            <code>store.dispatch(incrementAction);</code>
+        </div>
+        
+        <h3>5. Selectors</h3>
+        <p>A selector is a function that retrieves specific pieces of state from the Redux store.</p>
+        <div class="example">
+            <code>const selectCount = (state) => state.count;</code>
+        </div>
+        
+        <h3>6. Provider</h3>
+        <p>The Provider component makes the Redux store available to all the components in the application.</p>
+        <div class="example">
+            <code>
+                import { Provider } from 'react-redux';<br><br>
+                &lt;Provider store={store}&gt;<br>
+                &nbsp;&nbsp;&lt;App /&gt;<br>
+                &lt;/Provider&gt;
+            </code>
+        </div>
+        
+        <h3>7. connect()</h3>
+        <p>connect() is a function provided by React-Redux to connect React components to the Redux store.</p>
+        <div class="example">
+            <code>
+                import { connect } from 'react-redux';<br><br>
+                const Counter = ({ count, increment }) => (<br>
+                &nbsp;&nbsp;&lt;div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;{count}&lt;/h1&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;button onClick={increment}&gt;Increment&lt;/button&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                );<br><br>
+                const mapStateToProps = (state) => ({<br>
+                &nbsp;&nbsp;count: state.count<br>
+                });<br><br>
+                const mapDispatchToProps = (dispatch) => ({<br>
+                &nbsp;&nbsp;increment: () => dispatch({ type: 'INCREMENT', payload: 1 })<br>
+                });<br><br>
+                export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+            </code>
+        </div>
+        
+        <h2>React-Redux Working</h2>
+        <ol>
+            <li><strong>Setting Up the Store:</strong> The Redux store holds the entire state of your application.</li>
+            <li><strong>Dispatching Actions:</strong> Actions are plain objects that describe changes in state.</li>
+            <li><strong>Reducers Update the State:</strong> A reducer is a function that updates the state based on the action type.</li>
+            <li><strong>Connecting Components with connect():</strong> React-Redux’s connect() function connects React components to the Redux store.</li>
+            <li><strong>Using Provider to Make Store Accessible:</strong> The Provider component makes the store available to all components in the app.</li>
+            <li><strong>Re-Renders and Reactivity:</strong> React-Redux ensures that only components dependent on updated state will re-render, optimizing performance.</li>
+        </ol>
+        
+        <h2>Example Use Case</h2>
+        <p>Here's a simple example of a counter app using React-Redux:</p>
+        <div class="example">
+            <code>
+                import React from 'react';<br>
+                import ReactDOM from 'react-dom';<br>
+                import { createStore } from 'redux';<br>
+                import { Provider, connect } from 'react-redux';<br><br>
+                const counterReducer = (state = 0, action) => {<br>
+                &nbsp;&nbsp;switch (action.type) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;case 'INCREMENT':<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return state + 1;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;case 'DECREMENT':<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return state - 1;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;default:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return state;<br>
+                &nbsp;&nbsp;}<br>
+                };<br><br>
+                const store = createStore(counterReducer);<br><br>
+                const Counter = ({ count, increment, decrement }) => (<br>
+                &nbsp;&nbsp;&lt;div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;{count}&lt;/h1&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;button onClick={increment}&gt;+&lt;/button&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;button onClick={decrement}&gt;-&lt;/button&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                );<br><br>
+                const mapStateToProps = (state) => ({<br>
+                &nbsp;&nbsp;count: state<br>
+                });<br><br>
+                const mapDispatchToProps = (dispatch) => ({<br>
+                &nbsp;&nbsp;increment: () => dispatch({ type: 'INCREMENT' }),<br>
+                &nbsp;&nbsp;decrement: () => dispatch({ type: 'DECREMENT' })<br>
+                });<br><br>
+                const ConnectedCounter = connect(mapStateToProps, mapDispatchToProps)(Counter);<br><br>
+                ReactDOM.render(<br>
+                &nbsp;&nbsp;&lt;Provider store={store}&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;ConnectedCounter /&gt;<br>
+                &nbsp;&nbsp;&lt;/Provider&gt;,<br>
+                &nbsp;&nbsp;document.getElementById('root')<br>
+                );
+            </code>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Custom Hooks Example</title>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.20.6/babel.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #root {
+            width: 50%;
+            margin: 40px auto;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // Define the custom hook
+        function useToggle(initialValue = false) {
+            const [state, setState] = React.useState(initialValue);
+            const toggle = () => setState(prev => !prev);
+            return [state, toggle];
+        }
+
+        // Use the custom hook in a component
+        function ExampleComponent() {
+            const [isOn, toggle] = useToggle();
+            return (
+                <div>
+                    <h2>React Custom Hooks Example</h2>
+                    <button onClick={toggle}>{isOn ? "ON" : "OFF"}</button>
+                    <p>The button is currently {isOn ? "ON" : "OFF"}</p>
+                </div>
+            );
+        }
+
+        // Render the component
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ExampleComponent />);
+    </script>
+</body>
+</html>

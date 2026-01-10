@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Forms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            width: 300px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            height: 30px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            width: 100%;
+            height: 30px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>React Forms</h1>
+    <p>In React, forms are used to take input from users, like text, numbers, or selections. They work just like HTML forms but are often controlled by React state so you can easily track and update the input values.</p>
+    
+    <div id="root"></div>
+
+    <h2>Difference between Controlled and Uncontrolled Components</h2>
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>Controlled Components</th>
+            <th>Uncontrolled Components</th>
+        </tr>
+        <tr>
+            <td>Data Source</td>
+            <td>React state</td>
+            <td>DOM (internal State)</td>
+        </tr>
+        <tr>
+            <td>Value Binding</td>
+            <td>value prop bound to state</td>
+            <td>No binding value uses default value</td>
+        </tr>
+        <tr>
+            <td>How to Access Value</td>
+            <td>From state Variable</td>
+            <td>Via ref or document.querySelector</td>
+        </tr>
+        <tr>
+            <td>State Management</td>
+            <td>Managed by React</td>
+            <td>Managed by DOM</td>
+        </tr>
+        <tr>
+            <td>Real Time Validation</td>
+            <td>Easy to implement (validation on onChange)</td>
+            <td>Harder, needs manual checks</td>
+        </tr>
+        <tr>
+            <td>Re-rendering</td>
+            <td>Fewer re-renders</td>
+            <td>Harder, needs manual checks</td>
+        </tr>
+        <tr>
+            <td>Ease of Debugging</td>
+            <td>Easier to debug and test</td>
+            <td>Slightly harder to debug</td>
+        </tr>
+        <tr>
+            <td>Use Case</td>
+            <td>When you need to track and control user input</td>
+            <td>For quick/simple forms where state tracking isn’t needed</td>
+        </tr>
+    </table>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        class App extends React.Component {
+            state = {username: "", email: ""};
+
+            onFormSubmit = (event) => {
+                event.preventDefault();
+                alert(`Hello, ${this.state.username}! Your email is ${this.state.email}`);
+            };
+
+            render() {
+                return (
+                    <div>
+                        <form onSubmit={this.onFormSubmit}>
+                            <label>Enter username:</label>
+                            <input
+                                type="text"
+                                value={this.state.username}
+                                onChange={(e) =>
+                                    this.setState((prev) => ({
+                                        ...prev,
+                                        username: e.target.value,
+                                    }))
+                                }
+                            />
+                            <br />
+                            <br />
+                            <label>Enter Email Id:</label>
+                            <input
+                                type="email"
+                                value={this.state.email}
+                                onChange={(e) =>
+                                    this.setState((prev) => ({
+                                        ...prev,
+                                        email: e.target.value,
+                                    }))
+                                }
+                            ></input>
+                            <br />
+                            <br />
+                            <input type="submit" value={"Submit"} />
+                        </form>
+                        <br />
+                        <div>
+                            Entered Value: {this.state.username}
+                        </div>
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

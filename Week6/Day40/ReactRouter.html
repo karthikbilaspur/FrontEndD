@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>React Router</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+}
+.container {
+max-width: 800px;
+margin: 40px auto;
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>React Router</h1>
+<p>React Router is a popular library for managing client-side routing in React applications.</p>
+<h2>What is React Router?</h2>
+<p>React Router is a JavaScript library that enables client-side routing in React applications. It allows you to define routes for different URLs and render different components based on the current URL.</p>
+<h2>Types of React Router</h2>
+<ul>
+<li><strong>BrowserRouter:</strong> Uses the HTML5 history API to manage client-side routing.</li>
+<li><strong>HashRouter:</strong> Uses the URL hash to manage client-side routing.</li>
+<li><strong>MemoryRouter:</strong> Keeps the history in memory, useful for testing and server-side rendering.</li>
+<li><strong>NativeRouter:</strong> Used for React Native applications.</li>
+<li><strong>StaticRouter:</strong> Used for server-side rendering.</li>
+</ul>
+<h2>Features of React Router</h2>
+<ul>
+<li><strong>Client-side routing:</strong> Enables client-side routing, allowing for fast and seamless navigation between pages.</li>
+<li><strong>Route nesting:</strong> Allows you to nest routes, making it easy to manage complex routing scenarios.</li>
+<li><strong>Route parameters:</strong> Enables you to pass parameters to routes, making it easy to render dynamic content.</li>
+<li><strong>Redirects:</strong> Allows you to redirect users to different routes, making it easy to handle authentication and authorization.</li>
+<li><strong>Link component:</strong> Provides a Link component that allows you to create links between routes.</li>
+</ul>
+<h2>Example Code</h2>
+<pre>
+import React from 'react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+Code
+  const App = () => {
+    return (
+      &lt;BrowserRouter&gt;
+        &lt;div&gt;
+          &lt;Link to="/"&gt;Home&lt;/Link&gt;
+          &lt;Link to="/about"&gt;About&lt;/Link&gt;
+          &lt;Route path="/" exact component={Home} /&gt;
+          &lt;Route path="/about" component={About} /&gt;
+        &lt;/div&gt;
+      &lt;/BrowserRouter&gt;
+    );
+  };
+
+  const Home = () => {
+    return &lt;h1&gt;Home&lt;/h1&gt;;
+  };
+
+  const About = () => {
+    return &lt;h1&gt;About&lt;/h1&gt;;
+  };
+</pre>
+</div>
+</body>
+</html>

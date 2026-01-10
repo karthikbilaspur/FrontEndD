@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controlled Components in ReactJS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            width: 300px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            height: 30px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            height: 30px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Controlled Components in ReactJS</h1>
+    <p>Controlled components are form elements managed by React state, allowing React to control and update their values for better input handling and validation.</p>
+    
+    <div id="root"></div>
+
+    <h2>Flow of Controlled Component</h2>
+    <ul>
+        <li>Input Element: The user changes the input value.</li>
+        <li>Change Handler: The onChange event captures the new value and updates the state.</li>
+        <li>Component State: The state holds the updated input value.</li>
+        <li>Validate & Update: The value is validated and the state is updated.</li>
+        <li>Re-render: The input element is re-rendered with the updated value.</li>
+    </ul>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        function App() {
+            const [name, setName] = React.useState("");
+            const [showName, setShowName] = React.useState(false);
+
+            function handleSubmit(e) {
+                e.preventDefault();
+                setShowName(true);
+            }
+
+            return (
+                <div className="App">
+                    <form>
+                        <label>Name:</label>
+                        <input
+                            name="name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
+                        <button onClick={handleSubmit} type="submit">
+                            Submit
+                        </button>
+                    </form>
+                    {showName === true && <p>You have submitted. Name: {name}</p>}
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

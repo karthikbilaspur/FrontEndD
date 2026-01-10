@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>useEffect Hook</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+}
+</style>
+</head>
+<body>
+<h1>useEffect Hook</h1>
+<p>The useEffect hook is a way to handle side effects in functional components. Side effects are actions that can affect other components and cannot be done during rendering, such as setting timers, making API calls, or manually changing the DOM.</p>
+Code
+<h2>How it works</h2>
+<p>The useEffect hook takes two arguments: a function to run and an array of dependencies. The function is run after the component is rendered, and the dependencies array determines when the function should be re-run.</p>
+
+<h2>Syntax</h2>
+<pre>
+useEffect(() => {
+// code to run
+}, [dependencies]);
+</pre>
+Code
+<h2>Example</h2>
+<pre>
+import { useEffect, useState } from "react";
+function TimerComponent() {
+const [count, setCount] = useState(0);
+useEffect(() => {
+const interval = setInterval(() => {
+setCount((prev) => prev + 1);
+}, 1000);
+Code
+//Cleanup function to clear the interval
+return () => {
+  clearInterval(interval);
+  console.log("Interval cleared");
+};
+}, []); // Runs only once when the component mounts
+return &lt;h1&gt;Timer: {count} seconds&lt;/h1&gt;;
+}
+export default TimerComponent;
+</pre>
+Code
+<h2>Explanation</h2>
+<p>In this example, the useEffect hook is used to set up a timer that increments the count state every second. The cleanup function is used to clear the interval when the component is unmounted.</p>
+
+<h2>Dependencies Array</h2>
+<p>The dependencies array is used to determine when the effect should be re-run. If the array is empty, the effect is only run once when the component mounts. If the array contains values, the effect is re-run whenever any of the values change.</p>
+
+<h2>Common Use Cases</h2>
+<ul>
+    <li>Setting timers or intervals</li>
+    <li>Making API calls</li>
+    <li>Manually changing the DOM</li>
+    <li>Setting up event listeners</li>
+</ul>
+
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<div id="root"></div>
+<script>
+    const { useEffect, useState } = React;
+    function TimerComponent() {
+      const [count, setCount] = useState(0);
+
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setCount((prev) => prev + 1);
+        }, 1000);
+
+        //Cleanup function to clear the interval
+        return () => {
+          clearInterval(interval);
+          console.log("Interval cleared");
+        };
+      }, []); // Runs only once when the component mounts
+
+      return React.createElement('h1', null, `Timer: ${count} seconds`);
+    }
+
+    ReactDOM.render(React.createElement(TimerComponent), document.getElementById('root'));
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Lists</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        h3 {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Working with Lists in React</h1>
+    <p>React makes it easy to render multiple elements dynamically from arrays or objects, ensuring efficient and reusable code. Lists are crucial in most applications for displaying collections of data like user profiles, product catalogs, or tasks.</p>
+    
+    <div class="example">
+        <h2>Basic List Example</h2>
+        <p>Using <code>map()</code> to render a simple list of items:</p>
+        <div id="basic-list"></div>
+    </div>
+    
+    <div class="example">
+        <h2>List with Objects</h2>
+        <p>Rendering lists with multiple properties per item:</p>
+        <div id="object-list"></div>
+    </div>
+    
+    <div class="example">
+        <h2>Conditional Rendering</h2>
+        <p>Rendering list items based on conditions:</p>
+        <div id="conditional-list"></div>
+    </div>
+    
+    <div class="example">
+        <h2>List with Click Event</h2>
+        <p>Adding event handlers to list items:</p>
+        <div id="click-list"></div>
+    </div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        // Basic List
+        function BasicList() {
+            const items = ['Apple', 'Banana', 'Cherry'];
+            
+            return (
+                <div>
+                    <h3>My Fruit List</h3>
+                    <ul>
+                        {items.map((item, index) => (
+                            <li key={index}>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
+        
+        // List with Objects
+        function ObjectList() {
+            const users = [
+                { id: 1, name: 'John', age: 30 },
+                { id: 2, name: 'Jane', age: 25 },
+                { id: 3, name: 'Bob', age: 20 },
+            ];
+            
+            return (
+                <ul>
+                    {users.map((user) => (
+                        <li key={user.id}>
+                            {user.name} is {user.age} years old.
+                        </li>
+                    ))}
+                </ul>
+            );
+        }
+        
+        // Conditional Rendering
+        function ConditionalList() {
+            const users = [
+                { id: 1, name: 'John', age: 30 },
+                { id: 2, name: 'Jane', age: 25 },
+                { id: 3, name: 'Bob', age: 35 },
+            ];
+            
+            return (
+                <ul>
+                    {users.map((user) => (
+                        user.age > 30 ? (
+                            <li key={user.id}>{user.name} is over 30 years old</li>
+                        ) : (
+                            <li key={user.id}>{user.name} is under 30 years old</li>
+                        )
+                    ))}
+                </ul>
+            );
+        }
+        
+        // List with Click Event
+        function ClickList() {
+            const items = ["React", "Angular", "Vue"];
+            
+            const handleClick = (item) => {
+                alert(`You clicked on ${item}`);
+            };
+            
+            return (
+                <ul>
+                    {items.map((item, index) => (
+                        <button key={index} onClick={() => handleClick(item)}>
+                            {item}
+                        </button>
+                    ))}
+                </ul>
+            );
+        }
+        
+        ReactDOM.render(<BasicList />, document.getElementById('basic-list'));
+        ReactDOM.render(<ObjectList />, document.getElementById('object-list'));
+        ReactDOM.render(<ConditionalList />, document.getElementById('conditional-list'));
+        ReactDOM.render(<ClickList />, document.getElementById('click-list'));
+    </script>
+</body>
+</html>

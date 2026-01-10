@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Different Ways To Render a List of Items in React</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        h3 {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Different Ways To Render a List of Items in React</h1>
+    <p>In React, when we are working with dynamic data, it is common to render a list of items. In React, there are several methods to render the list efficiently.</p>
+    
+    <div class="example">
+        <h2>1. Using Array.map()</h2>
+        <p>Array.map() is a built-in JavaScript function provided by JavaScript. It iterates over the list of items in the array and returns a list of React components.</p>
+        <div id="array-map"></div>
+    </div>
+    
+    <div class="example">
+        <h2>2. Using for loop</h2>
+        <p>for loop is a control flow statement in JavaScript. It is used to iterate over the items in a array.</p>
+        <div id="for-loop"></div>
+    </div>
+    
+    <div class="example">
+        <h2>3. Using Array.forEach()</h2>
+        <p>forEach() function takes a callback function as an argument.</p>
+        <div id="array-foreach"></div>
+    </div>
+    
+    <div class="example">
+        <h2>4. Using React.Children.map()</h2>
+        <p>It is a utility function in React.</p>
+        <div id="react-children-map"></div>
+    </div>
+    
+    <div class="example">
+        <h2>5. Using map() and JSX Spread Attributes</h2>
+        <p>This method is used to render the components with dynamic props.</p>
+        <div id="map-jsx-spread"></div>
+    </div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        // Using Array.map()
+        function ArrayMap() {
+            const arrayList = ['List Item 1', 'List Item 2', 'List Item 3'];
+            
+            return (
+                <div>
+                    {arrayList.map((item, index) => (
+                        <div key={index}>{item}</div>
+                    ))}
+                </div>
+            );
+        }
+        
+        // Using for loop
+        function ForLoop() {
+            const arrayList = ['List Item 1', 'List Item 2', 'List Item 3'];
+            const arrayListComponents = [];
+            
+            for (let i = 0; i < arrayList.length; i++) {
+                arrayListComponents.push(<div key={i}>{arrayList[i]}</div>);
+            }
+            
+            return <div>{arrayListComponents}</div>;
+        }
+        
+        // Using Array.forEach()
+        function ArrayForEach() {
+            const arrayList = ['List Item 1', 'List Item 2', 'List Item 3'];
+            const arrayListComponents = [];
+            
+            arrayList.forEach((item, index) => {
+                arrayListComponents.push(<div key={index}>{item}</div>);
+            });
+            
+            return <div>{arrayListComponents}</div>;
+        }
+        
+        // Using React.Children.map()
+        function ReactChildrenMap() {
+            const arrayList = ['List Item 1', 'List Item 2', 'List Item 3'];
+            
+            return (
+                <div>
+                    {React.Children.map(arrayList, (item, index) => (
+                        <div key={index}>Modified {item}</div>
+                    ))}
+                </div>
+            );
+        }
+        
+        // Using map() and JSX Spread Attributes
+        function MapJSXSpread() {
+            const arrayListWithProps = [
+                { id: 1, name: 'Item 1', color: 'lightcoral' },
+                { id: 2, name: 'Item 2', color: 'cadetblue' },
+                { id: 3, name: 'Item 3', color: 'cyan' }
+            ];
+            
+            const ArrayListComponent = ({ name, color }) => (
+                <div style={{ backgroundColor: color, padding: '5px', margin: '5px', color: 'white' }}>
+                    {name}
+                </div>
+            );
+            
+            return (
+                <div>
+                    {arrayListWithProps.map(item => (
+                        <ArrayListComponent key={item.id} {...item} />
+                    ))}
+                </div>
+            );
+        }
+        
+        ReactDOM.render(<ArrayMap />, document.getElementById('array-map'));
+        ReactDOM.render(<ForLoop />, document.getElementById('for-loop'));
+        ReactDOM.render(<ArrayForEach />, document.getElementById('array-foreach'));
+        ReactDOM.render(<ReactChildrenMap />, document.getElementById('react-children-map'));
+        ReactDOM.render(<MapJSXSpread />, document.getElementById('map-jsx-spread'));
+    </script>
+</body>
+</html>

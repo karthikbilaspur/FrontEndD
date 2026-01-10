@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fetching Data with useEffect and useState</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+}
+</style>
+</head>
+<body>
+<h1>Fetching Data with useEffect and useState</h1>
+<p>In this example, we'll fetch data from the JSONPlaceholder API using the useEffect and useState hooks.</p>
+Code
+<h2>How it works</h2>
+<p>We'll use the useState hook to store the fetched data in the component's state, and the useEffect hook to fetch the data when the component mounts.</p>
+
+<h2>Syntax</h2>
+<pre>
+import { useEffect, useState } from "react";
+function DataFetcher() {
+const [data, setData] = useState([]);
+useEffect(() => {
+fetch('https://jsonplaceholder.typicode.com/posts')
+.then(response => response.json())
+.then(data => setData(data));
+}, []);
+return (
+&lt;div&gt;
+{data.map(post => (
+&lt;p key={post.id}&gt;{post.title}&lt;/p&gt;
+))}
+&lt;/div&gt;
+);
+}
+</pre>
+Code
+<h2>Explanation</h2>
+<p>In this example, we use the useState hook to initialize the data state with an empty array. We then use the useEffect hook to fetch the data from the JSONPlaceholder API when the component mounts.</p>
+
+<p>The fetch API returns a promise that resolves to the response object, which we then convert to JSON using the json() method. We then use the setData function to update the data state with the fetched data.</p>
+
+<p>Finally, we render the fetched data by mapping over the data array and rendering a paragraph for each post.</p>
+
+<h2>Example with Error Handling and Loading State</h2>
+<pre>
+import { useEffect, useState } from "react";
+function DataFetcher() {
+const [data, setData] = useState([]);
+const [isLoading, setIsLoading] = useState(true);
+const [error, setError] = useState(null);
+useEffect(() => {
+fetch('https://jsonplaceholder.typicode.com/posts')
+.then(response => response.json())
+.then(data => {
+setData(data);
+setIsLoading(false);
+})
+.catch(error => {
+setError(error);
+setIsLoading(false);
+});
+}, []);
+if (isLoading) {
+return &lt;p&gt;Loading...&lt;/p&gt;;
+}
+if (error) {
+return &lt;p&gt;Error: {error.message}&lt;/p&gt;;
+}
+return (
+&lt;div&gt;
+{data.map(post => (
+&lt;p key={post.id}&gt;{post.title}&lt;/p&gt;
+))}
+&lt;/div&gt;
+);
+}
+</pre>
+Code
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<div id="root"></div>
+<script>
+    const { useEffect, useState } = React;
+    function DataFetcher() {
+      const [data, setData] = useState([]);
+      const [isLoading, setIsLoading] = useState(true);
+      const [error, setError] = useState(null);
+
+      useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/posts')
+          .then(response => response.json())
+          .then(data => {
+            setData(data);
+            setIsLoading(false);
+          })
+          .catch(error => {
+            setError(error);
+            setIsLoading(false);
+          });
+      }, []);
+
+      if (isLoading) {
+        return React.createElement('p', null, 'Loading...');
+      }
+
+      if (error) {
+        return React.createElement('p', null, `Error: ${error.message}`);
+      }
+
+      return (
+        React.createElement('div', null, 
+          data.map(post => (
+            React.createElement('p', { key: post.id }, post.title)
+          ))
+        )
+      );
+    }
+
+    ReactDOM.render(React.createElement(DataFetcher), document.getElementById('root'));
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReactJS useNavigate Hook</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+}
+.container {
+max-width: 800px;
+margin: 40px auto;
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>ReactJS useNavigate Hook</h1>
+<p>The <strong>useNavigate</strong> hook is a part of the React Router library, which allows you to navigate between routes programmatically.</p>
+<h2>What is useNavigate?</h2>
+<p><strong>useNavigate</strong> is a hook that returns a function that can be used to navigate to a new location.</p>
+<h2>Example Usage:</h2>
+<pre>
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+Code
+  const Home = () => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+      navigate('/about');
+    };
+
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Home&lt;/h1&gt;
+        &lt;button onClick={handleClick}&gt;Go to About&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  };
+</pre>
+<h2>How it works:</h2>
+<ul>
+  <li>The <strong>useNavigate</strong> hook returns a <strong>navigate</strong> function.</li>
+  <li>The <strong>navigate</strong> function takes a URL path as an argument.</li>
+  <li>When called, it navigates to the specified URL.</li>
+</ul>
+<h2>Options:</h2>
+<ul>
+  <li><strong>navigate('/about')</strong>: Navigate to the specified URL.</li>
+  <li><strong>navigate('/about', { replace: true })</strong>: Replace the current URL in the history stack.</li>
+  <li><strong>navigate(-1)</strong>: Go back to the previous URL.</li>
+</ul>
+</div>
+</body>
+</html>

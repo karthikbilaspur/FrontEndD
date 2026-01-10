@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReactJS useParams Hook</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+}
+.container {
+max-width: 800px;
+margin: 40px auto;
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>ReactJS useParams Hook</h1>
+<p>The <strong>useParams</strong> hook is a part of the React Router library, which allows you to access URL parameters in your React components.</p>
+<h2>What is useParams?</h2>
+<p><strong>useParams</strong> is a hook that returns an object of key/value pairs of the dynamic params from the current URL that were matched by the <Route path>.</p>
+<h2>Example Usage:</h2>
+<pre>
+import React from 'react';
+import { useParams } from 'react-router-dom';
+Code
+  const UserProfile = () => {
+    const { userId } = useParams();
+
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;User Profile&lt;/h1&gt;
+        &lt;p&gt;User ID: {userId}&lt;/p&gt;
+      &lt;/div&gt;
+    );
+  };
+</pre>
+<h2>Route Configuration:</h2>
+<pre>
+  import React from 'react';
+  import { BrowserRouter, Route, Routes } from 'react-router-dom';
+  import UserProfile from './UserProfile';
+
+  const App = () => {
+    return (
+      &lt;BrowserRouter&gt;
+        &lt;Routes&gt;
+          &lt;Route path="/users/:userId" element={&lt;UserProfile /&gt;} /&gt;
+        &lt;/Routes&gt;
+      &lt;/BrowserRouter&gt;
+    );
+  };
+</pre>
+<h2>How it works:</h2>
+<ul>
+  <li>The <strong>:userId</strong> in the route path is a dynamic parameter.</li>
+  <li>The <strong>useParams</strong> hook extracts the value of <strong>userId</strong> from the URL.</li>
+  <li>The value is then used in the <strong>UserProfile</strong> component.</li>
+</ul>
+</div>
+</body>
+</html>

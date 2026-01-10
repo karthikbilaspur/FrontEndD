@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>React Context API Example</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+}
+.container {
+max-width: 800px;
+margin: 40px auto;
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.theme-light {
+background-color: #fff;
+color: #333;
+}
+.theme-dark {
+background-color: #333;
+color: #fff;
+}
+button {
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>React Context API Example</h1>
+<div id="with-context-api"></div>
+<div id="without-context-api"></div>
+</div>
+<script type="text/babel">
+// Import React and ReactDOM
+const { createContext, useContext, useState } = React;
+const { render } = ReactDOM;
+Code
+// Create a context
+const ThemeContext = createContext();
+
+// With Context API
+function AppWithContext() {
+  const [theme, setTheme] = useState('light');
+
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      <ButtonWithContext />
+    </ThemeContext.Provider>
+  );
+}
+
+function ButtonWithContext() {
+  const { theme, setTheme } = useContext(ThemeContext);
+
+  return (
+    <button
+      className={`theme-${theme}`}
+      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+    >
+      Toggle Theme (With Context API)
+    </button>
+  );
+}
+
+// Without Context API
+function AppWithoutContext() {
+  const [theme, setTheme] = useState('light');
+
+  return (
+    <ButtonWithoutContext theme={theme} setTheme={setTheme} />
+  );
+}
+
+function ButtonWithoutContext({ theme, setTheme }) {
+  return (
+    <button
+      className={`theme-${theme}`}
+      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+    >
+      Toggle Theme (Without Context API)
+    </button>
+  );
+}
+
+// Render components
+render(<AppWithContext />, document.getElementById('with-context-api'));
+render(<AppWithoutContext />, document.getElementById('without-context-api'));
+</script>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</body>
+</html>

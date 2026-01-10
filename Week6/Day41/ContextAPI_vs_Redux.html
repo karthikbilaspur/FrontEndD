@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Context API vs Redux</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Context API vs Redux</h1>
+        
+        <div class="section">
+            <h2>Context API</h2>
+            <h3>What is Context API?</h3>
+            <p>Context API is a built-in React feature that allows you to share data between components without passing props down manually.</p>
+            <h3>Usage</h3>
+            <ul>
+                <li>Create a context: <code>const ThemeContext = React.createContext()</code></li>
+                <li>Wrap your app with the provider: <code>&lt;ThemeContext.Provider value={theme}&gt;...&lt;/ThemeContext.Provider&gt;</code></li>
+                <li>Use the context in a component: <code>const theme = useContext(ThemeContext)</code></li>
+            </ul>
+            <h3>IRL Cases</h3>
+            <ul>
+                <li>Theme switching (light/dark mode)</li>
+                <li>Authentication (logged-in user data)</li>
+                <li>Language/Localization</li>
+            </ul>
+            <h3>Strengths</h3>
+            <ul>
+                <li>Easy to use</li>
+                <li>Built-in React feature</li>
+                <li>Good for small to medium-sized apps</li>
+            </ul>
+            <h3>Weaknesses</h3>
+            <ul>
+                <li>Can be tricky to debug</li>
+                <li>Not suitable for complex, large-scale apps</li>
+                <li>Limited scalability</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Redux</h2>
+            <h3>What is Redux?</h3>
+            <p>Redux is a state management library that helps manage global state by providing a single source of truth.</p>
+            <h3>Usage</h3>
+            <ul>
+                <li>Create a store: <code>const store = createStore(reducer)</code></li>
+                <li>Define actions and reducers</li>
+                <li>Connect components to the store: <code>connect(mapStateToProps, mapDispatchToProps)(Component)</code></li>
+            </ul>
+            <h3>IRL Cases</h3>
+            <ul>
+                <li>Complex forms with many inputs</li>
+                <li>Real-time data updates</li>
+                <li>Large-scale enterprise apps</li>
+            </ul>
+            <h3>Strength</h3>
+            <ul>
+                <li>Predictable state management</li>
+                <li>Scalable</li>
+                <li>Easy to debug with devtools</li>
+            </ul>
+            <h3>Weaknesses</h3>
+            <ul>
+                <li>Steeper learning curve</li>
+                <li>More boilerplate code</li>
+                <li>Overkill for small apps</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Comparison</h2>
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>Context API</th>
+                    <th>Redux</th>
+                </tr>
+                <tr>
+                    <td>Purpose</td>
+                    <td>Share data between components</td>
+                    <td>Manage global state</td>
+                </tr>
+                <tr>
+                    <td>Complexity</td>
+                    <td>Simple</td>
+                    <td>Complex</td>
+                </tr>
+                <tr>
+                    <td>Scalability</td>
+                    <td>Limited</td>
+                    <td>Highly scalable</td>
+                </tr>
+                <tr>
+                    <td>Learning Curve</td>
+                    <td>Easy</td>
+                    <td>Steep</td>
+                </tr>
+                <tr>
+                    <td>Boilerplate Code</td>
+                    <td>Minimal</td>
+                    <td>More</td>
+                </tr>
+                <tr>
+                    <td>Debugging</td>
+                    <td>Can be tricky</td>
+                    <td>Easy with devtools</td>
+                </tr>
+                <tr>
+                    <td>Best for</td>
+                    <td>Small to medium-sized apps</td>
+                    <td>Large-scale enterprise apps</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
