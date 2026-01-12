@@ -1,0 +1,96 @@
+// server.js
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const htmlContent = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.js vs Browser</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Node.js vs Browser</h1>
+    <h2>Node.js</h2>
+    <ul>
+      <li>Runs on the server-side</li>
+      <li>Built on Chrome's V8 JavaScript engine</li>
+      <li>Has access to the file system, network, and other system resources</li>
+      <li>Uses the CommonJS module system (require, module.exports)</li>
+      <li>Supports asynchronous I/O operations (e.g., fs, net)</li>
+      <li>No DOM (Document Object Model) or browser-specific APIs (e.g., window, document)</li>
+    </ul>
+    <h2>Browser</h2>
+    <ul>
+      <li>Runs on the client-side (user's web browser)</li>
+      <li>Built on various JavaScript engines (e.g., V8, SpiderMonkey, JavaScriptCore)</li>
+      <li>Has access to the DOM and browser-specific APIs (e.g., window, document)</li>
+      <li>Uses the ES6+ module system (import, export)</li>
+      <li>Supports asynchronous I/O operations (e.g., XMLHttpRequest, fetch)</li>
+      <li>Limited access to system resources (e.g., no file system access)</li>
+    </ul>
+    <h2>Key differences</h2>
+    <ul>
+      <li><strong>Environment:</strong> Node.js runs on the server, while browsers run on the client.</li>
+      <li><strong>Module system:</strong> Node.js uses CommonJS, while browsers use ES6+ modules.</li>
+      <li><strong>System access:</strong> Node.js has access to system resources, while browsers have limited access.</li>
+      <li><strong>APIs:</strong> Node.js has APIs for server-side tasks (e.g., fs, net), while browsers have APIs for client-side tasks (e.g., DOM, XMLHttpRequest).</li>
+    </ul>
+    <h2>Example: Making an HTTP request</h2>
+    <h3>Node.js (using http module)</h3>
+    <pre>
+const http = require('http');
+http.get('https://example.com', (res) => {
+  console.log(res.statusCode);
+});
+    </pre>
+    <h3>Browser (using fetch API)</h3>
+    <pre>
+fetch('https://example.com')
+  .then((res) => console.log(res.status))
+  .catch((err) => console.error(err));
+    </pre>
+  </div>
+</body>
+</html>
+`;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/html');
+  res.end(htmlContent);
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});

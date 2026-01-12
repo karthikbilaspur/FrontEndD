@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Functions in Node.js</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #root {
+            width: 80%;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        code {
+            background-color: #f7f7f7;
+            padding: 2px 4px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <h1>What are Async Functions?</h1>
+        <p>Async functions in Node.js are used to handle asynchronous operations, allowing your code to run without blocking other tasks.</p>
+
+        <h2>Key Features:</h2>
+        <ul>
+            <li>✔️ <code>async</code> keyword defines an asynchronous function</li>
+            <li>✔️ <code>await</code> keyword pauses execution until a promise is resolved</li>
+            <li>✔️ Returns a Promise</li>
+        </ul>
+
+        <h2>Functionality in Node.js:</h2>
+        <ul>
+            <li>✔️ Handle I/O operations (e.g., reading files, network requests)</li>
+            <li>✔️ Improve code readability and maintainability</li>
+            <li>✔️ Avoid callback hell</li>
+        </ul>
+
+        <h2>Example:</h2>
+        <pre>
+<code>
+const fs = require('fs').promises;
+
+async function readFile() {
+  try {
+    const data = await fs.readFile('example.txt', 'utf8');
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+readFile();
+</code>
+        </pre>
+    </div>
+</body>
+</html>

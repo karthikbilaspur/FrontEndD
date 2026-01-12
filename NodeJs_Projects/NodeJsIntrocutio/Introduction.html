@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #root {
+            width: 50%;
+            margin: 40px auto;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <h1>Let's dive into Node.js!</h1>
+        <p>Node.js is an open-source, cross-platform JavaScript runtime environment that lets you run JavaScript on the server-side. It's built on Chrome's V8 JavaScript engine and executes JavaScript code outside a browser.</p>
+        <h2>Key functionalities:</h2>
+        <ul>
+            <li><b>Server-side programming:</b> Create web servers, handle requests, and send responses.</li>
+            <li><b>Async I/O operations:</b> Handle multiple requests concurrently without blocking.</li>
+            <li><b>Event-driven programming:</b> Use events and callbacks to manage asynchronous operations.</li>
+            <li><b>NPM (Node Package Manager):</b> Access a vast library of packages and modules.</li>
+        </ul>
+        <h2>Example: Create a simple web server</h2>
+        <pre>
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello, World!\n');
+});
+
+server.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+        </pre>
+    </div>
+</body>
+</html>
