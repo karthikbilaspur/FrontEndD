@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe | Web Developer and Designer</title>
+    <meta name="description" content="Portfolio of John Doe, a web developer and designer">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header aria-label="Navigation">
+        <h1>John Doe</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" aria-label="Home">
+            <h2>Web Developer and Designer</h2>
+            <!-- existing content -->
+        </section>
+        <section id="about" aria-label="About Me">
+            <h2>About Me</h2>
+            <!-- existing content -->
+        </section>
+        <section id="projects" aria-label="Projects">
+            <h2>Projects</h2>
+            <div class="carousel" aria-label="Project Carousel">
+                <div class="carousel-inner">
+       <div class="project">
+    <img src="https://picsum.photos/200/300" alt="Project 1 image">
+    <h3>Project 1</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+</div>
+<div class="project">
+    <img src="https://picsum.photos/200/301" alt="Project 2 image">
+    <h3>Project 2</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+</div>             <!-- add more projects -->
+                </div>
+                <button class="prev" aria-label="Previous Project">Prev</button>
+                <button class="next" aria-label="Next Project">Next</button>
+            </div>
+        </section>
+        <section id="contact" aria-label="Get in Touch">
+            <h2>Get in Touch</h2>
+            <form id="contact-form" aria-label="Contact Form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required aria-required="true">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required aria-required="true">
+                <label for="message">Message:</label>
+                <textarea id="message" required aria-required="true"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer aria-label="Footer">
+        <p>&copy; <span id="year"></span> All rights reserved by John Doe</p>
+    </footer>
+    <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">Toggle Dark Mode</button>
+    <button id="scroll-top" aria-label="Scroll to Top">↑ Top</button>
+    <script src="script.js"></script>
+</body>
+</html>

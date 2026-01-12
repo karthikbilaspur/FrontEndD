@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Box Model</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <style>
+        .box-model-example {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid black;
+            margin: 10px;
+            background-color: #f2f2f2;
+        }
+        .content-example {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid black;
+            margin: 10px;
+            background-color: #f2f2f2;
+            box-sizing: content-box; /* Default box-sizing */
+        }
+        .border-box-example {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid black;
+            margin: 10px;
+            background-color: #f2f2f2;
+            box-sizing: border-box; /* Include padding and border in width and height */
+        }
+        .padding-example {
+            padding: 20px;
+            background-color: #f2f2f2;
+            border: 1px solid black;
+        }
+        .border-example {
+            border: 5px solid black;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        .margin-example {
+            margin: 10px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Box Model</h1>
+    <div class="box-model-example">This div demonstrates the box model.</div>
+    <h2>Content Box</h2>
+    <div class="content-example">This div uses content-box sizing.</div>
+    <h2>Border Box</h2>
+    <div class="border-box-example">This div uses border-box sizing.</div>
+    <h2>Padding</h2>
+    <div class="padding-example">This div has padding.</div>
+    <h2>Border</h2>
+    <div class="border-example">This div has a border.</div>
+    <h2>Margin</h2>
+    <div class="margin-example">This div has a margin.</div>
+    <h2>CSS Box Model Properties</h2>
+    <table border="1">
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>width</td>
+            <td>Specifies the width of an element.</td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td>Specifies the height of an element.</td>
+        </tr>
+        <tr>
+            <td>padding</td>
+            <td>Specifies the padding of an element.</td>
+        </tr>
+        <tr>
+            <td>border</td>
+            <td>Specifies the border of an element.</td>
+        </tr>
+        <tr>
+            <td>margin</td>
+            <td>Specifies the margin of an element.</td>
+        </tr>
+        <tr>
+            <td>box-sizing</td>
+            <td>Specifies how the width and height of an element are calculated.</td>
+        </tr>
+    </table>
+</body>
+</html>

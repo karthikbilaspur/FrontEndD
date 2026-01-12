@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymorphism in JavaScript</title>
+</head>
+<body>
+    <h1>Polymorphism in JavaScript</h1>
+    <p>Polymorphism is one of the 4 pillars of object-oriented programming languages where poly means many and morphism means transforming one form into another. Polymorphism means the same function with different signatures is called many times. It allows methods to do different things based on the object it is acting upon.</p>
+    
+    <h2>Method Overriding</h2>
+    <p>Method overriding occurs when a subclass provides its own specific implementation of a method that is already defined in its parent class. When you call this method, JavaScript will use the subclass's implementation instead of the parent's, which is a runtime decision.</p>
+    
+    <pre>
+        class Animal {
+            speak() {
+                console.log("Animal makes a sound");
+            }
+        }
+        
+        class Dog extends Animal {
+            speak() {
+                console.log("Dog barks");
+            }
+        }
+        
+        class Cat extends Animal {
+            speak() {
+                console.log("Cat meows");
+            }
+        }
+        
+        const dog = new Dog();
+        dog.speak(); 
+        
+        const cat = new Cat();
+        cat.speak();
+    </pre>
+    
+    <h2>Method Overloading (Compile-time Polymorphism)</h2>
+    <p>JavaScript does not natively support method overloading, where multiple methods with the same name but different arguments exist in the same scope. However, method overloading can be simulated by checking the number or type of arguments passed to a function, and executing different logic based on them.</p>
+    
+    <pre>
+        class Calculator {
+            add(a, b) {
+                if (b === undefined) {
+                    return a + a; 
+                }
+                return a + b; 
+            }
+        }
+        
+        const calc = new Calculator();
+        console.log(calc.add(2)); 
+        console.log(calc.add(2, 3));
+    </pre>
+    
+    <h2>Polymorphism with Functions and Objects</h2>
+    <p>It is also possible in JavaScript that we can make functions and objects with polymorphism.</p>
+    
+    <pre>
+        class A {
+            area(x, y) {
+                console.log(x * y);
+            }
+        }
+        class B extends A {
+            area(a, b) {
+                super.area(a, b);
+                console.log('Class B')
+            }
+        }
+        
+        let ob = new B();
+        let output = ob.area(100, 200);
+    </pre>
+    
+    <h2>Use Cases of Polymorphism</h2>
+    <ul>
+        <li>UI Components: Different types of UI elements like buttons, text fields, and checkboxes can have unique behaviors but have common interfaces.</li>
+        <li>Database Operations: Methods for different database types can share a common interface while implementing specific logic.</li>
+        <li>File Handling: Implementing the different behaviors but using the same method for reading, writing, and parsing different file formats.</li>
+        <li>API Responses: Function can be used for handling the different types of API responses.</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning Elements</title>
+    <style>
+        /* CSS Rule */
+        h1 {
+            color: blue; /* Property: value */
+            font-size: 24px;
+        }
+
+        p {
+            color: green;
+            font-size: 16px;
+        }
+
+        /* Positioning Examples */
+        .static-example {
+            position: static;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        .relative-example {
+            position: relative;
+            left: 50px;
+            top: 20px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        .absolute-container {
+            position: relative; 
+            width: 200px; 
+            height: 200px; 
+            background-color: #f2f2f2; 
+            padding: 20px;
+        }
+
+        .absolute-example {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #ccc;
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        .fixed-example {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        .sticky-example {
+            position: sticky;
+            top: 0;
+            background-color: #ccc;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Positioning Elements</h1>
+    <p>CSS positioning elements are used to control the layout of HTML elements on a web page.</p>
+
+    <h2>Types of Positioning Elements</h2>
+    <ul>
+        <li><strong>Static:</strong> This is the default positioning element. Elements are positioned according to the normal flow of the document.</li>
+        <li><strong>Relative:</strong> Elements are positioned relative to their normal position.</li>
+        <li><strong>Absolute:</strong> Elements are positioned relative to their nearest positioned ancestor.</li>
+        <li><strong>Fixed:</strong> Elements are positioned relative to the viewport.</li>
+        <li><strong>Sticky:</strong> Elements are positioned based on the user's scroll position.</li>
+    </ul>
+
+    <h2>Examples</h2>
+    <h3>Static Positioning</h3>
+    <code>
+        <div style="position: static; background-color: #f2f2f2; padding: 20px;">
+            This is a statically positioned element.
+        </div>
+    </code>
+    <div class="static-example">This is a statically positioned element.</div>
+
+    <h3>Relative Positioning</h3>
+    <code>
+        <div style="position: relative; left: 50px; top: 20px; background-color: #f2f2f2; padding: 20px;">
+            This is a relatively positioned element.
+        </div>
+    </code>
+    <div class="relative-example">This is a relatively positioned element.</div>
+
+    <h3>Absolute Positioning</h3>
+    <code>
+        <div style="position: relative; width: 200px; height: 200px; background-color: #f2f2f2; padding: 20px;">
+            <div style="position: absolute; top: 0; right: 0; background-color: #ccc; padding: 10px;">
+                This is an absolutely positioned element.
+            </div>
+        </div>
+    </code>
+    <div class="absolute-container">
+        <div class="absolute-example">This is an absolutely positioned element.</div>
+    </div>
+
+    <h3>Fixed Positioning</h3>
+    <code>
+        <div style="position: fixed; bottom: 0; right: 0; background-color: #f2f2f2; padding: 20px;">
+            This is a fixed positioned element.
+        </div>
+    </code>
+    <div class="fixed-example">This is a fixed positioned element.</div>
+
+    <h3>Sticky Positioning</h3>
+    <code>
+        <div style="height: 1000px; background-color: #f2f2f2; padding: 20px;">
+            <div style="position: sticky; top: 0; background-color: #ccc; padding: 10px;">
+                This is a sticky positioned element.
+            </div>
+        </div>
+    </code>
+    <div style="height: 1000px; background-color: #f2f2f2; padding: 20px;">
+        <div class="sticky-example">This is a sticky positioned element.</div>
+    </div>
+</body>
+</html>

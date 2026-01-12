@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Code Execution</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>JavaScript Code Execution</h1>
+<p>JavaScript code execution is a two-phase process: parsing and execution.</p>
+Code
+<h2>Parsing</h2>
+<p>When a JavaScript file is loaded, the browser's JavaScript engine parses the code, checking for syntax errors and creating an Abstract Syntax Tree (AST).</p>
+
+<h2>Execution</h2>
+<p>The JavaScript engine executes the code in the following order:</p>
+<ul>
+	<li><b>Global Execution Context</b>: The global execution context is created, and the code is executed line by line.</li>
+	<li><b>Function Execution Context</b>: When a function is called, a new execution context is created, and the function's code is executed.</li>
+	<li><b>Variable Hoisting</b>: Variables declared with <b>var</b> are "hoisted" to the top of their scope, while <b>let</b> and <b>const</b> are not.</li>
+</ul>
+
+<h2>Browser Developer Mode</h2>
+<p>Most modern browsers come with a built-in developer mode, which provides tools for debugging and testing JavaScript code.</p>
+<ul>
+	<li><b>Console</b>: A JavaScript console where you can execute code and see output.</li>
+	<li><b>Sources</b>: A list of all loaded JavaScript files, with options to set breakpoints and inspect code.</li>
+	<li><b>Debugger</b>: A debugger that allows you to step through code, inspect variables, and set breakpoints.</li>
+</ul>
+
+<h2>Execution Context</h2>
+<p>An execution context is an object that contains information about the current execution environment.</p>
+<ul>
+	<li><b>Variable Object</b>: An object that stores variables, functions, and arguments.</li>
+	<li><b>Scope Chain</b>: A chain of scope objects that determines variable access.</li>
+	<li><b>This</b>: A reference to the current execution context's <b>this</b> value.</li>
+</ul>
+
+<h2>Example</h2>
+<pre>
+	<code>
+		console.log(a); // undefined
+		var a = 10;
+		function foo() {
+			console.log(b); // ReferenceError: b is not defined
+			let b = 20;
+		}
+		foo();
+	</code>
+</pre>
+</body>
+</html>

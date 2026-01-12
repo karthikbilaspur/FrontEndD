@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Backgrounds</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <style>
+        .background-example {
+            background-color: #f2f2f2; /* Light gray background */
+            padding: 20px;
+        }
+        .background-image-example {
+            background-image: url('https://picsum.photos/200/300'); /* Background image */
+            padding: 20px;
+            color: white;
+            background-size: cover;
+            background-position: center;
+        }
+        .background-repeat-example {
+            background-image: url('https://picsum.photos/50/50'); /* Background image with repeat */
+            padding: 20px;
+            background-repeat: repeat-x; /* Repeat horizontally */
+        }
+        .background-position-example {
+            background-image: url('https://picsum.photos/200/300'); /* Background image with position */
+            padding: 20px;
+            background-position: top right; /* Position at top right */
+            background-repeat: no-repeat;
+        }
+        .background-attachment-example {
+            background-image: url('https://picsum.photos/200/300'); /* Background image with attachment */
+            padding: 20px;
+            background-attachment: fixed; /* Fixed background */
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 500px;
+            overflow: auto;
+        }
+        .background-shorthand-example {
+            background: #f2f2f2 url('https://picsum.photos/200/300') no-repeat center; /* Background shorthand */
+            padding: 20px;
+            color: white;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Backgrounds</h1>
+    <div class="background-example">This div has a light gray background color.</div>
+    <div class="background-image-example">This div has a background image.</div>
+    <div class="background-repeat-example">This div has a background image that repeats horizontally.</div>
+    <div class="background-position-example">This div has a background image positioned at top right.</div>
+    <div class="background-attachment-example">This div has a fixed background image.
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+    </div>
+    <div class="background-shorthand-example">This div uses the background shorthand property.</div>
+    <h2>CSS Background Properties</h2>
+    <table border="1">
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>background-color</td>
+            <td>Sets the background color of an element.</td>
+        </tr>
+        <tr>
+            <td>background-image</td>
+            <td>Sets the background image of an element.</td>
+        </tr>
+        <tr>
+            <td>background-repeat</td>
+            <td>Specifies how the background image should be repeated.</td>
+        </tr>
+        <tr>
+            <td>background-position</td>
+            <td>Sets the position of the background image.</td>
+        </tr>
+        <tr>
+            <td>background-attachment</td>
+            <td>Specifies whether the background image should be fixed or scroll with the page.</td>
+        </tr>
+        <tr>
+            <td>background</td>
+            <td>A shorthand property for setting all background properties at once.</td>
+        </tr>
+    </table>
+</body>
+</html>

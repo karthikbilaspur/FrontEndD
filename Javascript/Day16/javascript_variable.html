@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Scope</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Scope</h1>
+    <h2>Types of Scope</h2>
+    <table>
+        <tr>
+            <th>Scope</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>Global Scope</td>
+            <td>Variables declared outside any function or block are accessible everywhere in the code.</td>
+            <td><code>var x = 10; console.log(x); // 10</code></td>
+        </tr>
+        <tr>
+            <td>Function Scope</td>
+            <td>Variables declared with var inside a function are accessible only within that function.</td>
+            <td><code>function example() { var x = 10; console.log(x); // 10 }</code></td>
+        </tr>
+        <tr>
+            <td>Block Scope</td>
+            <td>Variables declared with let or const inside a block ({}) are accessible only within that block.</td>
+            <td><code>if (true) { let x = 10; console.log(x); // 10 }</code></td>
+        </tr>
+        <tr>
+            <td>Modular Scope</td>
+            <td>Introduced in ES6, ES Modules are the standard way to organize JavaScript code into reusable and maintainable chunks.</td>
+            <td><code>module.exports = { PI, add };</code></td>
+        </tr>
+    </table>
+
+    <h2>Examples</h2>
+    <h3>Global Scope</h3>
+    <code>
+        var x = 10;<br>
+        console.log(x); // 10<br>
+        let y = 20;<br>
+        console.log(y); // 20<br>
+        const z = 30;<br>
+        console.log(z); // 30
+    </code>
+
+    <h3>Block Scope</h3>
+    <code>
+        if (true) {<br>
+            var x = 10; // Function-scoped (not block-scoped)<br>
+            let y = 20; // Block-scoped<br>
+            const z = 30; // Block-scoped<br>
+        }<br>
+        console.log(x); // 10<br>
+        console.log(y); // Error: y is not defined<br>
+        console.log(z); // Error: z is not defined
+    </code>
+
+    <h3>Function Scope</h3>
+    <code>
+        function example() {<br>
+            var x = 10; // Function-scoped<br>
+            let y = 20; // Function-scoped<br>
+            const z = 30; // Function-scoped<br>
+            console.log(x, y, z); // 10 20 30<br>
+        }<br>
+        example();<br>
+        console.log(x); // Error: x is not defined<br>
+        console.log(y); // Error: y is not defined<br>
+        console.log(z); // Error: z is not defined
+    </code>
+
+    <h3>Lexical Scope (Closures)</h3>
+    <code>
+        function outer() {<br>
+            let outerVar = "I'm in the outer scope!";<br>
+            function inner() {<br>
+                console.log(outerVar); // Accessing parent's scope<br>
+            }<br>
+            inner();<br>
+        }<br>
+        outer();
+    </code>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #task-input {
+            padding: 10px;
+            width: 50%;
+            margin-right: 10px;
+        }
+
+        #add-task-button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #add-task-button:hover {
+            background-color: #3e8e41;
+        }
+
+        #task-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .task {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .task:last-child {
+            border-bottom: none;
+        }
+
+        .delete-task-button {
+            float: right;
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .delete-task-button:hover {
+            background-color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo List App</h1>
+    <input type="text" id="task-input" placeholder="Enter a task">
+    <button id="add-task-button">Add Task</button>
+    <ul id="task-list"></ul>
+
+    <script>
+        let taskList = document.getElementById('task-list');
+        let taskInput = document.getElementById('task-input');
+        let addTaskButton = document.getElementById('add-task-button');
+
+        // Add event listener to add task button
+        addTaskButton.addEventListener('click', addTask);
+
+        // Add event listener to task input for enter key press
+        taskInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                addTask();
+            }
+        });
+
+        // Function to add task
+        function addTask() {
+            let taskText = taskInput.value.trim();
+            if (taskText !== '') {
+                let task = document.createElement('li');
+                task.classList.add('task');
+                task.innerHTML = `
+                    <span>${taskText}</span>
+                    <button class="delete-task-button">Delete</button>
+                `;
+                taskList.appendChild(task);
+                taskInput.value = '';
+
+                // Add event listener to delete task button
+                let deleteTaskButton = task.querySelector('.delete-task-button');
+                deleteTaskButton.addEventListener('click', () => {
+                    taskList.removeChild(task);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript Control Flow Statements">
+    <meta name="keywords" content="JavaScript, Control Flow, Break, Continue, Return, Throw">
+    <meta name="author" content="Your Name">
+    <title>JavaScript Control Flow Statements</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Control Flow Statements</h1>
+    <p>Control flow statements are used to control the flow of execution of a program.</p>
+    <h2>Types of Control Flow Statements</h2>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>Break Statement</td>
+            <td>Terminates the current loop or switch statement.</td>
+            <td><code>for (let i = 0; i < 5; i++) { if (i === 3) { break; } console.log(i); }</code></td>
+        </tr>
+        <tr>
+            <td>Continue Statement</td>
+            <td>Skips the current iteration of a loop.</td>
+            <td><code>for (let i = 0; i < 5; i++) { if (i === 3) { continue; } console.log(i); }</code></td>
+        </tr>
+        <tr>
+            <td>Return Statement</td>
+            <td>Returns a value from a function.</td>
+            <td><code>function add(a, b) { return a + b; }</code></td>
+        </tr>
+        <tr>
+            <td>Throw Statement</td>
+            <td>Throws an exception.</td>
+            <td><code>throw new Error("Error message");</code></td>
+        </tr>
+    </table>
+
+    <h2>Examples</h2>
+    <h3>Break Statement</h3>
+    <code>
+        for (let i = 0; i < 5; i++) {<br>
+            if (i === 3) {<br>
+                break;<br>
+            }<br>
+            console.log(i);<br>
+        }<br>
+        // Output: 0, 1, 2
+    </code>
+
+    <h3>Continue Statement</h3>
+    <code>
+        for (let i = 0; i < 5; i++) {<br>
+            if (i === 3) {<br>
+                continue;<br>
+            }<br>
+            console.log(i);<br>
+        }<br>
+        // Output: 0, 1, 2, 4
+    </code>
+
+    <h3>Return Statement</h3>
+    <code>
+        function add(a, b) {<br>
+            return a + b;<br>
+        }<br>
+        console.log(add(2, 3));<br>
+        // Output: 5
+    </code>
+
+    <h3>Throw Statement</h3>
+    <code>
+        try {<br>
+            throw new Error("Error message");<br>
+        } catch (e) {<br>
+            console.log(e.message);<br>
+        }<br>
+        // Output: Error message
+    </code>
+
+    <h3>Try-Catch Block</h3>
+    <code>
+        try {<br>
+            // Code that may throw an error<br>
+        } catch (e) {<br>
+            // Code to handle the error<br>
+        } finally {<br>
+            // Code to be executed regardless of an error<br>
+        }
+    </code>
+
+    <h3>Switch Statement</h3>
+    <code>
+        let day = "Monday";<br>
+        switch (day) {<br>
+            case "Monday":<br>
+                console.log("Today is Monday");<br>
+                break;<br>
+            case "Tuesday":<br>
+                console.log("Today is Tuesday");<br>
+                break;<br>
+            default:<br>
+                console.log("Today is not Monday or Tuesday");<br>
+        }<br>
+        // Output: Today is Monday
+    </code>
+</body>
+</html>

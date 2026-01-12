@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Design</title>
+    <style>
+        /* CSS Rule */
+        h1 {
+            color: blue; /* Property: value */
+            font-size: 24px;
+        }
+
+        p {
+            color: green;
+            font-size: 16px;
+        }
+
+        /* Responsive Design Examples */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .grid-item {
+            background-color: #ccc;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Responsive Web Design</h1>
+    <p>Responsive web design is an approach to web design that makes web pages render well on a variety of devices and window or screen sizes.</p>
+
+    <h2>Key Principles</h2>
+    <ul>
+        <li><strong>Mobile-first design:</strong> Design for mobile devices first, then work your way up to larger screens.</li>
+        <li><strong>Flexible grids:</strong> Use flexible grids to create layouts that adapt to different screen sizes.</li>
+        <li><strong>Flexible images:</strong> Use flexible images to ensure they scale properly on different devices.</li>
+        <li><strong>Media queries:</strong> Use media queries to apply different styles based on different screen sizes.</li>
+    </ul>
+
+    <h2>Responsive Design Examples</h2>
+    <code>
+        <div style="max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f2f2f2;">
+            <img src="image.jpg" alt="Responsive Image" style="max-width: 100%; height: auto;">
+        </div>
+    </code>
+    < container class="container">
+        <img src="image.jpg" alt="Responsive Image" class="responsive-image">
+    </div>
+
+    <h2>Grid System</h2>
+    <code>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+            <div style="background-color: #ccc; padding: 20px;">Grid Item 1</div>
+            <div style="background-color: #ccc; padding: 20px;">Grid Item 2</div>
+            <div style="background-color: #ccc; padding: 20px;">Grid Item 3</div>
+        </div>
+    </code>
+    <div class="grid-container">
+        <div class="grid-item">Grid Item 1</div>
+        <div class="grid-item">Grid Item 2</div>
+        <div class="grid-item">Grid Item 3</div>
+    </div>
+
+    <h2>Media Queries</h2>
+    <code>
+        @media (max-width: 768px) {
+            /* styles for screens with a maximum width of 768px */
+        }
+    </code>
+    <p>Media queries are used to apply different styles based on different screen sizes.</p>
+
+    <h2>Common Breakpoints</h2>
+    <ul>
+        <li><strong>Extra small:</strong> 0px - 480px (mobile devices)</li>
+        <li><strong>Small:</strong> 481px - 768px (tablets and small desktops)</li>
+        <li><strong>Medium:</strong> 769px - 1024px (large desktops)</li>
+        <li><strong>Large:</strong> 1025px and up (extra large desktops)</li>
+    </ul>
+</body>
+</html>

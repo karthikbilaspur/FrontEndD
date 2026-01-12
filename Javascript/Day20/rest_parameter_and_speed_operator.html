@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Rest Parameters and Spread Operator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .example {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .output {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Rest Parameters and Spread Operator</h1>
+    
+    <h2>Rest Parameters (...args)</h2>
+    <p>Rest parameters allow a function to accept an indefinite number of arguments as an array.</p>
+    <div class="example">
+        <code>
+            function sum(...numbers) {<br>
+            &nbsp;&nbsp;return numbers.reduce((total, num) => total + num, 0);<br>
+            }<br>
+            console.log(sum(1, 2, 3)); // 6<br>
+            console.log(sum(1, 2, 3, 4)); // 10
+        </code>
+    </div>
+    
+    <h2>Spread Operator (...)</h2>
+    <p>The spread operator allows an iterable (array or object) to be expanded in places where zero or more arguments or elements are expected.</p>
+    <div class="example">
+        <code>
+            const arr1 = [1, 2, 3];<br>
+            const arr2 = [4, 5, 6];<br>
+            const combined = [...arr1, ...arr2];<br>
+            console.log(combined); // [1, 2, 3, 4, 5, 6]
+        </code>
+    </div>
+    
+    <h2>Use Cases</h2>
+    <h3>1. Function Arguments</h3>
+    <div class="example">
+        <code>
+            function sum(x, y, z) {<br>
+            &nbsp;&nbsp;return x + y + z;<br>
+            }<br>
+            const numbers = [1, 2, 3];<br>
+            console.log(sum(...numbers)); // 6
+        </code>
+    </div>
+    
+    <h3>2. Array Concatenation</h3>
+    <div class="example">
+        <code>
+            const arr1 = [1, 2, 3];<br>
+            const arr2 = [4, 5, 6];<br>
+            const combined = [...arr1, ...arr2];<br>
+            console.log(combined); // [1, 2, 3, 4, 5, 6]
+        </code>
+    </div>
+    
+    <h3>3. Object Merging</h3>
+    <div class="example">
+        <code>
+            const obj1 = {a: 1, b: 2};<br>
+            const obj2 = {c: 3, d: 4};<br>
+            const merged = {...obj1, ...obj2};<br>
+            console.log(merged); // {a: 1, b: 2, c: 3, d: 4}
+        </code>
+    </div>
+    
+    <div class="note">
+        <strong>Note:</strong> Rest parameters must be the last parameter in the function definition, and the spread of operator creates a shallow copy of arrays/objects.
+    </div>
+</body>
+</html>

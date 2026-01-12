@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Colors</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .hex-example {
+            background-color: #FF5733; /* Hexadecimal color */
+            padding: 20px;
+            color: white;
+        }
+        .rgb-example {
+            color: rgb(255, 0, 0); /* RGB color */
+            font-size: 20px;
+        }
+        .rgba-example {
+            color: rgba(0, 255, 0, 0.5); /* RGBA color with transparency */
+            font-size: 20px;
+        }
+        .hsl-example {
+            color: hsl(120, 100%, 50%); /* HSL color */
+            font-size: 20px;
+        }
+        .hsla-example {
+            color: hsla(120, 100%, 50%, 0.3); /* HSLA color with transparency */
+            font-size: 20px;
+        }
+        .bg-example {
+            background-color: #FF5733; /* Red-Orange background */
+            padding: 20px;
+            color: white;
+        }
+        .text-example {
+            color: rgb(255, 0, 0); /* Red text */
+            font-size: 20px;
+        }
+        .border-example {
+            border: 5px solid rgba(0, 255, 0, 0.5); /* Semi-transparent green border */
+            padding: 10px;
+            margin: 10px;
+        }
+        .hover-example {
+            background-color: #4CAF50; /* Green background */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .hover-example:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+        .shadow-example {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+            color: #FF5733;
+            font-size: 30px;
+        }
+        .box-shadow-example {
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            background-color: #FFF;
+        }
+        .gradient-example {
+            background: linear-gradient(to right, #FF5733, #33FF57);
+            padding: 40px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Colors</h1>
+    <div class="hex-example">This div has a Hexadecimal background color.</div>
+    <div class="rgb-example">This text is in RGB red.</div>
+    <div class="rgba-example">This text is in RGBA green with 50% transparency.</div>
+    <div class="hsl-example">This text is in HSL green.</div>
+    <div class="hsla-example">This text is in HSLA green with 30% opacity.</div>
+    <h2>Use Cases of CSS Colors</h2>
+    <div class="bg-example">This div has a warm background color!</div>
+    <p class="text-example">This text is in red.</p>
+    <div class="border-example">This div has a semi-transparent green border.</div>
+    <div class="hover-example">Hover over me to change the background color!</div>
+    <p class="shadow-example">This text has a shadow effect.</p>
+    <div class="box-shadow-example">This div has a box shadow.</div>
+    <div class="gradient-example">This div has a linear gradient background.</div>
+    <h2>Color Formats in CSS</h2>
+    <table border="1">
+        <tr>
+            <th>Color Format</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Color Names</td>
+            <td>Use predefined color names (e.g., red, blue, green) for simplicity.</td>
+        </tr>
+        <tr>
+            <td>Hexadecimal (Hex) Codes</td>
+            <td>Define colors using six-digit hex codes (e.g., #FF5733).</td>
+        </tr>
+        <tr>
+            <td>RGB (Red, Green, Blue)</td>
+            <td>Define colors using RGB values (e.g., rgb(255, 0, 0)).</td>
+        </tr>
+        <tr>
+            <td>RGBA (Red, Green, Blue, Alpha)</td>
+            <td>Extend RGB by adding an alpha (transparency) value (e.g., rgba(255, 0, 0, 0.5)).</td>
+        </tr>
+        <tr>
+            <td>HSL (Hue, Saturation, Lightness)</td>
+            <td>Define colors using HSL values (e.g., hsl(120, 100%, 50%)).</td>
+        </tr>
+        <tr>
+            <td>HSLA (Hue, Saturation, Lightness, Alpha)</td>
+            <td>Extend HSL by adding an alpha value for transparency (e.g., hsla(120, 100%, 50%, 0.5)).</td>
+        </tr>
+    </table>
+</body>
+</html>

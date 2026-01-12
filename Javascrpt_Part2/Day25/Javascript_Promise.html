@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Promise</title>
+</head>
+<body>
+    <h1>JavaScript Promise</h1>
+    <p>JavaScript Promises make handling asynchronous operations like API calls, file loading, or time delays easier. Think of a Promise as a placeholder for a value that will be available in the future. It can be in one of three states:</p>
+    <ul>
+        <li><strong>Pending:</strong> The task is in the initial state.</li>
+        <li><strong>Fulfilled:</strong> The task was completed successfully, and the result is available.</li>
+        <li><strong>Rejected:</strong> The task failed, and an error is provided.</li>
+    </ul>
+
+    <h2>Example:</h2>
+    <pre>
+        let checkEven = new Promise((resolve, reject) => {
+            let number = 4;
+            if (number % 2 === 0) resolve("The number is even!");
+            else reject("The number is odd!");
+        });
+        checkEven
+            .then((message) => console.log(message)) // On success
+            .catch((error) => console.error(error)); // On failure
+    </pre>
+
+    <h2>Syntax:</h2>
+    <pre>
+        let promise = new Promise((resolve, reject) => {
+            // Perform async operation
+            if (operationSuccessful) {
+                resolve("Task successful");
+            } else {
+                reject("Task failed");
+            }
+        });
+    </pre>
+
+    <h2>Advanced Promise Methods and Patterns:</h2>
+    <ol>
+        <li><strong>Promise.all()</strong>: Waits for all promises to resolve and returns their results as an array. If any promise is rejected, it immediately rejects.</li>
+        <li><strong>Promise.allSettled()</strong>: Waits for all promises to settle (fulfilled or rejected) and returns an array of their outcomes.</li>
+        <li><strong>Promise.race()</strong>: Resolves or rejects as soon as the first promise settles.</li>
+        <li><strong>Promise.any()</strong>: Resolves with the first fulfilled promise. If all are rejected, it rejects with an AggregateError.</li>
+        <li><strong>Promise.resolve()</strong>: Returns a promise that resolves with the given value.</li>
+        <li><strong>Promise.reject()</strong>: Returns a promise that immediately rejects with a given reason.</li>
+        <li><strong>Promise.finally()</strong>: Runs a cleanup or final code block regardless of the promise’s result (fulfilled or rejected).</li>
+        <li><strong>Chaining with Promise.prototype.then()</strong>: Allows sequential execution of promises, passing results to the next .then().</li>
+    </ol>
+
+    <h2>Benefits of Promises:</h2>
+    <ul>
+        <li>Avoid Callback Hell: Promises organize asynchronous code more neatly than nested callbacks.</li>
+        <li>Error Handling: Errors can be caught in one place using .catch().</li>
+        <li>Chaining: Perform tasks sequentially with .then().</li>
+    </ul>
+</body>
+</html>

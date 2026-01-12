@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Inheritance</title>
+</head>
+<body>
+    <h1>JavaScript Inheritance</h1>
+    <p>Inheritance is a fundamental concept in object-oriented programming (OOP) that allows one class or object to derive properties and behaviours from another.</p>
+    
+    <h2>Common Types of Inheritance</h2>
+    <ul>
+        <li><a href="#prototype-based-inheritance">Prototype-based Inheritance</a></li>
+        <li><a href="#es6-class-based-inheritance">ES6 Class-based Inheritance</a></li>
+        <li><a href="#mixins-for-inheritance">Mixins for Inheritance</a></li>
+        <li><a href="#inheritance-with-object-create">Inheritance with Object.create()</a></li>
+        <li><a href="#inheritance-with-object-setprototypeof">Inheritance with Object.setPrototypeOf()</a></li>
+        <li><a href="#factory-functions-for-inheritance">Factory Functions for Inheritance</a></li>
+    </ul>
+    
+    <h2 id="prototype-based-inheritance">1. Prototype-based Inheritance</h2>
+    <p>In JavaScript, everything (functions, arrays, strings) is an object. The prototype stores shared properties and methods, allowing all instances of a type to access them.</p>
+    
+    <pre>
+        function Animal(name) {
+            this.name = name;
+        }
+        Animal.prototype.speak = function () {
+            console.log(`${this.name} makes a sound.`);
+        };
+        
+        // Child constructor function
+        function Dog(name) {
+            Animal.call(this, name); // Inherit properties
+        }
+        
+        // Inherit methods from Animal
+        Dog.prototype = Object.create(Animal.prototype);
+        Dog.prototype.constructor = Dog;
+        
+        // Adding a new method to Dog
+        Dog.prototype.bark = function () {
+            console.log(`${this.name} barks: Woof!`);
+        };
+        
+        // Creating an instance
+        const myDog = new Dog("Buddy");
+        
+        myDog.speak(); 
+        myDog.bark();
+    </pre>
+    
+    <h2 id="es6-class-based-inheritance">2. ES6 Class-based Inheritance</h2>
+    <p>This code demonstrates class inheritance in JavaScript, where a child class (two) extends a parent class (one). The child class inherits properties and methods from the parent class.</p>
+    
+    <pre>
+        class one {
+            constructor(name) {
+                this.name = name
+            }
+            speaks() {
+                return `my name is ${this.name}`
+            }
+        }
+        class two extends one {
+            constructor(name) {
+                super(name)
+            }
+        }
+        const o = new two('Pranjal')
+        console.log(o.speaks())
+    </pre>
+    
+    <h2 id="mixins-for-inheritance">3. Mixins for Inheritance</h2>
+    <p>This code demonstrates prototypal inheritance and object merging using Object.assign(), allowing a constructor function (Person) to inherit methods from multiple objects (one and two).</p>
+    
+    <pre>
+        const one = {
+            speak() {
+                return `${this.name} speaks`
+            }
+        }
+        const two = {
+            walks() {
+                return `${this.name} walks`
+            }
+        }
+        function Person(name) {
+            this.name = name
+        }
+        Object.assign(Person.prototype, one, two)
+        const person1 = new Person('Pranjal')
+        console.log(person1.speak())
+        console.log(person1.walks())
+    </pre>
+    
+    <h2 id="inheritance-with-object-create">4. Inheritance with Object.create()</h2>
+    <p>Object.create() in JavaScript creates a new object that uses another object as its prototype, allowing it to inherit all its properties and methods.</p>
+    
+    <pre>
+        let obj = {
+            name: 'Pranjal',
+            age: 21,
+            prints() {
+                return `my name is ${this.name}`
+            }
+        }
+        let obj1 = Object.create(obj)
+        obj1.name = 'Hello'
+        console.log(obj1.age)
+        console.log(obj1.prints())
+    </pre>
+    
+    <h2 id="inheritance-with-object-setprototypeof">5. Inheritance with Object.setPrototypeOf()</h2>
+    <p>This code demonstrates prototypal inheritance using Object.setPrototypeOf(), which sets one object (two) as the prototype of another (one). This allows one to access properties from two.</p>
+    
+    <pre>
+        const one = {
+            speak() {
+                return `${this.name} speaks`
+            }
+        }
+        const two = {
+            name: 'Pranjal'
+        }
+        Object.setPrototypeOf(one, two)
+        console.log(one.speak())
+    </pre>
+    
+    <h2 id="factory-functions-for-inheritance">6. Factory Functions for Inheritance</h2>
+    <p>This code demonstrates factory functions in JavaScript, where a function (createPerson) returns new objects with shared properties and methods.</p>
+    
+    <pre>
+        function createPerson(name) {
+            return {
+                name: name,
+                greet() {
+                    return `Hello my name is ${this.name}`
+                }
+            }
+        }
+        const one = createPerson('Pranjal')
+        const two = createPerson('Pranav')
+        console.log(one.greet())
+        console.log(two.greet())
+    </pre>
+</body>
+</html>

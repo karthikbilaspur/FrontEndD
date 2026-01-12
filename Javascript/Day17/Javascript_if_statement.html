@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript If Statement</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript If Statement</h1>
+    <p>The if statement is used to execute a block of code if a specified condition is true.</p>
+    <h2>Types of If Statements</h2>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>If Statement</td>
+            <td>Executes a block of code if the condition is true.</td>
+            <td><code>if (x > 5) { console.log("x is greater than 5"); }</code></td>
+        </tr>
+        <tr>
+            <td>If-Else Statement</td>
+            <td>Executes a block of code if the condition is true, otherwise executes another block of code.</td>
+            <td><code>if (x > 5) { console.log("x is greater than 5"); } else { console.log("x is less than or equal to 5"); }</code></td>
+        </tr>
+        <tr>
+            <td>If-Else If-Else Statement</td>
+            <td>Executes a block of code if the condition is true, otherwise checks another condition and executes a block of code if true, otherwise executes another block of code.</td>
+            <td><code>if (x > 5) { console.log("x is greater than 5"); } else if (x === 5) { console.log("x is equal to 5"); } else { console.log("x is less than 5"); }</code></td>
+        </tr>
+        <tr>
+            <td>Nested If Statement</td>
+            <td>An if statement inside another if statement.</td>
+            <td><code>if (x > 5) { if (y > 10) { console.log("x is greater than 5 and y is greater than 10"); } }</code></td>
+        </tr>
+    </table>
+
+    <h2>Examples</h2>
+    <h3>If Statement</h3>
+    <code>
+        let x = 10;<br>
+        if (x > 5) {<br>
+            console.log("x is greater than 5");<br>
+        }
+    </code>
+
+    <h3>If-Else Statement</h3>
+    <code>
+        let x = 3;<br>
+        if (x > 5) {<br>
+            console.log("x is greater than 5");<br>
+        } else {<br>
+            console.log("x is less than or equal to 5");<br>
+        }
+    </code>
+
+    <h3>If-Else If-Else Statement</h3>
+    <code>
+        let x = 5;<br>
+        if (x > 5) {<br>
+            console.log("x is greater than 5");<br>
+        } else if (x === 5) {<br>
+            console.log("x is equal to 5");<br>
+        } else {<br>
+            console.log("x is less than 5");<br>
+        }
+    </code>
+
+    <h3>Nested If Statement</h3>
+    <code>
+        let x = 10;<br>
+        let y = 15;<br>
+        if (x > 5) {<br>
+            if (y > 10) {<br>
+                console.log("x is greater than 5 and y is greater than 10");<br>
+            }<br>
+        }
+    </code>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Function in ES6</title>
+</head>
+<body>
+    <h1>Generator Function in ES6</h1>
+    <p>A Generator Function is a special type of function that can pause its execution and later resume from where it left off.</p>
+    
+    <h2>Example</h2>
+    <pre>
+        function* generator() {
+            yield 'First value';
+            yield 'Second value';
+            return 'Done';
+        }
+        const gen = generator();
+        console.log(gen.next());
+        console.log(gen.next());
+        console.log(gen.next());
+    </pre>
+    <p>Output:</p>
+    <pre>
+        { value: 'First value', done: false }
+        { value: 'Second value', done: false }
+        { value: 'Done', done: true }
+    </pre>
+    
+    <h2>Infinite Sequence Generator</h2>
+    <pre>
+        function* infinite() {
+            let i = 0;
+            while (true) {
+                yield i++;
+            }
+        }
+        const gen = infinite();
+        console.log(gen.next().value);
+        console.log(gen.next().value);
+        console.log(gen.next().value);
+        console.log(gen.next().value);
+        console.log(gen.next().value);
+    </pre>
+    <p>Output:</p>
+    <pre>
+        0
+        1
+        2
+        3
+        4
+    </pre>
+    
+    <h2>Delegating Generators</h2>
+    <pre>
+        function* sub() {
+            yield 'Sub value 1';
+            yield 'Sub value 2';
+        }
+        function* main() {
+            yield* sub();
+            yield 'Main value';
+        }
+        const gen = main();
+        console.log(gen.next().value);
+        console.log(gen.next().value);
+        console.log(gen.next().value);
+    </pre>
+    <p>Output:</p>
+    <pre>
+        Sub value 1
+        Sub value 2
+        Main value
+    </pre>
+    
+    <h2>Generators with Asynchronous Operations</h2>
+    <pre>
+        function* asyncG() {
+            yield new Promise((resolve) => 
+                setTimeout(() => resolve('Async value'), 1000));
+        }
+        const gen = asyncG();
+        gen.next().value.then(console.log);
+    </pre>
+    <p>Output:</p>
+    <pre>
+        Async value
+    </pre>
+    
+    <h2>Stateful Iteration with Generators</h2>
+    <pre>
+        function* counter(start = 0) {
+            let count = start;
+            while (true) {
+                count += yield count;
+            }
+        }
+        const gen = counter();
+        console.log(gen.next().value);
+        console.log(gen.next(2).value);
+        console.log(gen.next(3).value);
+    </pre>
+    <p>Output:</p>
+    <pre>
+        0
+        2
+        5
+    </pre>
+    
+    <h2>Iterating Over a Collection</h2>
+    <pre>
+        function* objectE(obj) {
+            for (const [key, value] of Object.entries(obj)) {
+                yield [key, value];
+            }
+        }
+        const gen = objectE({ a: 1, b: 2, c: 3 });
+        for (const [key, value] of gen) {
+            console.log(`${key}: ${value}`);
+        }
+    </pre>
+    <p>Output:</p>
+    <pre>
+        a: 1
+        b: 2
+        c: 3
+    </pre>
+</body>
+</html>

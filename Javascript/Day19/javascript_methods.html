@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript map(), filter(), and reduce() methods">
+    <meta name="keywords" content="JavaScript, map(), filter(), reduce()">
+    <title>JavaScript map(), filter(), and reduce() Methods</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            color: #00698f;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+        .example {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript map(), filter(), and reduce() Methods</h1>
+    <p>The map(), filter(), and reduce() are the array functions that allow us to manipulate an array according to our logic and return a new array after applying the modified operations on it.</p>
+
+    <h2>Map()</h2>
+    <p>The map() method creates a new array by applying a function to each element of the original array.</p>
+    <div class="example">
+        <code>
+            let arr = [2, 4, 8, 10];<br>
+            let updatedArr = arr.map(val => val + 2);<br>
+            console.log(arr); // [2, 4, 8, 10]<br>
+            console.log(updatedArr); // [4, 6, 10, 12]
+        </code>
+    </div>
+
+    <h2>Filter()</h2>
+    <p>The filter() method creates a new array with elements that pass a certain condition defined by a callback function.</p>
+    <div class="example">
+        <code>
+            let arr = [2, 4, 8, 10];<br>
+            let updatedArr = arr.filter(val => val < 5);<br>
+            console.log(arr); // [2, 4, 8, 10]<br>
+            console.log(updatedArr); // [2, 4]
+        </code>
+    </div>
+
+    <h2>Reduce()</h2>
+    <p>The reduce() method reduces an array to a single value by executing a provided callback function once for each element.</p>
+    <div class="example">
+        <code>
+            let arr = [2, 4, 8, 10];<br>
+            let updatedArr = arr.reduce((prev, curr) => prev + curr, 0);<br>
+            console.log(arr); // [2, 4, 8, 10]<br>
+            console.log(updatedArr); // 24
+        </code>
+    </div>
+
+    <h2>Key Differences</h2>
+    <table>
+        <tr>
+            <th>Property</th>
+            <th>map()</th>
+            <th>filter()</th>
+            <th>reduce()</th>
+        </tr>
+        <tr>
+            <td>Return type</td>
+            <td>Returns a new array</td>
+            <td>Returns a new array</td>
+            <td>Returns a single element</td>
+        </tr>
+        <tr>
+            <td>Action</td>
+            <td>Modifies each element</td>
+            <td>Filters out elements</td>
+            <td>Reduces array to a single value</td>
+        </tr>
+        <tr>
+            <td>Parameters</td>
+            <td>value, index, array</td>
+            <td>value, index, array</td>
+            <td>accumulator, value, index, array</td>
+        </tr>
+    </table>
+
+    <script>
+        // Example code
+        let arr = [2, 4, 8, 10];
+        let updatedArr = arr.map(val => val + 2);
+        console.log(arr);
+        console.log(updatedArr);
+
+        let arr2 = [2, 4, 8, 10];
+        let updatedArr2 = arr2.filter(val => val < 5);
+        console.log(arr2);
+        console.log(updatedArr2);
+
+        let arr3 = [2, 4, 8, 10];
+        let updatedArr3 = arr3.reduce((prev, curr) => prev + curr, 0);
+        console.log(arr3);
+        console.log(updatedArr3);
+    </script>
+</body>
+</html>

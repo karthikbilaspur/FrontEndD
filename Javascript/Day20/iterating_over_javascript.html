@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterating Over JavaScript Objects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .example {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .output {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .note {
+            background-color: #e8f4ff;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iterating Over JavaScript Objects</h1>
+    <p>There are several ways to iterate over object properties in JavaScript.</p>
+    
+    <h2>Methods to Iterate</h2>
+    <table>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+            <th>Includes Prototypes</th>
+        </tr>
+        <tr>
+            <td>for...in</td>
+            <td>Iterates over all enumerable properties</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Object.keys()</td>
+            <td>Returns array of own enumerable keys</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>Object.values()</td>
+            <td>Returns array of own enumerable values</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>Object.entries()</td>
+            <td>Returns array of own enumerable key-value pairs</td>
+            <td>No</td>
+        </tr>
+    </table>
+    
+    <h2>Examples</h2>
+    <h3>1. for...in Loop</h3>
+    <div class="example">
+        <code>
+            const person = {name: "John", age: 30};<br>
+            for (let key in person) {<br>
+            &nbsp;&nbsp;console.log(`${key}: ${person[key]}`);<br>
+            }
+        </code>
+        <p class="output">Output: name: John, age: 30</p>
+    </div>
+    
+    <h3>2. Object.keys()</h3>
+    <div class="example">
+        <code>
+            const person = {name: "John", age: 30};<br>
+            Object.keys(person).forEach(key => {<br>
+            &nbsp;&nbsp;console.log(`${key}: ${person[key]}`);<br>
+            });
+        </code>
+        <p class="output">Output: name: John, age: 30</p>
+    </div>
+    
+    <h3>3. Object.entries()</h3>
+    <div class="example">
+        <code>
+            const person = {name: "John", age: 30};<br>
+            for (let [key, value] of Object.entries(person)) {<br>
+            &nbsp;&nbsp;console.log(`${key}: ${value}`);<br>
+            }
+        </code>
+        <p class="output">Output: name: John, age: 30</p>
+    </div>
+    
+    <div class="note">
+        <strong>Note:</strong> Use hasOwnProperty() with for...in to exclude prototype properties if needed.
+    </div>
+</body>
+</html>

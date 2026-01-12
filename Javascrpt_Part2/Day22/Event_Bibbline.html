@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Bubbling in JavaScript</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+}
+h1, h2 {
+color: #333;
+}
+code {
+background-color: #f0f0f0;
+padding: 2px 4px;
+border-radius: 2px;
+}
+</style>
+</head>
+<body>
+<h1>Event Bubbling in JavaScript</h1>
+<p>Event bubbling in JavaScript is a mechanism where an event triggered on a child element propagates upward through its ancestors in the DOM. It allows parent elements to respond to events triggered by their child elements.</p>
+Code
+<h2>How Event Bubbling Works</h2>
+<ul>
+    <li><strong>Event Triggering:</strong> The event is triggered on the child element, initiating the event propagation.</li>
+    <li><strong>Event Capturing:</strong> The event propagates from the root of the DOM down to the target (child).</li>
+    <li><strong>Event Bubbling:</strong> After reaching the target element, the event enters the bubbling phase, propagating back up through the DOM tree to the parent.</li>
+    <li><strong>Listener Behavior:</strong> Event listeners are attached to both parent and child elements using addEventListener.</li>
+</ul>
+
+<h2>Example</h2>
+<pre><code>
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+*{
+margin: 25px;
+box-sizing: border-box;
+}
+.grandparent{
+height: 350px;
+width: 350px;
+border: 2px solid red;
+}
+.parent{
+height: 250px;
+width: 250px;
+border: 2px solid blue;
+}
+.child{
+height: 150px;
+width: 150px;
+border: 2px solid green;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="grandparent" id="one"&gt;
+Grandparent
+&lt;div class="parent" id="two"&gt;
+Parent
+&lt;div class="child" id="three"&gt;
+Child
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+let grandparent=document.getElementById('one')
+let parent=document.getElementById('two')
+let child=document.getElementById('three')
+grandparent.addEventListener('click',function(e){
+Code
+        console.log("Grandparent Clicked")
+    })
+    parent.addEventListener('click',function(e){
+        console.log("Parent Clicked")
+    })
+    child.addEventListener('click',function(e){
+        console.log("Child Clicked")
+    })
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+Code
+<h2>Stopping Event Bubbling</h2>
+<p>To stop event bubbling, use the <code>event.stopPropagation()</code> method in the event handler.</p>
+<pre><code>
+grandparent.addEventListener('click',function(e){
+e.stopPropagation()
+console.log("Grandparent Clicked")
+})
+</code></pre>
+Code
+<h2>Event Bubbling vs Event Capturing</h2>
+<table>
+    <tr>
+        <th>Event Bubbling</th>
+        <th>Event Capturing</th>
+    </tr>
+    <tr>
+        <td>The event starts at the target element and propagates upward to the root of the DOM.</td>
+        <td>The event starts at the root of the DOM and propagates downward to the target element.</td>
+    </tr>
+    <tr>
+        <td>Event listeners are attached to handle events during the bubbling phase by default.</td>
+        <td>To handle events in the capturing phase, you must explicitly set the capture option to true in addEventListener.</td>
+    </tr>
+</table>
+</body>
+</html>

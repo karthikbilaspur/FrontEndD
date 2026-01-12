@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encapsulation in JavaScript</title>
+</head>
+<body>
+    <h1>Encapsulation in JavaScript</h1>
+    <p>Encapsulation is a fundamental concept in object-oriented programming that involves bundling data and the methods that operate on that data within a single unit, such as a class, and restricting access to some of the object's components to protect the integrity of the data.</p>
+    
+    <h2>Encapsulation Techniques in JavaScript</h2>
+    <ul>
+        <li><a href="#using-closures">Using Closures</a></li>
+        <li><a href="#using-classes">Using Classes</a></li>
+    </ul>
+    
+    <h2 id="using-closures">Using Closures</h2>
+    <p>Closures are functions that have access to variables in their outer lexical environment, even after the outer function has returned. Private variables and methods can be created using closures.</p>
+    
+    <pre>
+        function BankAccount(accountNumber, accountHolderName, balance) {
+            let _accountNumber = accountNumber;
+            let _accountHolderName = accountHolderName;
+            let _balance = balance;
+        
+            function showAccountDetails() {
+                console.log(`Account Number: ${_accountNumber}`);
+                console.log(`Account Holder Name: ${_accountHolderName}`);
+                console.log(`Balance: ${_balance}`);
+            }
+        
+            function deposit(amount) {
+                _balance += amount;
+                showAccountDetails();
+            }
+        
+            function withdraw(amount) {
+                if (_balance >= amount) {
+                    _balance -= amount;
+                    showAccountDetails();
+                } else {
+                    console.log("Insufficient Balance");
+                }
+            }
+        
+            return {
+                deposit: deposit,
+                withdraw: withdraw
+            };
+        }
+        
+        let myBankAccount = BankAccount("123456", "John Doe", 1000);
+        myBankAccount.deposit(500);
+        myBankAccount.withdraw(2000);
+    </pre>
+    
+    <h2 id="using-classes">Using Classes</h2>
+    <p>ES6 introduced the class syntax in JavaScript, which allows us to define classes and objects in a more structured way. Classes can be used to achieve encapsulation in JavaScript.</p>
+    
+    <pre>
+        class BankAccount {
+            constructor(accountNumber, accountHolderName, balance) {
+                this._accountNumber = accountNumber;
+                this._accountHolderName = accountHolderName;
+                this._balance = balance;
+            }
+        
+            showAccountDetails() {
+                console.log(`Account Number: ${this._accountNumber}`);
+                console.log(`Account Holder Name: ${this._accountHolderName}`);
+                console.log(`Balance: ${this._balance}`);
+            }
+        
+            deposit(amount) {
+                this._balance += amount;
+                this.showAccountDetails();
+            }
+        
+            withdraw(amount) {
+                if (this._balance >= amount) {
+                    this._balance -= amount;
+                    this.showAccountDetails();
+                } else {
+                    console.log("Insufficient Balance");
+                }
+            }
+        }
+        
+        let myBankAccount = new BankAccount("123456", "John Doe", 1000);
+        myBankAccount.deposit(500);
+        myBankAccount.withdraw(2000);
+    </pre>
+</body>
+</html>

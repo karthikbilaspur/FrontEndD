@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure in JavaScript</title>
+</head>
+<body>
+    <h1>Closure in JavaScript</h1>
+    <p>A closure is a function that retains access to its outer function's variables, even after the outer function has finished executing. It "remembers" the environment in which it was created, allowing it to access variables outside its immediate scope.</p>
+    
+    <h2>Example</h2>
+    <pre>
+        function outer() {
+            let outerVar = "I'm in the outer scope!";
+            function inner() {
+                console.log(outerVar); 
+                outerVar = "Updated"
+            }
+            return inner;  
+        }
+        const closure = outer(); 
+        closure();
+        closure();
+    </pre>
+    <p>Output:</p>
+    <pre>
+        I'm in the outer scope!
+        Updated
+    </pre>
+    
+    <h2>Lexical Scoping</h2>
+    <p>Closures rely on lexical scoping, meaning that a function’s scope is determined by where the function is defined, not where it is executed.</p>
+    
+    <h2>Private Variables</h2>
+    <p>Closures allow a function to keep variables hidden and only accessible within that function.</p>
+    <pre>
+        function counter() {
+            let count = 0; 
+            return function () {
+                count++;
+                return count;
+            };
+        }
+        const increment = counter();
+        console.log(increment());
+        console.log(increment());
+        console.log(increment());
+    </pre>
+    <p>Output:</p>
+    <pre>
+        1
+        2
+        3
+    </pre>
+    
+    <h2>Closures and IIFE</h2>
+    <p>IIFEs (Immediately Invoked Function Expressions) use closures to hide data inside the function.</p>
+    <pre>
+        const counter = (function () {
+            let count = 0;
+            return {
+                increment: function () {
+                    count++;
+                    console.log(count);
+                },
+                reset: function () {
+                    count = 0;
+                    console.log("Counter reset");
+                },
+            };
+        })();
+        counter.increment(); 
+        counter.increment(); 
+        counter.reset();
+    </pre>
+    <p>Output:</p>
+    <pre>
+        1
+        2
+        Counter reset
+    </pre>
+    
+    <h2>Closure and setTimeout</h2>
+    <p>Closures are helpful in asynchronous programming because they allow you to keep track of data even after a function has finished running.</p>
+    <pre>
+        function createTimers() {
+            for (let i = 1; i <= 3; i++) {
+                setTimeout(function () {
+                    console.log(`Timer ${i}`);
+                }, i * 1000);
+            }
+        }
+        createTimers();
+    </pre>
+    <p>Output:</p>
+    <pre>
+        Timer 1
+        Timer 2
+        Timer 3
+    </pre>
+    
+    <h2>Function Currying in JavaScript (Closure Example)</h2>
+    <p>Function currying is a technique to transform a function that takes multiple arguments into a series of functions that take one argument at a time.</p>
+    <pre>
+        function add(a) {
+            return function(b) {
+                return a + b;
+            };
+        }
+        const addTwo = add(2);  
+        console.log(addTwo(3));  
+        console.log(addTwo(4));
+    </pre>
+    <p>Output:</p>
+    <pre>
+        5
+        6
+    </pre>
+</body>
+</html>

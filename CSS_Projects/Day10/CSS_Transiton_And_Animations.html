@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions and Animations</title>
+    <style>
+        /* CSS Rule */
+        h1 {
+            color: blue; /* Property: value */
+            font-size: 24px;
+        }
+
+        p {
+            color: green;
+            font-size: 16px;
+        }
+
+        /* Transitions Examples */
+        .transition-example {
+            width: 100px;
+            height: 100px;
+            background-color: #f2f2f2;
+            transition: width 2s, height 2s, background-color 2s;
+        }
+
+        .transition-example:hover {
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+        }
+
+        /* Animations Examples */
+        @keyframes animation-example {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(100px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .animation-example {
+            width: 100px;
+            height: 100px;
+            background-color: #f2f2f2;
+            animation: animation-example 2s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Transitions and Animations</h1>
+    <p>CSS transitions and animations are used to create dynamic and interactive web pages.</p>
+
+    <h2>Transitions</h2>
+    <p>Transitions are used to change the style of an element over a specified duration.</p>
+    <code>
+        <div style="width: 100px; height: 100px; background-color: #f2f2f2; transition: width 2s, height 2s, background-color 2s;">Hover me!</div>
+    </code>
+    <div class="transition-example">Hover me!</div>
+
+    <h2>Animations</h2>
+    <p>Animations are used to create complex and reusable animations.</p>
+    <code>
+        @keyframes animation-example {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(100px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </code>
+    <div class="animation-example">Animated Element</div>
+
+    <h2>Transition Properties</h2>
+    <ul>
+        <li><strong>transition-property:</strong> specifies the property to be transitioned</li>
+        <li><strong>transition-duration:</strong> specifies the duration of the transition</li>
+        <li><strong>transition-timing-function:</strong> specifies the timing function of the transition</li>
+        <li><strong>transition-delay:</strong> specifies the delay before the transition starts</li>
+    </ul>
+
+    <h2>Animation Properties</h2>
+    <ul>
+        <li><strong>animation-name:</strong> specifies the name of the animation</li>
+        <li><strong>animation-duration:</strong> specifies the duration of the animation</li>
+        <li><strong>animation-timing-function:</strong> specifies the timing function of the animation</li>
+        <li><strong>animation-delay:</strong> specifies the delay before the animation starts</li>
+        <li><strong>animation-iteration-count:</strong> specifies the number of times the animation should repeat</li>
+        <li><strong>animation-direction:</strong> specifies the direction of the animation</li>
+        <li><strong>animation-fill-mode:</strong> specifies the fill mode of the animation</li>
+    </ul>
+</body>
+</html>

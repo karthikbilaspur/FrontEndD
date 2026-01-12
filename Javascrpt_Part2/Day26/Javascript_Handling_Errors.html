@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Handling Errors in JavaScript</title>
+</head>
+<body>
+	<h1>Handling Errors in JavaScript</h1>
+	<p>In JavaScript, error handling is used to find errors in the code, allowing coders to identify and resolve issues.</p>
+	<h2>Approaches to Handle Errors in JavaScript</h2>
+	<ol>
+		<li>
+			<h3>Using try, catch, and finally statement</h3>
+			<p>The try, catch, and finally blocks are used for error handling. The try block tests code, catch handles errors, and finally runs at the end regardless of the error.</p>
+			<pre>
+				<code>
+					try {
+						const a = b;
+						console.log(a);
+					} catch (error) {
+						console.log('The error found here is', error);
+					} finally {
+						console.log('runs each and every time');
+					}
+				</code>
+			</pre>
+		</li>
+		<li>
+			<h3>Explicitly causing errors using throw statement</h3>
+			<p>The throw statement in JavaScript is used to explicitly throw errors, which are then caught by the catch block.</p>
+			<pre>
+				<code>
+					try {
+						const a = 10;
+						if (a === 10) {
+							throw Error("Error is caused due to throw statement");
+						}
+						console.log(a);
+					} catch (error) {
+						console.log("The error found here is", error);
+					} finally {
+						console.log("runs each and every time");
+					}
+				</code>
+			</pre>
+		</li>
+		<li>
+			<h3>Errors using Error Object</h3>
+			<p>The Error Object in JavaScript provides a complete object containing the message thrown by the code, allowing users to identify error messages, names, and stacks.</p>
+			<pre>
+				<code>
+					function A() {
+						B();
+					}
+					function B() {
+						C();
+					}
+					function C() {
+						throw new Error('Hello Error hai yahan pai');
+					}
+					try {
+						A();
+					} catch (error) {
+						console.log(error.stack);
+						console.log(error.message);
+						console.log(error.name);
+					}
+				</code>
+			</pre>
+		</li>
+		<li>
+			<h3>Handling Asynchronous Errors with Promises</h3>
+			<p>Handling asynchronous errors with Promises involves using .catch() to catch errors during asynchronous operations, ensuring proper error handling in non-blocking code.</p>
+			<pre>
+				<code>
+					fetch('https://invalid.url')
+						.then(response => response.json())
+						.catch(error => {
+							console.error('Fetch failed:', error.message);
+						});
+				</code>
+			</pre>
+		</li>
+		<li>
+			<h3>Handling Asynchronous Errors with async/await</h3>
+			<p>The try...catch block is commonly used with async/await in asynchronous code to handle errors that may occur during the execution of asynchronous functions.</p>
+			<pre>
+				<code>
+					async function f() {
+						try {
+							let response = await fetch('https://invalid.url');
+							let data = await response.json();
+							console.log(data);
+						} catch (error) {
+							console.error('Error fetching data:', error.message);
+						}
+					}
+					f();
+				</code>
+			</pre>
+		</li>
+	</ol>
+	<h2>Use cases of Error Management in JavaScript</h2>
+	<ul>
+		<li>Network Requests: Handling errors in network operations to manage issues like timeouts, unreachable servers, or invalid responses.</li>
+		<li>User Input Validation: Catching errors when users enter invalid or unexpected data to ensure smooth form submissions and data processing.</li>
+		<li>File System Operations: Managing errors during file reading or writing to avoid crashes and ensure proper handling of file operations.</li>
+		<li>Database Queries: Handling errors during database interactions to prevent system crashes and ensure proper logging and recovery.</li>
+		<li>Asynchronous Operations: Using error handling in async/await or promises to catch errors in asynchronous tasks, ensuring that failures are handled properly without disrupting the main flow of the application.</li>
+	</ul>
+</body>
+</html>

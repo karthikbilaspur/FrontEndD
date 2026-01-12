@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes and Objects in JavaScript</title>
+</head>
+<body>
+    <h1>Classes and Objects in JavaScript</h1>
+    <p>In JavaScript, classes and objects are basic concepts of Object Oriented Programming (OOPs) that are used to represent real-world concepts and entities.</p>
+    
+    <h2>JavaScript Classes</h2>
+    <p>A class in JavaScript is a blueprint used to create objects that share similar properties and methods. It’s a cleaner, more structured way to implement object-oriented programming compared to the older prototype-based approach.</p>
+    
+    <h3>The Constructor Method</h3>
+    <p>The constructor method is a special method in JavaScript with the exact name 'constructor.' It is automatically executed when a new object is created from a class. Its primary purpose is to initialize object properties, allowing you to define the initial state of an object during its instantiation.</p>
+    
+    <pre>
+        // define a class
+        class Dog {
+            static sound = "bark"; // class property
+        
+            constructor(name) {
+                this.name = name; // instance property
+            }
+        }
+    </pre>
+    
+    <h2>JavaScript Class Methods</h2>
+    <p>Defining class methods in JavaScript is easy and simple, we just need to add () following a method name.</p>
+    
+    <pre>
+        class Dog {
+            constructor(name, breed) {
+                this.name = name;   // instance property
+                this.breed = breed; // instance property
+            }
+        
+            // defining method
+            bark() {
+                console.log(`${this.name} says woof!`);
+            }
+        }
+        
+        // creating an object (instance)
+        const myDog = new Dog("Rayne", "Husky");
+        myDog.bark(); // Output: Rayne says woof!
+    </pre>
+    
+    <h2>Class Getters and Setters</h2>
+    <p>We can use getter and setter methods to get the value of an object and set the value of an object. We can use the get keyword for the getter method and the set keyword for the setter methods</p>
+    
+    <pre>
+        class Dog {
+            constructor(name) {
+                this.name = name;
+            }
+        
+            // Getter method
+            get dogName() {
+                return this.name;
+            }
+        
+            // Setter method
+            set dogName(newName) {
+                this.name = newName;
+            }
+        
+            // Regular method
+            bark() {
+                console.log(`${this.name} says woof!`);
+            }
+        }
+        
+        // creating an object
+        let myDog = new Dog('Rayne');
+        console.log(myDog.name); // Rayne
+        
+        myDog.dogName = 'Buddy'; // using setter
+        console.log(myDog.name); // Buddy
+        
+        myDog.bark(); // Buddy says woof!
+    </pre>
+    
+    <h2>Object</h2>
+    <p>An object in JavaScript is a specific instance of a class. It contains its own set of data (properties) and can use the methods defined in its class. Multiple objects can be created from the same class, each having unique values for their properties.</p>
+    
+    <pre>
+        class Dog {
+            static sound = "bark"; // class property
+        }
+        
+        // Create an object from the class
+        let dog1 = new Dog();
+        
+        // Access the class property
+        console.log(Dog.sound); // bark
+    </pre>
+    
+    <h2>JavaScript Object Properties</h2>
+    <p>In JavaScript the members inside the object which are the key: values are called Object properties.</p>
+    
+    <p>To Access Object Properties:</p>
+    <ul>
+        <li>Using dot Notation: <code>object_name.key_1</code></li>
+        <li>Using bracket Notation: <code>object_name["key_1"]</code></li>
+    </ul>
+    
+    <h2>JavaScript Nested Objects</h2>
+    <p>In this case, an object contains another object inside it.</p>
+    
+    <pre>
+        const dog1 = {
+            name: "Rayne",
+            breed: "Husky"
+        };
+        
+        const dog2 = {
+            name: "Buddy",
+            breed: "Beagle"
+        };
+    </pre>
+    
+    <h2>JavaScript Object Methods</h2>
+    <p>In JavaScript, we can add methods to Objects.</p>
+    
+    <pre>
+        const Dog = {
+            breed: 'Husky',
+            color: 'Gray & White',
+            details: {
+                height: '18 inches',
+                weight: '30 pounds'
+            }
+        };
+        
+        console.log(Dog.breed);              // Husky
+        console.log(Dog.details.height);     // 18 inches
+        console.log(Dog["color"]);           // Gray & White
+        console.log(Dog.details["weight"]);  // 30 pounds
+    </pre>
+</body>
+</html>

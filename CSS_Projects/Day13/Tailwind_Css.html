@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS Overview</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    code {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      display: block;
+      margin: 10px 0;
+    }
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Tailwind CSS Overview</h1>
+  <p>Tailwind CSS is a utility-first CSS framework for building custom user interfaces quickly and efficiently.</p>
+
+  <h2>Utility-First</h2>
+  <p>Build custom components using a set of pre-defined utility classes.</p>
+  <code>
+    &lt;div class="bg-blue-500 text-white p-4 rounded-lg"&gt;
+      Hello, World!
+    &lt;/div&gt;
+  </code>
+  <div class="bg-blue-500 text-white p-4 rounded-lg">
+    Hello, World!
+  </div>
+
+  <h2>Responsive Design</h2>
+  <p>Create responsive designs with a simple and intuitive syntax.</p>
+  <code>
+    &lt;div class="md:bg-red-500 lg:bg-green-500 xl:bg-blue-500 p-4 rounded-lg"&gt;
+      Responsive Design
+    &lt;/div&gt;
+  </code>
+  <div class="md:bg-red-500 lg:bg-green-500 xl:bg-blue-500 p-4 rounded-lg">
+    Responsive Design
+  </div>
+
+  <h2>Customization</h2>
+  <p>Configure Tailwind to fit your brand's design system.</p>
+  <code>
+    // tailwind.config.js
+    module.exports = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3498db',
+          },
+        },
+      },
+    }
+  </code>
+
+  <h2>Example Components</h2>
+  <code>
+    &lt;button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"&gt;
+      Click me!
+    &lt;/button&gt;
+  </code>
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    Click me!
+  </button>
+
+  <h2>Getting Started</h2>
+  <p>Install Tailwind CSS via npm: <code>npm install tailwindcss</code></p>
+  <p>Create a <code>tailwind.config.js</code> file: <code>npx tailwindcss init</code></p>
+  <p>Include Tailwind in your CSS: <code>@import 'tailwindcss';</code></p>
+  <p>Start building with Tailwind!</p>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Template Literals</title>
+</head>
+<body>
+    <h1>JavaScript Template Literals</h1>
+    <p>Template literals are string literals that allow embedded expressions (variables) into your code.</p>
+    
+    <h2>Basic Example</h2>
+    <pre>
+let a='GFG'
+console.log(`hello ${a}`)
+    </pre>
+    <p>Output: hello GFG</p>
+    
+    <h2>String Interpolation with Expressions</h2>
+    <pre>
+let x = 5;
+let y = 10;
+console.log(`The sum of ${x} and ${y} is ${x + y}`);
+    </pre>
+    <p>Output: The sum of 5 and 10 is 15</p>
+    
+    <h2>Multi-line Strings with Template Literals</h2>
+    <pre>
+const s = `This is a multi-line
+string that spans across
+several lines.`;
+console.log(s);
+    </pre>
+    <p>Output: This is a multi-line<br>string that spans across<br>several lines.</p>
+    
+    <h2>Tagged Template Literals</h2>
+    <pre>
+function greet(strings, name) {
+    return `${strings[0]}${name.toUpperCase()}${strings[1]}`;
+}
+const name = 'gfg';
+console.log(greet`Hello, ${name}!`);
+    </pre>
+    <p>Output: Hello, GFG!</p>
+    
+    <h2>Escaping Backticks and Dollar Signs</h2>
+    <pre>
+const s = `This is a backtick: \` and this is a dollar sign: \$`;
+console.log(s);
+    </pre>
+    <p>Output: This is a backtick: ` and this is a dollar sign: $</p>
+    
+    <h2>Use Cases</h2>
+    <ol>
+        <li>
+            <h3>Multi-line Strings</h3>
+            <pre>
+const poem = `Roses are red,
+Violets are blue,
+JavaScript is awesome,
+And so are you!`;
+console.log(poem);
+            </pre>
+            <p>Output: Roses are red,<br>Violets are blue,<br>JavaScript is awesome,<br>And so are you!</p>
+        </li>
+        <li>
+            <h3>Dynamic Expressions</h3>
+            <pre>
+const a = 5, b = 10;
+const result = `Sum of ${a} and ${b} is ${a + b}.`;
+console.log(result);
+            </pre>
+            <p>Output: Sum of 5 and 10 is 15.</p>
+        </li>
+        <li>
+            <h3>Tagged Templates</h3>
+            <pre>
+function tag(strings, ...values) {
+    return strings.reduce((acc, str, i) => acc + str + (values[i] || ''), '');
+}
+const output = tag`Hello, ${"Saran"}!`;
+console.log(output);
+            </pre>
+            <p>Output: Hello, Saran!</p>
+        </li>
+        <li>
+            <h3>HTML Template</h3>
+            <pre>
+const title = "Welcome";
+const html = `<h1>${title}</h1>`;
+console.log(html);
+            </pre>
+            <p>Output: <h1>Welcome</h1></p>
+        </li>
+        <li>
+            <h3>Conditionals in Templates</h3>
+            <pre>
+const isAdmin = true;
+const userRole = `User role: ${isAdmin ? "Admin" : "Guest"}.`;
+console.log(userRole);
+            </pre>
+            <p>Output: User role: Admin.</p>
+        </li>
+        <li>
+            <h3>Loops with Templates</h3>
+            <pre>
+const items = ["apple", "banana", "cherry"];
+const list = `Items: ${items.map(item => `\n- ${item}`)}`;
+console.log(list);
+            </pre>
+            <p>Output: Items:<br>- apple,<br>- banana,<br>- cherry</p>
+        </li>
+        <li>
+            <h3>Embedding Functions</h3>
+            <pre>
+const toUpper = str => str.toUpperCase();
+const s = `Shouting: ${toUpper("hello")}`;
+console.log(s);
+            </pre>
+            <p>Output: Shouting: HELLO</p>
+        </li>
+    </ol>
+</body>
+</html>

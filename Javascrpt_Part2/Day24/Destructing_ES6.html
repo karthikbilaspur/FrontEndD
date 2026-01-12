@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Destructuring in ES6?</title>
+</head>
+<body>
+    <h1>What is Destructuring in ES6?</h1>
+    <p>Destructuring in JavaScript allows you to extract values from arrays or objects and assign them to variables in a concise and readable way.</p>
+    
+    <h2>How Destructuring works</h2>
+    <ul>
+        <li>Array Destructuring: It lets you easily grab values from an array and assign them to variables, instead of using the array's index.</li>
+        <li>Object Destructuring: This helps you pick properties from an object and store them in variables, making your code easier to read and understand.</li>
+        <li>Default Values: You can set a backup value for variables while destructuring. If something is missing or undefined, the default will be used instead.</li>
+        <li>Skipping Items: In arrays, you can choose to ignore certain values while destructuring, focusing only on the ones you need.</li>
+        <li>Nested Destructuring: It helps you pull values from objects or arrays within other objects or arrays, all in one go, making the code shorter and more efficient.</li>
+    </ul>
+    
+    <h2>Destructuring Arrays</h2>
+    <pre>
+const fruits = ['apple', 'banana', 'cherry'];
+const [first, second] = fruits;
+console.log(first);  
+console.log(second);
+    </pre>
+    <p>Output: apple, banana</p>
+    
+    <h2>Destructuring Objects</h2>
+    <pre>
+const obj = { name: 'Mohan', age: 30 };
+const { name, age } = obj;
+console.log(name); 
+console.log(age);
+    </pre>
+    <p>Output: Mohan, 30</p>
+    
+    <h2>Nested Destructuring</h2>
+    <pre>
+const obj = { name: 'Shinaya', address: { city: 'Dehradun', zip: '248002' } };
+const { name, address: { city, zip } } = obj;
+console.log(name); 
+console.log(city); 
+console.log(zip);
+    </pre>
+    <p>Output: Shinaya, Dehradun, 248002</p>
+    
+    <h2>Destructuring Function Parameters</h2>
+    <pre>
+function greet({ name, age }) {
+    console.log(`Hello, ${name}. You are ${age} years old.`);
+}
+const person = { name: 'Raj', age: 25 };
+greet(person);
+    </pre>
+    <p>Output: Hello, Raj. You are 25 years old.</p>
+    
+    <h2>Destructuring with Rest Syntax</h2>
+    <pre>
+const obj = { name: 'Raj', age: 25, country: 'India', profession: 'Engineer' };
+const { name, age, ...more } = obj;
+console.log(name);         
+console.log(age);          
+console.log(more);
+    </pre>
+    <p>Output: Raj, 25, { country: 'India', profession: 'Engineer' }</p>
+</body>
+</html>

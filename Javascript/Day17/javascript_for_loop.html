@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript For Loop</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript For Loop</h1>
+    <p>The for loop is used to execute a block of code repeatedly for a specified number of times.</p>
+    <h2>Types of For Loops</h2>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>For Loop</td>
+            <td>Executes a block of code repeatedly for a specified number of times.</td>
+            <td><code>for (let i = 0; i < 5; i++) { console.log(i); }</code></td>
+        </tr>
+        <tr>
+            <td>For-In Loop</td>
+            <td>Executes a block of code for each property of an object.</td>
+            <td><code>for (let prop in obj) { console.log(prop); }</code></td>
+        </tr>
+        <tr>
+            <td>For-Of Loop</td>
+            <td>Executes a block of code for each element of an iterable (array, string, etc.).</td>
+            <td><code>for (let elem of arr) { console.log(elem); }</code></td>
+        </tr>
+    </table>
+
+    <h2>Examples</h2>
+    <h3>For Loop</h3>
+    <code>
+        for (let i = 0; i < 5; i++) {<br>
+            console.log(i);<br>
+        }<br>
+        // Output: 0, 1, 2, 3, 4
+    </code>
+
+    <h3>For-In Loop</h3>
+    <code>
+        let obj = { a: 1, b: 2, c: 3 };<br>
+        for (let prop in obj) {<br>
+            console.log(prop + ": " + obj[prop]);<br>
+        }<br>
+        // Output: a: 1, b: 2, c: 3
+    </code>
+
+    <h3>For-Of Loop</h3>
+    <code>
+        let arr = [1, 2, 3];<br>
+        for (let elem of arr) {<br>
+            console.log(elem);<br>
+        }<br>
+        // Output: 1, 2, 3
+    </code>
+
+    <h3>For Loop with Break Statement</h3>
+    <code>
+        for (let i = 0; i < 5; i++) {<br>
+            if (i === 3) {<br>
+                break;<br>
+            }<br>
+            console.log(i);<br>
+        }<br>
+        // Output: 0, 1, 2
+    </code>
+
+    <h3>For Loop with Continue Statement</h3>
+    <code>
+        for (let i = 0; i < 5; i++) {<br>
+            if (i === 3) {<br>
+                continue;<br>
+            }<br>
+            console.log(i);<br>
+        }<br>
+        // Output: 0, 1, 2, 4
+    </code>
+</body>
+</html>

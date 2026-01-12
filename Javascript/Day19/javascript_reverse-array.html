@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reverse an Array in JavaScript">
+    <meta name="keywords" content="JavaScript, Reverse Array, Array Methods">
+    <title>Reverse an Array in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            color: #00698f;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+        .example {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Reverse an Array in JavaScript</h1>
+    <p>Here are the different methods to reverse an array in JavaScript:</p>
+
+    <h2>1. Using the reverse() Method</h2>
+    <p>JavaScript provides a built-in array method called reverse() that reverses the elements of the array in place.</p>
+    <div class="example">
+        <code>
+            let a = [1, 2, 3, 4, 5];<br>
+            a.reverse();<br>
+            console.log(a); // [5, 4, 3, 2, 1]
+        </code>
+    </div>
+
+    <h2>2. Using For Loop</h2>
+    <p>Another approach is to manually reverse an array by using a loop to swap elements.</p>
+    <div class="example">
+        <code>
+            const a = [1, 2, 3, 4, 5];<br>
+            for (let i = 0; i < Math.floor(a.length / 2); i++) {<br>
+                let temp = a[i];<br>
+                a[i] = a[a.length - 1 - i];<br>
+                a[a.length - 1 - i] = temp;<br>
+            }<br>
+            console.log(a); // [5, 4, 3, 2, 1]
+        </code>
+    </div>
+
+    <h2>3. Using Recursion</h2>
+    <p>You can use recursion by removing the first element of the array, reversing the rest of the array, and then pushing the removed element to the end of the reversed array.</p>
+    <div class="example">
+        <code>
+            const a = [1, 2, 3, 4, 5];<br>
+            const reversed = (function reverse(a) {<br>
+                if (a.length === 0) {<br>
+                    return [];<br>
+                }<br>
+                return [a.pop()].concat(reverse(a));<br>
+            })([...a]);<br>
+            console.log(reversed); // [5, 4, 3, 2, 1]
+        </code>
+    </div>
+
+    <h2>4. Using the reduce() Method</h2>
+    <p>The reduce() method can be used to accumulate the elements of the array in reverse order by pushing each element to the front of the accumulator.</p>
+    <div class="example">
+        <code>
+            let a = [1, 2, 3, 4, 5];<br>
+            let revArr = a.reduce((acc, current) => <br>
+                [current, ...acc], []);<br>
+            console.log(revArr); // [5, 4, 3, 2, 1]
+        </code>
+    </div>
+
+    <h2>5. Using the Spread Operator and reverse()</h2>
+    <p>You can use the spread operator (...) to create a shallow copy of the array and then apply the reverse() method on that copy.</p>
+    <div class="example">
+        <code>
+            let a = [1, 2, 3, 4, 5];<br>
+            let reversed = [...a].reverse();<br>
+            console.log(reversed); // [5, 4, 3, 2, 1]
+        </code>
+    </div>
+
+    <h2>6. Using a Stack (Last-In-First-Out Approach)</h2>
+    <p>A stack follows the Last-In-First-Out (LIFO) principle, which can be used to reverse an array by pushing elements to the stack and then popping them back out.</p>
+    <div class="example">
+        <code>
+            const a = [1, 2, 3, 4, 5];<br>
+            const rev = [];<br>
+            while (a.length > 0) {<br>
+                rev.push(a.pop());<br>
+            }<br>
+            console.log(rev); // [5, 4, 3, 2, 1]
+        </code>
+    </div>
+
+    <script>
+        // Example code
+        let a = [1, 2, 3, 4, 5];
+        a.reverse();
+        console.log(a);
+
+        const b = [1, 2, 3, 4, 5];
+        for (let i = 0; i < Math.floor(b.length / 2); i++) {
+            let temp = b[i];
+            b[i] = b[b.length - 1 - i];
+            b[b.length - 1 - i] = temp;
+        }
+        console.log(b);
+
+        const c = [1, 2, 3, 4, 5];
+        const reversed = (function reverse(a) {
+            if (a.length === 0) {
+                return [];
+            }
+            return [a.pop()].concat(reverse(a));
+        })([...c]);
+        console.log(reversed);
+
+        let d = [1, 2, 3, 4, 5];
+        let revArr = d.reduce((acc, current) => 
+            [current, ...acc], []);
+        console.log(revArr);
+
+        let e = [1, 2, 3, 4, 5];
+        let reversedE = [...e].reverse();
+        console.log(reversedE);
+
+        const f = [1, 2, 3, 4, 5];
+        const revF = [];
+        while (f.length > 0) {
+            revF.push(f.pop());
+        }
+        console.log(revF);
+    </script>
+</body>
+</html>

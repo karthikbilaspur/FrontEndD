@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explain call(), apply(), and bind() methods in JavaScript</title>
+</head>
+<body>
+    <h1>Explain call(), apply(), and bind() methods in JavaScript</h1>
+    <p>JavaScript provides the call(), apply(), and bind() methods for setting the this context within a function. These methods are especially useful when working with object-oriented code or handling different function contexts.</p>
+    
+    <h2>1. Bind() Method</h2>
+    <p>The Bind() Method creates a new function and when that new function is called it set this keyword to the first argument which is passed to the bind method, and if any other sequences of arguments preceding the first argument are passed to the bind method then they are passed as an argument to the new function when the new function is called.</p>
+    
+    <pre>
+        let nameObj = {
+            name: "Tony"
+        }
+        
+        let PrintName = {
+            name: "steve",
+            sayHi: function () {
+                console.log(this.name);
+            }
+        }
+        
+        let HiFun = PrintName.sayHi.bind(nameObj);
+        HiFun();
+    </pre>
+    
+    <h2>2. Call() Method</h2>
+    <p>The Call() Method calls the function directly and sets this to the first argument passed to the call method and if any other sequences of arguments preceding the first argument are passed to the call method then they are passed as an argument to the function.</p>
+    
+    <pre>
+        let nameObj = {
+            name: "Tony"
+        }
+        
+        let PrintName = {
+            name: "steve",
+            sayHi: function (age) {
+                console.log(this.name + " age is " + age);
+            }
+        }
+        
+        PrintName.sayHi.call(nameObj, 42);
+    </pre>
+    
+    <h2>3. Apply() Method</h2>
+    <p>The Apply() Method calls the function directly and sets this to the first argument passed to the apply method and if any other arguments provided as an array are passed to the call method then they are passed as an argument to the function.</p>
+    
+    <pre>
+        let nameObj = {
+            name: "Tony"
+        }
+        
+        let PrintName = {
+            name: "steve",
+            sayHi: function (...age) {
+                console.log(this.name + " age is " + age);
+            }
+        }
+        PrintName.sayHi.apply(nameObj, [42]);
+    </pre>
+    
+    <h2>Polyfills</h2>
+    <h3>Bind Polyfill</h3>
+    <pre>
+        Object.prototype.MyBind = function (bindObj, ...args) {
+            bindObj.myMethod = this;
+            return function () {
+                bindObj.myMethod(...args);
+            }
+        }
+    </pre>
+    
+    <h3>Call Polyfill</h3>
+    <pre>
+        Object.prototype.MyCall = function (bindObj, ...args) {
+            bindObj.myMethod = this;
+            bindObj.myMethod(...args);
+        }
+    </pre>
+    
+    <h3>Apply Polyfill</h3>
+    <pre>
+        Object.prototype.MyApply = function (bindObj, args) {
+            bindObj.myMethod = this;
+            bindObj.myMethod(...args);
+        }
+    </pre>
+</body>
+</html>

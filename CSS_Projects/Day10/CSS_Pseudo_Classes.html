@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Classes</title>
+    <style>
+        /* CSS Rule */
+        h1 {
+            color: blue; /* Property: value */
+            font-size: 24px;
+        }
+
+        p {
+            color: green;
+            font-size: 16px;
+        }
+
+        /* Pseudo Classes Examples */
+        .hover-example:hover {
+            background-color: #f2f2f2;
+        }
+
+        .active-example:active {
+            background-color: #ccc;
+        }
+
+        .focus-example:focus {
+            border: 1px solid #aaa;
+        }
+
+        .visited-example:visited {
+            color: #999;
+        }
+
+        .first-child-example:first-child {
+            background-color: #f2f2f2;
+        }
+
+        .last-child-example:last-child {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pseudo Classes</h1>
+    <p>Pseudo classes are used to define a special state of an element.</p>
+
+    <h2>Types of Pseudo Classes</h2>
+    <ul>
+        <li><strong>:hover</strong> - selects an element when it is hovered over</li>
+        <li><strong>:active</strong> - selects an element when it is being activated (e.g. clicked)</li>
+        <li><strong>:focus</strong> - selects an element when it has focus (e.g. a form input)</li>
+        <li><strong>:visited</strong> - selects a link when it has been visited</li>
+        <li><strong>:first-child</strong> - selects an element that is the first child of its parent</li>
+        <li><strong>:last-child</strong> - selects an element that is the last child of its parent</li>
+    </ul>
+
+    <h2>Pseudo Classes Examples</h2>
+    <code>
+        <div style="background-color: #f2f2f2;">Hover over me!</div>
+    </code>
+    <div class="hover-example">Hover over me!</div>
+
+    <code>
+        <div style="background-color: #ccc;">Click me!</div>
+    </code>
+    <div class="active-example">Click me!</div>
+
+    <code>
+        <input type="text" style="border: 1px solid #aaa;">
+    </code>
+    <input type="text" class="focus-example">
+
+    <code>
+        <a href="#" style="color: #999;">Visited Link</a>
+    </code>
+    <a href="#" class="visited-example">Visited Link</a>
+
+    <code>
+        <div>
+            <p style="background-color: #f2f2f2;">First Child</p>
+            <p>Second Child</p>
+        </div>
+    </code>
+    <div>
+        <p class="first-child-example">First Child</p>
+        <p>Second Child</p>
+    </div>
+
+    <code>
+        <div>
+            <p>First Child</p>
+            <p style="background-color: #ccc;">Last Child</p>
+        </div>
+    </code>
+    <div>
+        <p>First Child</p>
+        <p class="last-child-example">Last Child</p>
+    </div>
+</body>
+</html>

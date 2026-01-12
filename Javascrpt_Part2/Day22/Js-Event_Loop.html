@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Loop in JavaScript</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+}
+h1, h2 {
+color: #333;
+}
+code {
+background-color: #f0f0f0;
+padding: 2px 4px;
+border-radius: 2px;
+}
+</style>
+</head>
+<body>
+<h1>Event Loop in JavaScript</h1>
+<p>The event loop is an important concept in JavaScript that enables asynchronous programming by handling tasks efficiently. Since JavaScript is single-threaded, it uses the event loop to manage the execution of multiple tasks without blocking the main thread.</p>
+Code
+<h2>Example</h2>
+<pre><code>
+console.log("Start");
+setTimeout(() => {
+console.log("setTimeout Callback");
+}, 0);
+Promise.resolve().then(() => {
+console.log("Promise Resolved");
+});
+console.log("End");
+</code></pre>
+<p>Output:</p>
+<pre><code>
+Start
+End
+Promise Resolved
+setTimeout Callback
+</code></pre>
+Code
+<h2>How the Event Loop Works</h2>
+<ul>
+    <li><strong>Call Stack:</strong> JavaScript has a call stack where function execution is managed in a Last-In, First-Out (LIFO) order.</li>
+    <li><strong>Web APIs:</strong> These include setTimeout, setInterval, fetch, DOM events, and other non-blocking operations.</li>
+    <li><strong>Callback Queue (Task Queue):</strong> When an asynchronous operation is completed, its callback is pushed into the task queue.</li>
+    <li><strong>Microtask Queue:</strong> Promises and other microtasks go into the microtask queue, which is processed before the task queue.</li>
+    <li><strong>Event Loop:</strong> It continuously checks the call stack and, if empty, moves tasks from the queue to the stack for execution.</li>
+</ul>
+
+<h2>Phases of the Event Loop</h2>
+<ol>
+    <li><strong>Timers Phase:</strong> Executes callbacks from setTimeout and setInterval.</li>
+    <li><strong>I/O Callbacks Phase:</strong> Handles I/O operations like file reading, network requests, etc.</li>
+    <li><strong>Prepare Phase:</strong> Internal phase used by Node.js.</li>
+    <li><strong>Poll Phase:</strong> Retrieves new I/O events and executes callbacks.</li>
+    <li><strong>Check Phase:</strong> Executes callbacks from setImmediate.</li>
+    <li><strong>Close Callbacks Phase:</strong> Executes close event callbacks, e.g., socket.on('close').</li>
+    <li><strong>Microtasks Execution:</strong> After each phase, the event loop processes the microtask queue before moving to the next phase.</li>
+</ol>
+
+<h2>Common Issues Related to the Event Loop</h2>
+<ul>
+    <li><strong>Blocking the Main Thread:</strong> Heavy computations block the event loop, making the app unresponsive.</li>
+    <li><strong>Delayed Execution of setTimeout:</strong> setTimeout doesn’t always run exactly after the specified time.</li>
+    <li><strong>Priority of Microtasks Over Callbacks:</strong> Microtasks run before setTimeout, even if set with 0ms delay.</li>
+    <li><strong>Callback Hell:</strong> Too many nested callbacks make code unreadable.</li>
+</ul>
+
+<h2>Best Practices for Working with the Event Loop</h2>
+<ul>
+    <li>Use Asynchronous Operations</li>
+    <li>Optimize Long-Running Tasks</li>
+    <li>Use Microtasks Wisely</li>
+    <li>Leverage setImmediate() for High-Priority Tasks</li>
+    <li>Debug Using Performance Tools</li>
+</ul>
+</body>
+</html>

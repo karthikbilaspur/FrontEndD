@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Callbacks</title>
+</head>
+<body>
+    <h1>JavaScript Callbacks</h1>
+    <p>A callback function is a function that is passed as an argument to another function and executed later.</p>
+    <ul>
+        <li>A function can accept another function as a parameter.</li>
+        <li>Callbacks allow one function to call another at a later time.</li>
+        <li>A callback function can execute after another function has finished.</li>
+    </ul>
+
+    <h2>Example:</h2>
+    <pre>
+        function greet(name, callback) {
+            console.log("Hello, " + name);
+            callback();
+        }
+
+        function sayBye() {
+            console.log("Goodbye!");
+        }
+
+        greet("Ajay", sayBye);
+    </pre>
+    <p>Output:</p>
+    <pre>
+        Hello, Ajay
+        Goodbye!
+    </pre>
+    <p>Here, <code>sayBye()</code> is passed as a callback to <code>greet()</code>, which executes after the greeting.</p>
+
+    <h2>How Do Callbacks Work in JavaScript?</h2>
+    <p>JavaScript executes code line by line (synchronously), but sometimes we need to delay execution or wait for a task to complete before running the next function. Callbacks help achieve this by passing a function that is executed later.</p>
+
+    <h2>Callbacks for Asynchronous Execution</h2>
+    <pre>
+        console.log("Start");
+
+        setTimeout(function () {
+            console.log("Inside setTimeout");
+        }, 2000);
+
+        console.log("End");
+    </pre>
+    <p>Output:</p>
+    <pre>
+        Start
+        End
+        Inside setTimeout  (after 2 seconds)
+    </pre>
+    <p><code>setTimeout()</code> is an asynchronous function that takes a callback to execute after 2 seconds. The rest of the code continues executing without waiting.</p>
+
+    <h2>Where Are Callbacks Used?</h2>
+    <ol>
+        <li>Handling Asynchronous Operations</li>
+        <li>Callbacks in Functions Handling Operations</li>
+        <li>Callbacks in Event Listeners</li>
+        <li>Callbacks in API Calls (Fetching Data)</li>
+    </ol>
+
+    <h2>Problems with Callbacks</h2>
+    <ol>
+        <li>Callback Hell (Nested Callbacks)</li>
+        <li>Error Handling Issues in Callbacks</li>
+    </ol>
+
+    <h2>Alternatives to Callbacks</h2>
+    <ol>
+        <li>Promises (Fixing Callback Hell)</li>
+        <li>Async/Await (Cleaner Alternative)</li>
+    </ol>
+
+    <h2>When to Use and Avoid Callbacks?</h2>
+    <p>Use callbacks when:</p>
+    <ul>
+        <li>Handling asynchronous tasks (API calls, file reading).</li>
+        <li>Implementing event-driven programming.</li>
+        <li>Creating higher-order functions.</li>
+    </ul>
+    <p>Avoid callbacks when:</p>
+    <ul>
+        <li>Code becomes nested and unreadable (use Promises or async/await).</li>
+        <li>You need error handling in asynchronous operations (Promises are better).</li>
+    </ul>
+</body>
+</html>

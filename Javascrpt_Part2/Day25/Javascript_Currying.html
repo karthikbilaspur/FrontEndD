@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currying Function in JavaScript</title>
+</head>
+<body>
+    <h1>Currying Function in JavaScript</h1>
+    <p>Currying is used in JavaScript to break down complex function calls into smaller, more manageable steps. It transforms a function with multiple arguments into a series of functions, each taking a single argument.</p>
+
+    <ul>
+        <li>It converts a function with multiple parameters into a sequence of functions.</li>
+        <li>Each function takes a single argument and returns another function until all arguments are received.</li>
+        <li>Helps in functional programming by enabling function reusability and composition.</li>
+    </ul>
+
+    <h2>Example:</h2>
+    <pre>
+        // Normal Function
+        function add(a, b) {
+            return a + b;
+        }
+        console.log(add(2, 3)); 
+
+        // Function Currying
+        function add(a) {
+            return function(b) {
+                return a + b;
+            }
+        }
+
+        const addTwo = add(5);  // First function call with 5
+        console.log(addTwo(4));
+    </pre>
+
+    <h2>How Currying Works in JavaScript?</h2>
+    <p>Currying function in JavaScript can be done manually, but it can also be done using the closure.</p>
+    <ol>
+        <li>Creating the First Function: The first function takes the first argument and gives back a new function to take the next one.</li>
+        <li>Returning a New Function: The returned function takes the next argument and keeps going until all the arguments are given.</li>
+        <li>Returning the Result: Once all the arguments are provided, the final result is calculated and returned.</li>
+    </ol>
+
+    <h2>Currying with Arrow Functions:</h2>
+    <pre>
+        const add = a => b => a + b;
+        console.log(add(5)(4));
+    </pre>
+
+    <h2>When to Use Currying in JavaScript?</h2>
+    <p>In JavaScript, currying function is used in the following cases:</p>
+    <ul>
+        <li>Partial Application: In the partial application we set some arguments in advance in the function and call it later with the remaining arguments.</li>
+        <li>Higher-Order Functions: When one function takes the other functions as arguments (eg: map, filter, reduce) in that case we can use the currying function to manage the arguments more effectively.</li>
+        <li>Functional Programming: Where functions are treated as important and focus is on not changing data and combining functions in those cases currying works perfectly.</li>
+    </ul>
+</body>
+</html>

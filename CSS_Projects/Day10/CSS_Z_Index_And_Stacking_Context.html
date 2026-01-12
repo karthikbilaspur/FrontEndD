@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Z-Index and Stacking Context</title>
+    <style>
+        /* CSS Rule */
+        h1 {
+            color: blue; /* Property: value */
+            font-size: 24px;
+        }
+
+        p {
+            color: green;
+            font-size: 16px;
+        }
+
+        /* Z-Index Examples */
+        .box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .box1 {
+            background-color: #f2f2f2;
+            top: 50px;
+            left: 50px;
+            z-index: 1;
+        }
+
+        .box2 {
+            background-color: #ccc;
+            top: 70px;
+            left: 70px;
+            z-index: 2;
+        }
+
+        .box3 {
+            background-color: #aaa;
+            top: 90px;
+            left: 90px;
+            z-index: 3;
+        }
+
+        /* Stacking Context Examples */
+        .stacking-context {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: #f2f2f2;
+        }
+
+        .stacking-context .box1 {
+            top: 20px;
+            left: 20px;
+            z-index: 1;
+        }
+
+        .stacking-context .box2 {
+            top: 40px;
+            left: 40px;
+            z-index: 2;
+        }
+
+        .stacking-context .box3 {
+            top: 60px;
+            left: 60px;
+            z-index: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Z-Index and Stacking Context</h1>
+    <p>CSS z-index is used to control the stacking order of elements.</p>
+
+    <h2>Z-Index Examples</h2>
+    <code>
+        <div style="position: relative; width: 200px; height: 200px; border: 1px solid black;">
+            <div style="position: absolute; top: 50px; left: 50px; width: 100px; height: 100px; background-color: #f2f2f2; z-index: 1;">Box 1</div>
+            <div style="position: absolute; top: 70px; left: 70px; width: 100px; height: 100px; background-color: #ccc; z-index: 2;">Box 2</div>
+            <div style="position: absolute; top: 90px; left: 90px; width: 100px; height: 100px; background-color: #aaa; z-index: 3;">Box 3</div>
+        </div>
+    </code>
+    <div style="position: relative; width: 200px; height: 200px; border: 1px solid black;">
+        <div class="box box1">Box 1</div>
+        <div class="box box2">Box 2</div>
+        <div class="box box3">Box 3</div>
+    </div>
+
+    <h2>Stacking Context Examples</h2>
+    <p>A stacking context is formed when an element is positioned and has a z-index other than auto, or when an element is a flex item or grid item.</p>
+    <code>
+        <div style="position: relative; width: 200px; height: 200px; border: 1px solid black; background-color: #f2f2f2;">
+            <div style="position: absolute; top: 20px; left: 20px; width: 100px; height: 100px; background-color: #f2f2f2; z-index: 1;">Box 1</div>
+            <div style="position: absolute; top: 40px; left: 40px; width: 100px; height: 100px; background-color: #ccc; z-index: 2;">Box 2</div>
+            <div style="position: absolute; top: 60px; left: 60px; width: 100px; height: 100px; background-color: #aaa; z-index: 3;">Box 3</div>
+        </div>
+    </code>
+    <div class="stacking-context">
+        <div class="box box1">Box 1</div>
+        <div class="box box2">Box 2</div>
+        <div class="box box3">Box 3</div>
+    </div>
+
+    <h2>Rules for Stacking Context</h2>
+    <ul>
+        <li>The stacking context is formed by an element that is positioned and has a z-index other than auto.</li>
+        <li>The stacking context is also formed by an element that is a flex item or grid item.</li>
+        <li>The stacking context is also formed by an element that has an opacity less than 1.</li>
+        <li>The stacking context is also formed by an element that has a transform, filter, or clip-path property.</li>
+    </ul>
+</body>
+</html>

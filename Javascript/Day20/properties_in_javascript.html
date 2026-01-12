@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Object Properties</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .example {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .output {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .note {
+            background-color: #e8f4ff;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Object Properties</h1>
+    <p>Object properties are the values associated with an object, identified by a key (string or symbol).</p>
+    
+    <h2>Property Types</h2>
+    <ul>
+        <li><strong>Data Properties:</strong> Contain a value</li>
+        <li><strong>Accessor Properties:</strong> Define getter/setter functions</li>
+    </ul>
+    
+    <h2>Property Characteristics</h2>
+    <table>
+        <tr>
+            <th>Characteristic</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Value</td>
+            <td>The property's value</td>
+        </tr>
+        <tr>
+            <td>Writable</td>
+            <td>Whether the value can be changed</td>
+        </tr>
+        <tr>
+            <td>Enumerable</td>
+            <td>Whether it appears in for...in loops</td>
+        </tr>
+        <tr>
+            <td>Configurable</td>
+            <td>Whether it can be deleted or modified</td>
+        </tr>
+    </table>
+    
+    <h2>Defining Properties</h2>
+    <h3>1. Object Literal</h3>
+    <div class="example">
+        <code>
+            const person = {<br>
+            &nbsp;&nbsp;name: "John",<br>
+            &nbsp;&nbsp;age: 30<br>
+            };
+        </code>
+    </div>
+    
+    <h3>2. Dot Notation</h3>
+    <div class="example">
+        <code>
+            const person = {}; <br>
+            person.name = "John";<br>
+            person.age = 30;
+        </code>
+    </div>
+    
+    <h3>3. Bracket Notation</h3>
+    <div class="example">
+        <code>
+            const person = {}; <br>
+            person["name"] = "John";<br>
+            person["age"] = 30;
+        </code>
+    </div>
+    
+    <h3>4. Object.defineProperty()</h3>
+    <div class="example">
+        <code>
+            const person = {}; <br>
+            Object.defineProperty(person, 'name', {<br>
+            &nbsp;&nbsp;value: "John",<br>
+            &nbsp;&nbsp;writable: true,<br>
+            &nbsp;&nbsp;enumerable: true<br>
+            });
+        </code>
+    </div>
+    
+    <h2>Property Access</h2>
+    <div class="example">
+        <code>
+            const person = { name: "John", age: 30 };<br>
+            console.log(person.name); // John<br>
+            console.log(person["age"]); // 30
+        </code>
+    </div>
+    
+    <div class="note">
+        <strong>Note:</strong> Property names are strings or symbols. If you use other types, they're converted to strings.
+    </div>
+</body>
+</html>

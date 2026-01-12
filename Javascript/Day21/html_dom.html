@@ -1,0 +1,38 @@
+<!-- HTML5 File: JavaScript HTML DOM Example -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript HTML DOM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="demo">This is some text.</h1>
+    <button onclick="changeText()">Change Text</button>
+
+    <script>
+        // Function to change text content
+        function changeText() {
+            let element = document.getElementById("demo");
+            element.textContent = "Text changed by JavaScript!";
+        }
+
+        // Accessing elements in the DOM
+        let heading = document.getElementById("demo");
+        console.log(heading.textContent);
+
+        // Modifying the DOM
+        document.getElementById("demo").style.color = "blue";
+
+        // Adding an event listener
+        document.querySelector("button").addEventListener("click", function() {
+            console.log("Button clicked!");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    code {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      display: block;
+      margin: 10px 0;
+    }
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+  <h1 class="text-3xl font-bold text-green-600">Tailwind CSS Layout</h1>
+  <p>Tailwind CSS is a utility-first CSS framework for rapid custom UI.</p>
+
+  <h2 class="text-2xl font-bold mt-4">Container</h2>
+  <p>Fix the max-width of an element to match the min-width of the breakpoint.</p>
+  <code>
+    &lt;div class="container mx-auto"&gt;
+      Container
+    &lt;/div&gt;
+  </code>
+  <div class="container mx-auto bg-gray-200 p-4">
+    Container
+  </div>
+
+  <h2 class="text-2xl font-bold mt-4">Box Sizing</h2>
+  <p>Define how the user should calculate the total width and height of an element.</p>
+  <code>
+    &lt;div class="box-border h-32 w-32 p-4 border-4 border-green-500"&gt;
+      Box Sizing
+    &lt;/div&gt;
+  </code>
+  <div class="box-border h-32 w-32 p-4 border-4 border-green-500">
+    Box Sizing
+  </div>
+
+  <h2 class="text-2xl font-bold mt-4">Display</h2>
+  <p>Define how the components are going to be placed on the web page.</p>
+  <code>
+    &lt;div class="block p-4 bg-blue-500 text-white"&gt;
+      Block
+    &lt;/div&gt;
+    &lt;div class="inline p-4 bg-blue-500 text-white"&gt;
+      Inline
+    &lt;/div&gt;
+  </code>
+  <div class="block p-4 bg-blue-500 text-white">
+    Block
+  </div>
+  <div class="inline p-4 bg-blue-500 text-white">
+    Inline
+  </div>
+
+  <h2 class="text-2xl font-bold mt-4">Float</h2>
+  <p>Define the flow of content for controlling the wrapping of content around an element.</p>
+  <code>
+    &lt;div class="float-right p-4 bg-red-500 text-white"&gt;
+      Float Right
+    &lt;/div&gt;
+  </code>
+  <div class="float-right p-4 bg-red-500 text-white">
+    Float Right
+  </div>
+
+  <h2 class="text-2xl font-bold mt-4">Clear</h2>
+  <p>Specify which side of floating elements are not allowed to float.</p>
+  <code>
+    &lt;div class="clear-both p-4 bg-gray-200"&gt;
+      Clear Both
+    &lt;/div&gt;
+  </code>
+  <div class="clear-both p-4 bg-gray-200">
+    Clear Both
+  </div>
+
+  <h2 class="text-2xl font-bold mt-4">Object Fit</h2>
+  <p>Specify how an image or video should be resized to fit its content box.</p>
+  <code>
+    &lt;img class="object-cover h-32 w-32" src="image.jpg"&gt;
+  </code>
+  <img class="object-cover h-32 w-32" src="https://picsum.photos/200/300">
+
+  <h2 class="text-2xl font-bold mt-4">Object Position</h2>
+  <p>Specify how an image or video element is positioned with x/y coordinates.</p>
+  <code>
+    &lt;img class="object-none object-left-top h-32 w-32" src="image.jpg"&gt;
+  </code>
+  <img class="object-none object-left-top h-32 w-32" src="https://picsum.photos/200/300">
+
+  <h2 class="text-2xl font-bold mt-4">Overflow</h2>
+  <p>Tell whether to clip content or to add scroll bars.</p>
+  <code>
+    &lt;div class="overflow-auto h-32 w-32 p-4 bg-gray-200"&gt;
+      Overflow Auto
+    &lt;/div&gt;
+  </code>
+  <div class="overflow-auto h-32 w-32 p-4 bg-gray-200">
+    Overflow Auto
+  </div>
+
+  <h2 class="text-2xl font-bold mt-4">Overscroll Behavior</h2>
+  <p>Set the behavior of the browser when the boundary of a scrolling area is reached.</p>
+  <code>
+    &lt;div class="overscroll-contain h-32 w-32 p-4 bg-gray-200"&gt;
+      Overscroll Contain
+    &lt;/div&gt;
+  </code>
+  <div class="overscroll-contain h-32 w-32 p-4 bg-gray-200">
+    Overscroll Contain
+  </div>
+
+  <h2 class="text-2xl font-bold mt-4">Position</h2>
+  <p>Control how an element is positioned in the DOM.</p>
+  <code>
+    &lt;div class="absolute top-0 left-0 p-4 bg-blue-500 text-white"&gt;
+      Absolute
+    &lt;/div&gt;
+  </code>
+  <div class="absolute top-0 left-0 p-4 bg-blue-500 text-white">
+    Absolute
+  </div>
+
+  <h2 class="text-2xl font-bold mt-4">Top/Right/Bottom/Left</h2>
+  <p>Control the alignment of a positioned element.</p>
+  <code>
+    &lt;div class="absolute top-0 right-0 p-4 bg-red-500 text-white"&gt;
+      Top Right
+    &lt;/div&gt;
+  </code>
+  <div class="absolute top-0 right-0 p-4 bg-red-500 text-white">
+    Top Right
+  </div>
+
+  <h2 class="text-2xl font-bold mt-4">Visibility</h2>
+  <p>Specify whether an element is visible or not.</p>
+  <code>
+    &lt;div class="invisible p-4 bg-gray-200"&gt;
+      Invisible
+    &lt;/div&gt;
+  </code>
+  <div class="invisible p-4 bg-gray-200">
+    Invisible
+  </div>
+
+  <h2 class="text-2xl font-bold mt-4">Z-index</h2>
+  <p>Describe the z-index along the three-dimensional plane.</p>
+  <code>
+    &lt;div class="z-10 p-4 bg-blue-500 text-white"&gt;
+      Z-index 10
+    &lt;/div&gt;
+  </code>
+  <div class="z-10 p-4 bg-blue-500 text-white">
+    Z-index 10
+  </div>
+</body>
+</html>

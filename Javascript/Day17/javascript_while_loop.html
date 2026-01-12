@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript While Loop</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript While Loop</h1>
+    <p>The while loop is used to execute a block of code repeatedly as long as a specified condition is true.</p>
+    <h2>Types of While Loops</h2>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>While Loop</td>
+            <td>Executes a block of code repeatedly as long as the condition is true.</td>
+            <td><code>let i = 0; while (i < 5) { console.log(i); i++; }</code></td>
+        </tr>
+        <tr>
+            <td>Do-While Loop</td>
+            <td>Executes a block of code once, then repeatedly as long as the condition is true.</td>
+            <td><code>let i = 0; do { console.log(i); i++; } while (i < 5);</code></td>
+        </tr>
+    </table>
+
+    <h2>Examples</h2>
+    <h3>While Loop</h3>
+    <code>
+        let i = 0;<br>
+        while (i < 5) {<br>
+            console.log(i);<br>
+            i++;<br>
+        }<br>
+        // Output: 0, 1, 2, 3, 4
+    </code>
+
+    <h3>Do-While Loop</h3>
+    <code>
+        let i = 0;<br>
+        do {<br>
+            console.log(i);<br>
+            i++;<br>
+        } while (i < 5);<br>
+        // Output: 0, 1, 2, 3, 4
+    </code>
+
+    <h3>While Loop with Break Statement</h3>
+    <code>
+        let i = 0;<br>
+        while (i < 5) {<br>
+            if (i === 3) {<br>
+                break;<br>
+            }<br>
+            console.log(i);<br>
+            i++;<br>
+        }<br>
+        // Output: 0, 1, 2
+    </code>
+
+    <h3>While Loop with Continue Statement</h3>
+    <code>
+        let i = 0;<br>
+        while (i < 5) {<br>
+            i++;<br>
+            if (i === 3) {<br>
+                continue;<br>
+            }<br>
+            console.log(i);<br>
+        }<br>
+        // Output: 1, 2, 4, 5
+    </code>
+
+    <h3>Infinite While Loop</h3>
+    <code>
+        let i = 0;<br>
+        while (true) {<br>
+            console.log(i);<br>
+            i++;<br>
+            if (i === 5) {<br>
+                break;<br>
+            }<br>
+        }<br>
+        // Output: 0, 1, 2, 3, 4
+    </code>
+</body>
+</html>

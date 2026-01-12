@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript Functions - Learn about different types of functions in JavaScript">
+    <meta name="keywords" content="JavaScript, Functions, Programming, Web Development">
+    <meta name="author" content="Your Name">
+    <title>JavaScript Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            color: #00698f;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+        .example {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Functions</h1>
+    <p>A function is a block of code that can be called multiple times from different parts of your program.</p>
+
+    <h2>Types of Functions</h2>
+    <ul>
+        <li><code>Named Function</code>: A function with a name.</li>
+        <li><code>Anonymous Function</code>: A function without a name.</li>
+        <li><code>Arrow Function</code>: A shorthand way to write anonymous functions.</li>
+        <li><code>Immediately Invoked Function Expression (IIFE)</code>: A function that is called immediately after it's defined.</li>
+        <li><code>Higher-Order Function</code>: A function that takes another function as an argument or returns a function.</li>
+        <li><code>Recursive Function</code>: A function that calls itself.</li>
+    </ul>
+
+    <h2>Examples</h2>
+    <div class="example">
+        <h3>Simple Function</h3>
+        <code>
+            function greet(name) {<br>
+                console.log(`Hello, ${name}!`);<br>
+            }<br>
+            greet('John'); // Output: Hello, John!
+        </code>
+    </div>
+
+    <div class="example">
+        <h3>Function with Return Value</h3>
+        <code>
+            function add(a, b) {<br>
+                return a + b;<br>
+            }<br>
+            let result = add(2, 3);<br>
+            console.log(result); // Output: 5
+        </code>
+    </div>
+
+    <div class="example">
+        <h3>Function with Default Parameters</h3>
+        <code>
+            function greet(name = 'World') {<br>
+                console.log(`Hello, ${name}!`);<br>
+            }<br>
+            greet(); // Output: Hello, World!<br>
+            greet('John'); // Output: Hello, John!
+        </code>
+    </div>
+
+    <div class="example">
+        <h3>Function with Rest Parameters</h3>
+        <code>
+            function sum(...numbers) {<br>
+                return numbers.reduce((a, b) => a + b, 0);<br>
+            }<br>
+            console.log(sum(1, 2, 3, 4, 5)); // Output: 15
+        </code>
+    </div>
+
+    <div class="example">
+        <h3>Callback Function</h3>
+        <code>
+            function fetchData(callback) {<br>
+                // Simulate a delay<br>
+                setTimeout(() => {<br>
+                    callback('Data received!');<br>
+                }, 2000);<br>
+            }<br>
+            fetchData((data) => console.log(data)); // Output: Data received! (after 2 seconds)
+        </code>
+    </div>
+
+    <script>
+        // Example code
+        function greet(name) {
+            console.log(`Hello, ${name}!`);
+        }
+        greet('John');
+
+        function add(a, b) {
+            return a + b;
+        }
+        let result = add(2, 3);
+        console.log(result);
+
+        function greetDefault(name = 'World') {
+            console.log(`Hello, ${name}!`);
+        }
+        greetDefault();
+        greetDefault('John');
+
+        function sum(...numbers) {
+            return numbers.reduce((a, b) => a + b, 0);
+        }
+        console.log(sum(1, 2, 3, 4, 5));
+
+        function fetchData(callback) {
+            // Simulate a delay
+            setTimeout(() => {
+                callback('Data received!');
+            }, 2000);
+        }
+        fetchData((data) => console.log(data));
+    </script>
+</body>
+</html>

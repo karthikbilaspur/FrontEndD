@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Strict Mode</title>
+</head>
+<body>
+	<h1>JavaScript Strict Mode</h1>
+	<p>Strict Mode in JavaScript is a feature that helps catch common coding mistakes and implement a stricter set of rules to improve code quality. It eliminates silent errors, prevents the use of unsafe actions, and improves performance optimization by JavaScript engines.</p>
+	<h2>Use strict directive</h2>
+	<p>The "use strict"; directive in JavaScript is used to enable strict mode.</p>
+	<pre>
+		<code>
+			"use strict";
+			function showValue() {
+				x = 10;
+			}
+			showValue()
+		</code>
+	</pre>
+	<p>Output:</p>
+	<pre>
+		<code>
+			ReferenceError: x is not defined
+		</code>
+	</pre>
+	<h2>Declaring Strict Mode</h2>
+	<p>Strict mode is declared by placing the "use strict"; directive at the beginning of your JavaScript code or inside a specific function.</p>
+	<h3>For the entire script</h3>
+	<pre>
+		<code>
+			"use strict";
+			// Code here runs in strict mode
+		</code>
+	</pre>
+	<h3>For a specific function</h3>
+	<pre>
+		<code>
+			function m() {
+				"use strict";
+				// Code here runs in strict mode
+			}
+		</code>
+	</pre>
+	<h2>Why to use strict mode</h2>
+	<ul>
+		<li>Catches Common Errors: Strict mode helps catch mistakes like using undeclared variables, which can prevent hard-to-debug issues.</li>
+		<li>Prevents Accidental Globals: It prevents the creation of global variables by accident, making your code more predictable.</li>
+		<li>Disallows Deleting Variables: It prevents deletion of variables or functions, which could lead to unexpected behavior.</li>
+		<li>Improves Performance: Some JavaScript engines can optimize code better when strict mode is enabled, leading to improved performance.</li>
+		<li>Makes Code Safer: Strict mode disables unsafe features and reduces the chances of encountering difficult-to-debug errors, leading to cleaner and more secure code.</li>
+	</ul>
+	<h2>Use Cases for Strict Mode</h2>
+	<ol>
+		<li><strong>Eliminating Silent Errors</strong>: Strict mode throws an error when you attempt to use undeclared variables.</li>
+		<li><strong>Disallowing with Statement</strong>: The with statement is disallowed in strict mode due to its unpredictable behaviour.</li>
+		<li><strong>Securing this in Functions</strong>: In strict mode, 'this' inside a function is undefined, ensuring that you don’t accidentally modify the global object when calling functions without a context.</li>
+		<li><strong>Preventing Writing to Read-Only Properties</strong>: Strict mode prevents modification of read-only properties, ensuring that objects maintain their intended immutability.</li>
+		<li><strong>Preventing eval from Creating Variables</strong>: In strict mode, eval does not create variables in the surrounding scope, which prevents unexpected side effects and improves code security.</li>
+		<li><strong>Disallowing delete on Non-Configurable Properties</strong>: Strict mode throws an error if you attempt to delete non-configurable properties, ensuring that properties cannot be accidentally removed.</li>
+	</ol>
+</body>
+</html>

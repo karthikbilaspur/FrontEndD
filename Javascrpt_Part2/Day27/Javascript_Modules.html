@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Modules</title>
+</head>
+<body>
+    <h1>JavaScript Modules</h1>
+    <p>A JavaScript module is a small piece of code that can be used in different parts of your program. It helps break down big projects into smaller, more manageable sections, each focused on a specific task.</p>
+    
+    <h2>Types of Modules</h2>
+    <p>JavaScript provides two primary module systems:</p>
+    <ul>
+        <li><h3>1. CommonJS Modules</h3>
+            <p>In JavaScript, CommonJS is a module system primarily used in NodeJS environments.</p>
+            <pre>
+                //import
+                const module1 = require('./module1');
+                
+                //export
+                module.exports = { module1, module2, ....};
+            </pre>
+        </li>
+        <li><h3>2. ES6 module</h3>
+            <p>ES6 Modules (ECMAScript Modules) provide a standardized way to structure and organize JavaScript code into separate, reusable modules.</p>
+            <pre>
+                //maths.js
+                export function add(a,b){
+                    return a+b
+                }
+                export const PI=3.1414
+            </pre>
+        </li>
+    </ul>
+    
+    <h2>Use cases of ES6 modules</h2>
+    <ul>
+        <li><h3>1. Default Export and Import</h3>
+            <pre>
+                //greet.js
+                export default function greet(name) {
+                  return `Hello, ${name}!`;
+                }
+            </pre>
+        </li>
+        <li><h3>2. Named Exports with Aliases</h3>
+            <pre>
+                //Operations.js
+                export function multiply(a, b) {
+                    return a * b;
+                  }
+                export function divide(a, b) {
+                    return a / b;
+                  }
+            </pre>
+        </li>
+        <li><h3>3. Dynamic Imports</h3>
+            <pre>
+                //codes2.js
+                (async () => {
+                    const module = await import('./codes1.js');
+                    console.log(module.greet('GFG'));
+                  })();
+            </pre>
+        </li>
+        <li><h3>4. Combining Default and Named Exports</h3>
+            <pre>
+                //person.js
+                export default class Person {
+                    constructor(name) {
+                        this.name = name;
+                    }
+                    sayHello() {
+                        return `Hello, I am ${this.name}`;
+                    }
+                }
+                
+                export const greet = (name) => `Hi, ${name}!`;
+            </pre>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Syntax Summary</title>
+    <style>
+        /* CSS Rule */
+        h1 {
+            color: blue; /* Property: value */
+            font-size: 24px;
+        }
+
+        p {
+            color: green;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello, World!</h1>
+    <p>This is a simple paragraph.</p>
+
+    <h2>Selectors</h2>
+    <ul>
+        <li><strong>Universal Selector:</strong> * { margin: 0; padding: 0; }</li>
+        <li><strong>Type Selector:</strong> h1 { font-family: Arial, sans-serif; }</li>
+        <li><strong>Class Selector:</strong> .box { border: 1px solid black; padding: 10px; }</li>
+        <li><strong>ID Selector:</strong> #header { background-color: lightgray; }</li>
+    </ul>
+
+    <h2>Declaration Block</h2>
+    <ul>
+        <li><strong>Properties:</strong> color, background-color, font-size, margin, padding</li>
+        <li><strong>Values:</strong> color name, number (e.g., 16px), percentages (e.g., 50%)</li>
+    </ul>
+
+    <h2>Grouping and Nesting</h2>
+    <ul>
+        <li><strong>Grouping:</strong> h1, h2, h3 { color: darkblue; }</li>
+        <li><strong>Nesting:</strong> ul li { list-style-type: square; }</li>
+    </ul>
+
+    <h2>Pseudo-classes and Pseudo-elements</h2>
+    <ul>
+        <li><strong>Pseudo-class:</strong> a:hover { color: green; }</li>
+        <li><strong>Pseudo-element:</strong> p::first-line { font-weight: bold; }</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Min and Max of an Array in JavaScript">
+    <meta name="keywords" content="JavaScript, Min, Max, Array Methods">
+    <title>Min and Max of an Array in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #00698f;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+        .example {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .output {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Min and Max of an Array in JavaScript</h1>
+    <p>To find the minimum or maximum element in a JavaScript array, use Math.min or Math.max with the spread operator.</p>
+
+    <h2>Using Math.min() and Math.max() Methods</h2>
+    <p>The Math object's Math.min() and Math.max() methods are static methods that return the minimum and maximum elements of a given array.</p>
+    <div class="example">
+        <code>
+            let Arr = [50, 60, 20, 10, 40];<br>
+            let minVal = Math.min(...Arr);<br>
+            let maxVal = Math.max(...Arr);<br>
+            console.log("Min Elem is:" + minVal); // Min Elem is:10<br>
+            console.log("Max Elem is:" + maxVal); // Max Elem is:60
+        </code>
+        <div class="output">
+            <p>Output:</p>
+            <p>Min Elem is: 10</p>
+            <p>Max Elem is: 60</p>
+        </div>
+    </div>
+
+    <h2>Iterating through the Array</h2>
+    <p>Iterate through the array, initializing the minimum and maximum values to Infinity and -Infinity, respectively.</p>
+    <div class="example">
+        <code>
+            let Arr = [50, 60, 20, 10, 40];<br>
+            let minVal = Infinity;<br>
+            let maxVal = -Infinity;<br>
+            for (let item of Arr) {<br>
+                if (item < minVal) minVal = item;<br>
+                if (item > maxVal) maxVal = item;<br>
+            }<br>
+            console.log("Min elem is: " + minVal); // Min elem is: 10<br>
+            console.log("Max elem is: " + maxVal); // Max elem is: 60
+        </code>
+        <div class="output">
+            <p>Output:</p>
+            <p>Min elem is: 10</p>
+            <p>Max elem is: 60</p>
+        </div>
+    </div>
+
+    <h2>Using a Custom Comparator with Array.sort() Method</h2>
+    <p>The Array.sort() method sorts the elements of an array in place and returns the sorted array.</p>
+    <div class="example">
+        <code>
+            let Arr = [50, 60, 20, 10, 40];<br>
+            Arr.sort((a, b) => a - b);<br>
+            let minVal = Arr[0];<br>
+            Arr.sort((a, b) => b - a);<br>
+            let maxVal = Arr[0];<br>
+            console.log("Min Elem is:" + minVal); // Min Elem is:10<br>
+            console.log("Max Elem is:" + maxVal); // Max Elem is:60
+        </code>
+        <div class="output">
+            <p>Output:</p>
+            <p>Min Elem is: 10</p>
+            <p>Max Elem is: 60</p>
+        </div>
+    </div>
+
+    <script>
+        // Example code
+        let Arr = [50, 60, 20, 10, 40];
+        let minVal = Math.min(...Arr);
+        let maxVal = Math.max(...Arr);
+        console.log("Min Elem is:" + minVal);
+        console.log("Max Elem is:" + maxVal);
+
+        let Arr2 = [50, 60, 20, 10, 40];
+        let minVal2 = Infinity;
+        let maxVal2 = -Infinity;
+        for (let item of Arr2) {
+            if (item < minVal2) minVal2 = item;
+            if (item > maxVal2) maxVal2 = item;
+        }
+        console.log("Min elem is: " + minVal2);
+        console.log("Max elem is: " + maxVal2);
+
+        let Arr3 = [50, 60, 20, 10, 40];
+        Arr3.sort((a, b) => a - b);
+        let minVal3 = Arr3[0];
+        Arr3.sort((a, b) => b - a);
+        let maxVal3 = Arr3[0];
+        console.log("Min Elem is:" + minVal3);
+        console.log("Max Elem is:" + maxVal3);
+    </script>
+</body>
+</html>

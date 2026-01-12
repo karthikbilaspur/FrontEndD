@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A guide to JavaScript output methods, including alert(), console.log(), document.write(), and document.getElementById().">
+	<meta name="keywords" content="JavaScript, output methods, alert, console.log, document.write, document.getElementById">
+	<title>JavaScript Output Methods</title>
+</head>
+<body>
+	<h1>JavaScript Output Methods</h1>
+	<p>JavaScript provides several ways to output data, each with its own specific use case.</p>
+	
+	<h2>alert()</h2>
+	<p>The <b>alert()</b> method displays a dialog box with a message and an OK button.</p>
+	<ul>
+		<li>Useful for displaying important messages to the user.</li>
+		<li>Can be intrusive, as it blocks the execution of the script until the user clicks OK.</li>
+	</ul>
+	<pre>
+		<code>
+			alert("Hello, World!");
+		</code>
+	</pre>
+	
+	<h2>console.log()</h2>
+	<p>The <b>console.log()</b> method outputs a message to the browser's console.</p>
+	<ul>
+		<li>Useful for debugging and testing purposes.</li>
+		<li>Does not affect the user experience, as it is not visible to the user by default.</li>
+	</ul>
+	<pre>
+		<code>
+			console.log("Hello, World!");
+		</code>
+	</pre>
+	
+	<h2>document.write()</h2>
+	<p>The <b>document.write()</b> method writes a string of text to the document.</p>
+	<ul>
+		<li>Useful for simple, static content.</li>
+		<li>Can overwrite the entire document if used after the page has finished loading.</li>
+	</ul>
+	<pre>
+		<code>
+			document.write("Hello, World!");
+		</code>
+	</pre>
+	
+	<h2>document.getElementById()</h2>
+	<p>The <b>document.getElementById()</b> method returns an element with the specified ID.</p>
+	<ul>
+		<li>Useful for manipulating specific elements on the page.</li>
+		<li>Does not output data directly, but rather allows you to access and modify elements.</li>
+	</ul>
+	<pre>
+		<code>
+			// HTML: <p id="myParagraph">Hello, World!</p>
+			var paragraph = document.getElementById("myParagraph");
+			paragraph.innerHTML = "New text!";
+		</code>
+	</pre>
+	
+	<h2>Example Use Cases</h2>
+	<pre>
+		<code>
+			// Display a greeting message
+			alert("Welcome to our website!");
+			
+			// Log a message to the console
+			console.log("User logged in successfully.");
+			
+			// Write a message to the document
+			document.write("<h1>Hello, World!</h1>");
+			
+			// Change the text of a paragraph
+			var paragraph = document.getElementById("myParagraph");
+			paragraph.innerHTML = "New text!";
+		</code>
+	</pre>
+</body>
+</html>

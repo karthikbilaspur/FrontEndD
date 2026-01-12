@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+    <style>
+        /* CSS Rule */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 24px;
+        }
+
+        p {
+            color: var(--secondary-color);
+            font-size: 16px;
+        }
+
+        .variable-example {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Variables</h1>
+    <p>Variables are used to store values that can be reused throughout a CSS document.</p>
+
+    <h2>Types of Variables</h2>
+    <ul>
+        <li><strong>Global Variables</strong> - defined in the :root pseudo-class</li>
+        <li><strong>Local Variables</strong> - defined in a specific selector</li>
+    </ul>
+
+    <h2>Variables Examples</h2>
+    <code>
+        <div style="background-color: #007bff; color: #fff; padding: 10px; border-radius: 5px;">Variable Example</div>
+    </code>
+    <div class="variable-example">Variable Example</div>
+</body>
+</html>

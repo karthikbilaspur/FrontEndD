@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Flexbox</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <style>
+        .flex-container {
+            display: flex;
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+        .flex-item {
+            background-color: #ccc;
+            margin: 10px;
+            padding: 20px;
+            width: 100px;
+        }
+        .flex-direction-row {
+            display: flex;
+            flex-direction: row;
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+        .flex-direction-column {
+            display: flex;
+            flex-direction: column;
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+        .flex-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+        .justify-content {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+        .align-items {
+            display: flex;
+            align-items: center;
+            background-color: #f2f2f2;
+            padding: 10px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Flexbox</h1>
+    <div class="flex-container">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+    <h2>Flex Direction</h2>
+    <div class="flex-direction-row">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+    <div class="flex-direction-column">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+    <h2>Flex Wrap</h2>
+    <div class="flex-wrap">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+        <div class="flex-item">Item 4</div>
+        <div class="flex-item">Item 5</div>
+        <div class="flex-item">Item 6</div>
+    </div>
+    <h2>Justify Content</h2>
+    <div class="justify-content">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+    <h2>Align Items</h2>
+    <div class="align-items">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+    <h2>CSS Flexbox Properties</h2>
+    <table border="1">
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>display</td>
+            <td>Specifies the display type (e.g., flex, inline-flex).</td>
+        </tr>
+        <tr>
+            <td>flex-direction</td>
+            <td>Specifies the direction of the flex items (e.g., row, column).</td>
+        </tr>
+        <tr>
+            <td>flex-wrap</td>
+            <td>Specifies whether the flex items should wrap or not (e.g., wrap, nowrap).</td>
+        </tr>
+        <tr>
+            <td>justify-content</td>
+            <td>Specifies the alignment of the flex items along the main axis (e.g., flex-start, center, space-between).</td>
+        </tr>
+        <tr>
+            <td>align-items</td>
+            <td>Specifies the alignment of the flex items along the cross axis (e.g., flex-start, center, baseline).</td>
+        </tr>
+    </table>
+</body>
+</html>

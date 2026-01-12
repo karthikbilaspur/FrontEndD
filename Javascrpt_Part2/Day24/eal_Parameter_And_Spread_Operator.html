@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Parameter And Spread Operator in JavaScript</title>
+</head>
+<body>
+    <h1>Rest Parameter And Spread Operator in JavaScript</h1>
+    <p>JavaScript introduced the Rest Parameter and Spread Operator in ES6 to make handling functions and arrays more flexible and concise.</p>
+    
+    <h2>Rest Parameter</h2>
+    <p>The Rest Parameter allows functions to accept an indefinite number of arguments as an array.</p>
+    <pre>
+function myFunc(...args) {
+    console.log(args);
+}
+myFunc(1, 2, 3, 4, 5);
+    </pre>
+    <p>Output: [ 1, 2, 3, 4, 5 ]</p>
+    
+    <h3>Using Rest Parameter in Functions</h3>
+    <pre>
+function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+console.log(sum(1,2,3,4,5))
+    </pre>
+    <p>Output: 15</p>
+    
+    <h3>Use cases of Rest Parameter</h3>
+    <ol>
+        <li>
+            <h4>Collecting Function Arguments</h4>
+            <pre>
+function greet(greeting, ...names) {
+    return `${greeting}, ${names.join(' and ')}`;
+}
+console.log(greet("Hello", "John", "Jane", "Bob"));
+            </pre>
+            <p>Output: Hello, John and Jane and Bob</p>
+        </li>
+        <li>
+            <h4>Filtering Properties in Objects</h4>
+            <pre>
+const { a, ...rest } = { a: 1, b: 2, c: 3 };
+console.log(a)
+console.log(rest)
+            </pre>
+            <p>Output: 1, { b: 2, c: 3 }</p>
+        </li>
+        <li>
+            <h4>Destructuring with Rest</h4>
+            <pre>
+const [first, ...rest] = [1, 2, 3, 4];
+console.log(first)
+console.log(rest)
+            </pre>
+            <p>Output: 1, [ 2, 3, 4 ]</p>
+        </li>
+        <li>
+            <h4>Function Default Parameters</h4>
+            <pre>
+function mul(factor, ...nums) {
+    return nums.map(num => num * factor);
+}
+console.log(mul(2,1,2,3,4,5))
+            </pre>
+            <p>Output: [ 2, 4, 6, 8, 10 ]</p>
+        </li>
+    </ol>
+    
+    <h2>Spread Operator</h2>
+    <p>The spread operator (...arr) in JavaScript is used to expand an array or object into individual elements.</p>
+    <pre>
+const n = [1, 2, 3];
+const ne = [...n, 4, 5];  
+console.log(ne);
+    </pre>
+    <p>Output: [ 1, 2, 3, 4, 5 ]</p>
+    
+    <h3>Use cases of Spread Operator</h3>
+    <ol>
+        <li>
+            <h4>Merging Arrays</h4>
+            <pre>
+const a1 = [1, 2];
+const a2 = [3, 4];
+const merged = [...a1, ...a2];
+console.log(merged)
+            </pre>
+            <p>Output: [ 1, 2, 3, 4 ]</p>
+        </li>
+        <li>
+            <h4>Cloning Arrays</h4>
+            <pre>
+const original = [10, 20, 30];
+const clone = [...original];
+console.log(clone)
+            </pre>
+            <p>Output: [ 10, 20, 30 ]</p>
+        </li>
+        <li>
+            <h4>Combining Objects</h4>
+            <pre>
+const obj1 = { a: 1, b: 2 };
+const obj2 = { b: 3, c: 4 };
+const combined = { ...obj1, ...obj2 };
+console.log(combined)
+            </pre>
+            <p>Output: { a: 1, b: 3, c: 4 }</p>
+        </li>
+    </ol>
+    
+    <h2>Differences Between Rest Parameter and Spread Operator</h2>
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>Rest Parameter</th>
+            <th>Spread Operator</th>
+        </tr>
+        <tr>
+            <td>Syntax</td>
+            <td>function(...args) {}</td>
+            <td>[...array], {...object}</td>
+        </tr>
+        <tr>
+            <td>Purpose</td>
+            <td>Collects multiple arguments into an array</td>
+            <td>Expands elements of an array, object, or string</td>
+        </tr>
+        <tr>
+            <td>Usage</td>
+            <td>Function parameters</td>
+            <td>Arrays, objects, function calls</td>
+        </tr>
+        <tr>
+            <td>Returns</td>
+            <td>An array</td>
+            <td>Individual element</td>
+        </tr>
+    </table>
+</body>
+</html>

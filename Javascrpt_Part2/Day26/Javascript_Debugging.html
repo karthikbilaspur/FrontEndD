@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Debugging in JavaScript</title>
+</head>
+<body>
+	<h1>Debugging in JavaScript</h1>
+	<p>Debugging is the process of testing, finding, and reducing bugs (errors) in computer programs. It involves:</p>
+	<ul>
+		<li>Identifying errors (syntax, runtime, or logical errors).</li>
+		<li>Using debugging tools to analyze code execution.</li>
+		<li>Implementing fixes and verifying correctness.</li>
+	</ul>
+
+	<h2>Types of Errors in JavaScript</h2>
+	<ul>
+		<li>
+			<strong>Syntax Errors:</strong> Issues with incorrect syntax, preventing execution.
+			<pre>console.log("Hello); // SyntaxError: missing closing quote</pre>
+		</li>
+		<li>
+			<strong>Runtime Errors:</strong> Errors occurring during execution.
+			<pre>let a = undefined;
+console.log(a.length); // TypeError: Cannot read properties of undefined</pre>
+		</li>
+		<li>
+			<strong>Logical Errors:</strong> Code runs without errors but produces incorrect results.
+			<pre>function add(a, b) {
+    return a - b; // Logical error: should use + instead of -
+}</pre>
+		</li>
+	</ul>
+
+	<h2>JavaScript Debuggers</h2>
+	<h3>1. Built-in Debugging Tools</h3>
+	<p>Modern browsers provide built-in JavaScript debuggers, accessible via Developer Tools. Debuggers can be turned on and off, forcing errors to be reported. They allow setting breakpoints and examining variables while code executes.</p>
+	<p><strong>Steps to Activate Debugging:</strong></p>
+	<ul>
+		<li>Chrome: Open "More tools" → "Developer tools" → Select "Console".</li>
+		<li>Firefox: Open "Web Developer" → "Web Console".</li>
+		<li>Edge: Open "Developer Tools" → Select "Console".</li>
+		<li>Opera: Open "Developer" → "Developer tools" → "Console".</li>
+		<li>Safari: Enable "Show Develop menu in menu bar" under Preferences, then select "Show Error Console".</li>
+	</ul>
+
+	<h3>2. Using console.log()</h3>
+	<p>One of the simplest debugging techniques is logging messages to the console.</p>
+	<pre>let x = 10;
+console.log("Value of x:", x);</pre>
+
+	<h3>3. Setting Breakpoints</h3>
+	<p>Breakpoints stop execution at specific lines, allowing variable inspection.</p>
+	<ol>
+		<li>Open DevTools (F12 or Ctrl+Shift+I).</li>
+		<li>Navigate to the "Sources" tab.</li>
+		<li>Click on line numbers to set breakpoints.</li>
+		<li>Resume execution using the play button after analysis.</li>
+	</ol>
+
+	<h3>4. Using the debugger Keyword</h3>
+	<p>The debugger statement stops execution and opens debugging tools.</p>
+	<pre>function test() {
+    let n = 42;
+    debugger; // Execution pauses here
+    console.log(n);
+}
+test();</pre>
+
+	<h2>Common Debugging Issues and Fixes</h2>
+	<ul>
+		<li>
+			<strong>Debugging Syntax Errors:</strong> Syntax errors occur when code violates JavaScript's syntax rules. These errors are typically caught during compilation.
+			<pre>console.log("Hello);</pre>
+			<p>Fix: Add the missing closing quote.</p>
+		</li>
+		<li>
+			<strong>Using console.log() to Track Values:</strong> Logging variable values helps debug unexpected outputs.
+			<pre>let x = 5;
+console.log("X value:", x);</pre>
+		</li>
+		<li>
+			<strong>Debugging with Breakpoints in DevTools:</strong> Breakpoints allow developers to pause code execution and inspect variable values.
+			<pre>function add(a, b) {
+    return a + b;
+}
+let res = add(5, 10);
+console.log(res);</pre>
+		</li>
+		<li>
+			<strong>Identifying undefined Variables:</strong> Undefined variables usually indicate scope issues or missing arguments.
+			<pre>function greet(name) {
+    console.log("Hello, " + name);
+}
+greet(); // Undefined issue</pre>
+			<p>Fix: Call greet("Ajay") to pass a valid argument.</p>
+		</li>
+		<li>
+			<strong>Catching Errors with try...catch:</strong> Handling runtime errors prevents crashes.
+			<pre>try {
+    let data = JSON.parse("{invalid}");
+} catch (error) {
+    console.error("Parsing error:", error.message);
+}</pre>
+			<p>Fix: Ensure valid JSON input.</p>
+		</li>
+		<li>
+			<strong>Debugging Asynchronous Code with Promises:</strong> Handling async operations can be tricky.
+			<pre>fetch("invalid-url").catch(error => console.error("Request failed", error));</pre>
+			<p>Fix: Handle network errors gracefully.</p>
+		</li>
+		<li>
+			<strong>Debugging Event Listeners:</strong> Event listeners may not trigger as expected.
+			<pre>document.getElementById("btn").addEventListener("click", function() {
+    console.log("Button clicked");
+});</pre>
+			<p>Fix: Ensure the element ID exists.</p>
+		</li>
+		<li>
+			<strong>Memory Leak Detection:</strong> Memory leaks slow down applications.
+			<pre>let a = [];
+setInterval(() => a.push("data"), 1000); // Potential memory leak</pre>
+			<p>Fix: Clear unused data regularly.</p>
+		</li>
+	</ul>
+</body>
+</html>

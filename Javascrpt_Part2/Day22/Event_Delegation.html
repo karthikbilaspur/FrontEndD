@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Delegation in JavaScript</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+}
+h1, h2 {
+color: #333;
+}
+code {
+background-color: #f0f0f0;
+padding: 2px 4px;
+border-radius: 2px;
+}
+</style>
+</head>
+<body>
+<h1>Event Delegation in JavaScript</h1>
+<p>Event Delegation is a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.</p>
+Code
+<h2>Example Without Event Delegation</h2>
+<pre><code>
+const customUI = document.createElement('ul');
+for (var i = 1; i <= 10; i++) {
+const newElement = document.createElement('li');
+newElement.textContent = "This is line " + i;
+newElement.addEventListener('click', () => {
+console.log('Responding')
+})
+customUI.appendChild(newElement);
+}
+</code></pre>
+Code
+<h2>Example With Event Delegation</h2>
+<pre><code>
+const customUI = document.createElement('ul');
+function responding(evt) {
+if (evt.target.nodeName === 'LI')
+console.log('Responding')
+}
+for (var i = 1; i <= 10; i++) {
+const newElement = document.createElement('li');
+newElement.textContent = "This is line " + i;
+customUI.appendChild(newElement);
+}
+customUI.addEventListener('click', responding);
+</code></pre>
+Code
+<h2>How Event Delegation Works</h2>
+<ul>
+    <li>The event is triggered on the child element.</li>
+    <li>The event goes through the capturing phase.</li>
+    <li>It reaches the target element.</li>
+    <li>It switches to the bubbling phase.</li>
+    <li>When it hits the parent element, it runs the event listener.</li>
+    <li>Inside the listener function, event.target is the element that was clicked.</li>
+</ul>
+</body>
+</html>

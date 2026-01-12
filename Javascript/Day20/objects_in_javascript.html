@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Objects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .example {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .output {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .note {
+            background-color: #e8f4ff;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Objects</h1>
+    <p>Objects are the fundamental data structure in JavaScript, used to store collections of key-value pairs.</p>
+    
+    <h2>Creating Objects</h2>
+    <h3>1. Object Literal Syntax</h3>
+    <div class="example">
+        <code>
+            const person = {<br>
+            &nbsp;&nbsp;name: "John Doe",<br>
+            &nbsp;&nbsp;age: 30,<br>
+            &nbsp;&nbsp;profession: "Developer"<br>
+            };
+        </code>
+        <p class="output">Output: { name: 'John Doe', age: 30, profession: 'Developer' }</p>
+    </div>
+    
+    <h3>2. Using new Object()</h3>
+    <div class="example">
+        <code>
+            const person = new Object();<br>
+            person.name = "John Doe";<br>
+            person.age = 30;<br>
+            person.profession = "Developer";
+        </code>
+        <p class="output">Output: { name: 'John Doe', age: 30, profession: 'Developer' }</p>
+    </div>
+    
+    <h2>Object Operations</h2>
+    <ul>
+        <li><strong>Access Properties:</strong> <code>obj.name</code> or <code>obj["name"]</code></li>
+        <li><strong>Modify:</strong> <code>obj.age = 31;</code></li>
+        <li><strong>Add:</strong> <code>obj.city = "New York";</code></li>
+        <li><strong>Remove:</strong> <code>delete obj.profession;</code></li>
+    </ul>
+    
+    <h2>Object Methods</h2>
+    <ul>
+        <li><code>Object.keys(obj)</code> - Returns property names</li>
+        <li><code>Object.values(obj)</code> - Returns property values</li>
+        <li><code>Object.entries(obj)</code> - Returns key-value pairs</li>
+    </ul>
+    
+    <h2>{} vs new Object()</h2>
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>{}</th>
+            <th>new Object()</th>
+        </tr>
+        <tr>
+            <td>Usage</td>
+            <td>Preferred, concise</td>
+            <td>Less common</td>
+        </tr>
+        <tr>
+            <td>Performance</td>
+            <td>Faster</td>
+            <td>Slower</td>
+        </tr>
+    </table>
+    
+    <div class="note">
+        <strong>Best Practice:</strong> Use object literals ({}) for creating objects. It's more concise and efficient.
+    </div>
+</body>
+</html>

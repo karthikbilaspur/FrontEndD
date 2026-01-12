@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to ES6</title>
+</head>
+<body>
+    <h1>Introduction to ES6</h1>
+    <p>ES6, or ECMAScript 2015, is the 6th version of the ECMAScript programming language.</p>
+    
+    <h2>New Features in ES6</h2>
+    <ol>
+        <li>
+            <h3>The let Keyword</h3>
+            <pre>
+let n = 10;
+{
+    let n = 2; 
+    console.log(n);
+}
+console.log(n);
+            </pre>
+            <p>Output: 2, 10</p>
+        </li>
+        <li>
+            <h3>The const Keyword</h3>
+            <pre>
+const PI = 3.14159;
+PI = 3; // Error: Assignment to constant variable
+            </pre>
+        </li>
+        <li>
+            <h3>Arrow Functions</h3>
+            <pre>
+// Traditional function
+function add(a, b) { return a + b; }
+
+// Arrow function
+const add = (a, b) => a + b;
+            </pre>
+        </li>
+        <li>
+            <h3>Destructuring Assignment</h3>
+            <pre>
+const obj = {
+    name : "Raj",
+    age : 25
+};
+const {name, age} = obj;
+console.log(name, age);
+            </pre>
+            <p>Output: Raj 25</p>
+        </li>
+        <li>
+            <h3>The Spread (...) Operator</h3>
+            <pre>
+const n1 = [ 1, 2, 3 ];
+const n2 = [...n1, 4, 5 ];
+console.log(n2);
+            </pre>
+            <p>Output: [ 1, 2, 3, 4, 5 ]</p>
+        </li>
+        <li>
+            <h3>The For/Of Loop</h3>
+            <pre>
+const a = [ "apple", "banana", "cherry" ];
+for (const fruit of a) {
+    console.log(fruit);
+}
+            </pre>
+            <p>Output: apple, banana, cherry</p>
+        </li>
+        <li>
+            <h3>Maps and Sets</h3>
+            <pre>
+const map = new Map();
+map.set("a", 1);
+map.set("b", 2);
+console.log(map.get("a"));
+
+const set = new Set([ 1, 2, 3, 3 ]);
+console.log(set);
+            </pre>
+            <p>Output: 1, Set(3) { 1, 2, 3 }</p>
+        </li>
+        <li>
+            <h3>Classes</h3>
+            <pre>
+class Animal {
+    speak() { console.log("The animal makes a sound"); }
+}
+
+const dog = new Animal();
+dog.speak();
+            </pre>
+            <p>Output: The animal makes a sound</p>
+        </li>
+        <li>
+            <h3>Promises</h3>
+            <pre>
+const fetch = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve("Data fetched"), 2000);
+    });
+};
+
+fetch().then(data => console.log(data));
+            </pre>
+        </li>
+        <li>
+            <h3>Default Parameters</h3>
+            <pre>
+function greet(name = "Guest") { return `Hello, ${name}!`; }
+console.log(greet());
+            </pre>
+            <p>Output: Hello, Guest!</p>
+        </li>
+    </ol>
+</body>
+</html>

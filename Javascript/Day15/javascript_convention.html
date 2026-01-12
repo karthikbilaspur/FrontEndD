@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A comprehensive guide to JavaScript variables, including variable declarations, major JavaScript keywords, and naming conventions.">
+	<meta name="keywords" content="JavaScript, variables, var, let, const, JavaScript keywords, naming conventions">
+	<title>JavaScript Variables</title>
+</head>
+<body>
+	<h1>JavaScript Variables</h1>
+	<p>Variables are used to store and manipulate data in JavaScript. They are essential for writing dynamic and interactive code.</p>
+	
+	<h2>Variable Declarations</h2>
+	<p>JavaScript has three ways to declare variables:</p>
+	<ul>
+		<li><b>var</b>: The original way to declare variables, with function scope. Variables declared with <b>var</b> are "hoisted" to the top of their scope, which means they can be used before they are declared.</li>
+		<li><b>let</b>: A block-scoped variable declaration, introduced in ES6. Variables declared with <b>let</b> are not "hoisted" and can only be used within their block scope.</li>
+		<li><b>const</b>: A block-scoped constant declaration, introduced in ES6. Variables declared with <b>const</b> cannot be reassigned and are also not "hoisted".</li>
+	</ul>
+	
+	<h2>Major JavaScript Keywords</h2>
+	<ul>
+		<li><b>if</b>: Conditional statement. Used to execute a block of code if a condition is true.</li>
+		<li><b>else</b>: Conditional statement. Used to execute a block of code if the condition in the <b>if</b> statement is false.</li>
+		<li><b>switch</b>: Multi-way conditional statement. Used to execute a block of code based on a value.</li>
+		<li><b>for</b>: Loop statement. Used to execute a block of code repeatedly for a specified number of times.</li>
+		<li><b>while</b>: Loop statement. Used to execute a block of code repeatedly while a condition is true.</li>
+		<li><b>function</b>: Function declaration. Used to define a reusable block of code.</li>
+		<li><b>return</b>: Return statement. Used to return a value from a function.</li>
+		<li><b>break</b>: Break statement. Used to exit a loop or switch statement.</li>
+		<li><b>continue</b>: Continue statement. Used to skip the current iteration of a loop.</li>
+	</ul>
+	
+	<h2>Naming Conventions</h2>
+	<p>JavaScript variable names should follow these conventions:</p>
+	<ul>
+		<li>Use camelCase (e.g., <b>myVariable</b>). This means the first letter of the first word is lowercase, and the first letter of each subsequent word is uppercase.</li>
+		<li>Avoid using reserved keywords (e.g., <b>var</b>, <b>let</b>, <b>const</b>).</li>
+		<li>Avoid using special characters (except <b>$</b> and <b>_</b>).</li>
+		<li>Be descriptive and concise. Variable names should clearly indicate what the variable represents.</li>
+	</ul>
+	
+	<h2>Examples</h2>
+	<pre>
+		<code>
+			// Variable declarations
+			var myVariable = 10;
+			let myBlockVariable = 20;
+			const MY_CONSTANT = 30;
+			
+			// Function declaration
+			function myFunction() {
+				console.log(myVariable);
+			}
+			
+			// Conditional statement
+			if (myVariable > 10) {
+				console.log('myVariable is greater than 10');
+			} else {
+				console.log('myVariable is less than or equal to 10');
+			}
+			
+			// Loop statement
+			for (var i = 0; i < 5; i++) {
+				console.log(i);
+			}
+		</code>
+	</pre>
+	
+	<h2>Best Practices</h2>
+	<ul>
+		<li>Use <b>let</b> and <b>const</b> instead of <b>var</b>. This helps to avoid variable hoisting issues and makes the code more readable.</li>
+		<li>Avoid global variables. Global variables can cause naming conflicts and make the code harder to understand.</li>
+		<li>Use descriptive variable names. This makes the code more readable and easier to understand.</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Overview</title>
+</head>
+<body>
+    <h1>CSS (Cascading Style Sheets)</h1>
+    <section>
+        <h2>What is CSS?</h2>
+        <p>CSS stands for Cascading Style Sheets. It is a styling language used to control the layout and appearance of web pages written in HTML or XML.</p>
+    </section>
+
+    <section>
+        <h2>Brief History of CSS</h2>
+        <p>CSS was first proposed by Håkon Wium Lie in 1994 and was first implemented in 1996.</p>
+        <ul>
+            <li>CSS1: Released in 1996</li>
+            <li>CSS2: Released in 1998</li>
+            <li>CSS2.1: Released in 2011</li>
+            <li>CSS3: Released in 2011 (still being developed)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Types of CSS</h2>
+        <ul>
+            <li><strong>Inline CSS:</strong> Applied directly to an HTML element using the style attribute.</li>
+            <li><strong>Internal CSS:</strong> Defined in the head section of an HTML document using the style tag.</li>
+            <li><strong>External CSS:</strong> Defined in an external file (usually with a .css extension) and linked to an HTML document.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Uses of CSS</h2>
+        <ul>
+            <li>Layout and spacing: CSS is used to control the layout and spacing of web pages, including margins, padding, and positioning.</li>
+            <li>Typography: CSS is used to control the typography of web pages, including font family, size, color, and style.</li>
+            <li>Color and background: CSS is used to control the color and background of web pages, including background images and gradients.</li>
+            <li>Responsive design: CSS is used to create responsive designs that adapt to different screen sizes and devices.</li>
+            <li>Animations and transitions: CSS is used to create animations and transitions that enhance the user experience.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Examples</h2>
+        <h3>Inline CSS</h3>
+        <code>&lt;p style="color: blue; font-size: 20px;"&gt;This is a paragraph.&lt;/p&gt;</code>
+
+        <h3>Internal CSS</h3>
+        <code>
+            &lt;head&gt;<br>
+            &nbsp;&nbsp;&lt;style&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;body {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #f2f2f2;<br>
+           0&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;&lt;/style&gt;<br>
+            &lt;/head&gt;
+        </code>
+
+        <h3>External CSS</h3>
+        <code>
+            /* styles.css */<br>
+            body {<br>
+            &nbsp;&nbsp;background-color: #f2f2f2;<br>
+            }
+        </code>
+        <code>
+            &lt;head&gt;<br>
+            &nbsp;&nbsp;&lt;link rel="stylesheet" type="text/css" href="styles.css"&gt;<br>
+            &lt;/head&gt;
+        </code>
+    </section>
+</body>
+</html>

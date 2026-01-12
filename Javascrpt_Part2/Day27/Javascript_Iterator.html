@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Iterator</title>
+</head>
+<body>
+    <h1>JavaScript Iterator</h1>
+    <p>A JavaScript Iterator is an object that lets you traverse through a list or collection one item at a time.</p>
+    
+    <h2>Example</h2>
+    <pre>
+        const array = ['a', 'b', 'c'];
+        const it = array[Symbol.iterator]()
+        for (let value of it) {
+            console.log(value)
+        }
+    </pre>
+    <p>Output:</p>
+    <pre>
+        a
+        b
+        c
+    </pre>
+    
+    <h2>Create our own iterable object</h2>
+    <p>Iterable protocol: The object must define a method with 'Symbol.iterator' the key which returns an object that itself follows iterator protocol.</p>
+    <pre>
+        let obj = {
+          data: [1, 2, 3],
+          [Symbol.iterator]() {
+            let i = 0;
+            return {
+              next: () => ({
+                value: this.data[i],
+                done: i++ >= this.data.length
+              })
+            };
+          }
+        };
+        for (let x of obj) 
+          console.log(x);
+    </pre>
+    <p>Output:</p>
+    <pre>
+        1
+        2
+        3
+    </pre>
+    
+    <h2>Error scenario</h2>
+    <pre>
+        var newIt = arr[Symbol.iterator]
+        newIt()
+        //Because it does not properly bind
+        Uncaught TypeError: Cannot convert undefined or null to object 
+        //How we can fix this 
+        //var newIt = arr[Symbol.iterator].bind(arr); 
+        newIt()
+        Array Iterator { }
+        { value: <currentItem>, done: <boolean> }
+    </pre>
+    
+    <h2>Properties of Iterator</h2>
+    <ul>
+        <li>value: the current item in the sequence</li>
+        <li>done: true if all items have been consumed, otherwise false</li>
+    </ul>
+    
+    <h2>Checking if an object is iterable</h2>
+    <pre>
+        typeof obj?.[Symbol.iterator] === "function"
+    </pre>
+    <p>For example, Array.prototype contains a [Symbol.iterator] method (specifically values()), so arrays are iterable by default. Other built-in iterables include String, Map, and Set—their prototypes also define [Symbol.iterator].</p>
+</body>
+</html>

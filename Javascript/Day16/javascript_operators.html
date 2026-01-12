@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Operators</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Operators</h1>
+    <h2>Types of Operators</h2>
+    <table>
+        <tr>
+            <th>Operator</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>Arithmetic Operators</td>
+            <td>Perform mathematical calculations like addition, subtraction, multiplication, etc.</td>
+            <td><code>const sum = 5 + 3; // 8</code></td>
+        </tr>
+        <tr>
+            <td>Assignment Operators</td>
+            <td>Assign values to variables and perform operations like addition or multiplication.</td>
+            <td><code>let n = 10; n += 5; // 15</code></td>
+        </tr>
+        <tr>
+            <td>Comparison Operators</td>
+            <td>Compare two values and return a boolean (true or false).</td>
+            <td><code>console.log(10 > 5); // true</code></td>
+        </tr>
+        <tr>
+            <td>Logical Operators</td>
+            <td>Perform logical operations like AND, OR, NOT.</td>
+            <td><code>console.log(true && false); // false</code></td>
+        </tr>
+        <tr>
+            <td>Bitwise Operators</td>
+            <td>Perform operations on binary representations of numbers.</td>
+            <td><code>console.log(5 & 1); // 1</code></td>
+        </tr>
+        <tr>
+            <td>Ternary Operator</td>
+            <td>A shorthand for conditional statements.</td>
+            <td><code>const status = age >= 18 ? "Adult" : "Minor";</code></td>
+        </tr>
+        <tr>
+            <td>Comma Operator</td>
+            <td>Evaluate multiple expressions and return the last value.</td>
+            <td><code>const res = (n1 = 1, n2 = 2, n1 + n2); // 3</code></td>
+        </tr>
+        <tr>
+            <td>Unary Operators</td>
+            <td>Operate on a single operand (e.g., increment, decrement).</td>
+            <td><code>let x = 5; console.log(++x); // 6</code></td>
+        </tr>
+        <tr>
+            <td>Relational Operators</td>
+            <td>Check relationships between values.</td>
+            <td><code>console.log("length" in obj); // true</code></td>
+        </tr>
+        <tr>
+            <td>BigInt Operators</td>
+            <td>Perform calculations with large integers.</td>
+            <td><code>const big1 = 123n; console.log(big1 + 1n); // 124n</code></td>
+        </tr>
+        <tr>
+            <td>String Operators</td>
+            <td>Concatenate strings.</td>
+            <td><code>const s = "Hello" + " World"; // "Hello World"</code></td>
+        </tr>
+        <tr>
+            <td>Chaining Operator (?.)</td>
+            <td>Safe navigation operator.</td>
+            <td><code>obj.address?.city; // "Delhi"</code></td>
+        </tr>
+    </table>
+
+    <h2>Examples</h2>
+    <h3>Arithmetic Operators</h3>
+    <code>
+        const sum = 5 + 3; // 8<br>
+        const diff = 10 - 2; // 8<br>
+        const p = 4 * 2; // 8<br>
+        const q = 8 / 2; // 4
+    </code>
+
+    <h3>Assignment Operators</h3>
+    <code>
+        let n = 10;<br>
+        n += 5; // 15<br>
+        n *= 2; // 30
+    </code>
+
+    <h3>Comparison Operators</h3>
+    <code>
+        console.log(10 > 5); // true<br>
+        console.log(10 === "10"); // false
+    </code>
+
+    <h3>Logical Operators</h3>
+    <code>
+        const a = true, b = false;<br>
+        console.log(a && b); // false<br>
+        console.log(a || b); // true
+    </code>
+</body>
+</html>

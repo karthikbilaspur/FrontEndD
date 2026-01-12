@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate the factorial of a number in JavaScript using different methods">
+    <meta name="keywords" content="JavaScript, Factorial, Math, Programming">
+    <meta name="author" content="GeeksforGeeks">
+    <title>Factorial of a Number in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            color: #00698f;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+        .example {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Factorial of a Number in JavaScript</h1>
+    <p>The factorial of a number is a mathematic concept used in many areas like counting possibilities and solving problems.</p>
+
+    <h2>Logic</h2>
+    <p>n! = n × (n-1) × (n-2) × ... × 1</p>
+
+    <h2>Methods</h2>
+    <div class="example">
+        <h3>1. Using Iteration</h3>
+        <code>
+            function fact(n) {<br>
+                let res = 1;<br>
+                for (let i = 1; i <= n; i++) {<br>
+                    res *= i;<br>
+                }<br>
+                return res;<br>
+            }<br>
+            console.log(fact(5)); // Output: 120
+        </code>
+    </div>
+
+    <div class="example">
+        <h3>2. Using Recursion</h3>
+        <code>
+            function fact(n) {<br>
+                if (n === 0 || n === 1) {<br>
+                    return 1;<br>
+                }<br>
+                return n * fact(n - 1);<br>
+            }<br>
+            console.log(fact(5)); // Output: 120
+        </code>
+    </div>
+
+    <div class="example">
+        <h3>3. Using a While Loop</h3>
+        <code>
+            function fact(n) {<br>
+                let res = 1;<br>
+                while (n > 1) {<br>
+                    res *= n;<br>
+                    n--;<br>
+                }<br>
+                return res;<br>
+            }<br>
+            console.log(fact(5)); // Output: 120
+        </code>
+    </div>
+
+    <div class="example">
+        <h3>4. Using Memoization</h3>
+        <code>
+            const fact = (function () {<br>
+                const cache = {};<br>
+                return function facto(n) {<br>
+                    if (n === 0 || n === 1) {<br>
+                        return 1;<br>
+                    }<br>
+                    if (cache[n]) {<br>
+                        console.log("value from cache");<br>
+                        return cache[n];<br>
+                    }<br>
+                    cache[n] = n * facto(n - 1);<br>
+                    return cache[n];<br>
+                };<br>
+            })();<br>
+            console.log(fact(5)); // Output: 120
+        </code>
+    </div>
+
+    <div class="example">
+        <h3>5. Using Functional Programming</h3>
+        <code>
+            const fact = (n) =><br>
+                n === 0 || n === 1<br>
+                    ? 1<br>
+                    : Array.from({ length: n }, (_, i) => i + 1).reduce(<br>
+                        (acc, num) => acc * num,<br>
+                        1<br>
+                    );<br>
+            console.log(fact(5)); // Output: 120
+        </code>
+    </div>
+
+    <h2>Comparison of Methods</h2>
+    <table>
+        <tr>
+            <th>Method</th>
+            <th>Time Complexity</th>
+            <th>Space Complexity</th>
+        </tr>
+        <tr>
+            <td>Iteration</td>
+            <td>O(n)</td>
+            <td>O(1)</td>
+        </tr>
+        <tr>
+            <td>Recursion</td>
+            <td>O(n)</td>
+            <td>O(n)</td>
+        </tr>
+        <tr>
+            <td>While Loop</td>
+            <td>O(n)</td>
+            <td>O(1)</td>
+        </tr>
+        <tr>
+            <td>Memoization</td>
+            <td>O(n)</td>
+            <td>O(n)</td>
+        </tr>
+        <tr>
+            <td>Functional Programming</td>
+            <td>O(n)</td>
+            <td>O(n)</td>
+        </tr>
+    </table>
+
+    <h2>Conclusion</h2>
+    <p>The choice of method depends on the specific use case and requirements. Iteration and while loop methods are simple and efficient, while recursion and memoization methods are more elegant but may have performance issues for large inputs. Functional programming method is concise and expressive but may be less efficient than other methods.</p>
+
+    <script>
+        // Example code
+        function fact(n) {
+            let res = 1;
+            for (let i = 1; i <= n; i++) {
+                res *= i;
+            }
+            return res;
+        }
+        console.log(fact(5));
+
+        function factRecursive(n) {
+            if (n === 0 || n === 1) {
+                return 1;
+            }
+            return n * factRecursive(n - 1);
+        }
+        console.log(factRecursive(5));
+
+        function factWhile(n) {
+            let res = 1;
+            while (n > 1) {
+                res *= n;
+                n--;
+            }
+            return res;
+        }
+        console.log(factWhile(5));
+
+        const factMemo = (function () {
+            const cache = {};
+            return function facto(n) {
+                if (n === 0 || n === 1) {
+                    return 1;
+                }
+                if (cache[n]) {
+                    console.log("value from cache");
+                    return cache[n];
+                }
+                cache[n] = n * facto(n - 1);
+                return cache[n];
+            };
+        })();
+        console.log(factMemo(5));
+
+        const factFunctional = (n) =>
+            n === 0 || n === 1
+                ? 1
+                : Array.from({ length: n }, (_, i) => i + 1).reduce(
+                    (acc, num) => acc * num,
+                    1
+                );
+        console.log(factFunctional(5));
+    </script>
+</body>
+</html>

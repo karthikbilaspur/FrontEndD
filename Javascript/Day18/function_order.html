@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Higher-Order Functions in JavaScript - Learn about higher-order functions and their examples">
+    <meta name="keywords" content="JavaScript, Higher-Order Functions, Programming, Web Development">
+    <meta name="author" content="Your Name">
+    <title>Higher-Order Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            color: #00698f;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+        .example {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Higher-Order Functions</h1>
+    <p>A higher-order function is a function that takes another function as an argument or returns a function as its result.</p>
+
+    <h2>Why Higher-Order Functions?</h2>
+    <ul>
+        <li>They allow us to abstract away complex logic and make our code more reusable.</li>
+        <li>They enable us to create functions that can be customized with different behaviors.</li>
+        <li>They are a key feature of functional programming.</li>
+    </ul>
+
+    <h2>Examples</h2>
+    <div class="example">
+        <h3>Simple Higher-Order Function</h3>
+        <code>
+            function twice(func) {<br>
+                func();<br>
+                func();<br>
+            }<br>
+            twice(() => console.log('Hello World!'));
+        </code>
+    </div>
+
+    <div class="example">
+        <h3>Higher-Order Function with Arguments</h3>
+        <code>
+            function greet(greeting) {<br>
+                return function(name) {<br>
+                    console.log(`${greeting}, ${name}!`);<br>
+                }<br>
+            }<br>
+            const sayHello = greet('Hello');<br>
+            sayHello('John'); // Output: Hello, John!
+        </code>
+    </div>
+
+    <h2>Array Methods as Higher-Order Functions</h2>
+    <div class="example">
+        <h3>Array Method map()</h3>
+        <code>
+            const numbers = [1, 2, 3, 4, 5];<br>
+            const doubleNumbers = numbers.map((num) => num * 2);<br>
+            console.log(doubleNumbers); // Output: [2, 4, 6, 8, 10]
+        </code>
+    </div>
+
+    <div class="example">
+        <h3>Array Method filter()</h3>
+        <code>
+            const numbers = [1, 2, 3, 4, 5];<br>
+            const evenNumbers = numbers.filter((num) => num % 2 === 0);<br>
+            console.log(evenNumbers); // Output: [2, 4]
+        </code>
+    </div>
+
+    <div class="example">
+        <h3>Array Method reduce()</h3>
+        <code>
+            const numbers = [1, 2, 3, 4, 5];<br>
+            const sum = numbers.reduce((acc, num) => acc + num, 0);<br>
+            console.log(sum); // Output: 15
+        </code>
+    </div>
+
+    <div class="example">
+        <h3>Array Method forEach()</h3>
+        <code>
+            const numbers = [1, 2, 3, 4, 5];<br>
+            numbers.forEach((num) => console.log(num));
+        </code>
+    </div>
+
+    <div class="example">
+        <h3>Array Method find()</h3>
+        <code>
+            const numbers = [1, 2, 3, 4, 5];<br>
+            const found = numbers.find((num) => num > 3);<br>
+            console.log(found); // Output: 4
+        </code>
+    </div>
+
+    <div class="example">
+        <h3>Array Method some()</h3>
+        <code>
+            const numbers = [1, 2, 3, 4, 5];<br>
+            const hasEven = numbers.some((num) => num % 2 === 0);<br>
+            console.log(hasEven); // Output: true
+        </code>
+    </div>
+
+    <div class="example">
+        <h3>Array Method every()</h3>
+        <code>
+            const numbers = [1, 2, 3, 4, 5];<br>
+            const allEven = numbers.every((num) => num % 2 === 0);<br>
+            console.log(allEven); // Output: false
+        </code>
+    </div>
+
+    <h2>Function Composition</h2>
+    <div class="example">
+        <h3>Function Composition</h3>
+        <code>
+            const addOne = (x) => x + 1;<br>
+            const multiplyByTwo = (x) => x * 2;<br>
+            const composed = (x) => multiplyByTwo(addOne(x));<br>
+            console.log(composed(5)); // Output: 12
+        </code>
+    </div>
+
+    <h2>Currying</h2>
+    <div class="example">
+        <h3>Currying</h3>
+        <code>
+            function add(a) {<br>
+                return function(b) {<br>
+                    return a + b;<br>
+                }<br>
+            }<br>
+            const addFive = add(5);<br>
+            console.log(addFive(3)); // Output: 8
+        </code>
+    </div>
+
+    <h2>Memoization</h2>
+    <div class="example">
+        <h3>Memoization</h3>
+        <code>
+            function memoize(func) {<br>
+                const cache = {};<br>
+                return function(...args) {<br>
+                    const key = JSON.stringify(args);<br>
+                    if (cache[key]) {<br>
+                        return cache[key];<br>
+                    }<br>
+                    const result = func(...args);<br>
+                    cache[key] = result;<br>
+                    return result;<br>
+                }<br>
+            }<br>
+            const add = (a, b) => a + b;<br>
+            const memoizedAdd = memoize(add);<br>
+            console.log(memoizedAdd(2, 3)); // Output: 5
+        </code>
+    </div>
+
+    <h2>Passing Functions as Arguments</h2>
+    <div class="example">
+        <h3>Passing Functions as Arguments</h3>
+        <code>
+            function greet(func) {<br>
+                func();<br>
+            }<br>
+            greet(() => console.log('Hello World!'));
+        </code>
+    </div>
+
+    <h2>Returning Functions from Functions</h2>
+    <div class="example">
+        <h3>Returning Functions from Functions</h3>
+        <code>
+            function greet() {<br>
+                return function() {<br>
+                    console.log('Hello World!');<br>
+                }<br>
+            }<br>
+            const sayHello = greet();<br>
+            sayHello();
+        </code>
+    </div>
+
+    <script>
+        // Example code
+        function twice(func) {
+            func();
+            func();
+        }
+        twice(() => console.log('Hello World!'));
+
+        function greet(greeting) {
+            return function(name) {
+                console.log(`${greeting}, ${name}!`);
+            }
+        }
+        const sayHello = greet('Hello');
+        sayHello('John');
+
+        const numbers = [1, 2, 3, 4, 5];
+        const doubleNumbers = numbers.map((num) => num * 2);
+        console.log(doubleNumbers);
+
+        const evenNumbers = numbers.filter((num) => num % 2 === 0);
+        console.log(evenNumbers);
+
+        const sum = numbers.reduce((acc, num) => acc + num, 0);
+        console.log(sum);
+
+        numbers.forEach((num) => console.log(num));
+
+        const found = numbers.find((num) => num > 3);
+        console.log(found);
+
+        const hasEven = numbers.some((num) => num % 2 === 0);
+        console.log(hasEven);
+
+        const allEven = numbers.every((num) => num % 2 === 0);
+        console.log(allEven);
+
+        const addOne = (x) => x + 1;
+        const multiplyByTwo = (x) => x * 2;
+        const composed = (x) => multiplyByTwo(addOne(x));
+        console.log(composed(5));
+
+        function add(a) {
+            return function(b) {
+                return a + b;
+            }
+        }
+        const addFive = add(5);
+        console.log(addFive(3));
+
+        function memoize(func) {
+            const cache = {};
+            return function(...args) {
+                const key = JSON.stringify(args);
+                if (cache[key]) {
+                    return cache[key];
+                }
+                const result = func(...args);
+                cache[key] = result;
+                return result;
+            }
+        }
+        const add = (a, b) => a + b;
+        const memoizedAdd = memoize(add);
+        console.log(memoizedAdd(2, 3));
+
+        function greet(func) {
+            func();
+        }
+        greet(() => console.log('Hello World!'));
+
+        function greet() {
+            return function() {
+                console.log('Hello World!');
+            }
+        }
+        const sayHello = greet();
+        sayHello();
+    </script>
+</body>
+</html>

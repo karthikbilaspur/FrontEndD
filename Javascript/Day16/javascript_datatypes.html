@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+<head>
+    <title>JavaScript Data Types</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Data Types</h1>
+    <h2>Primitive Types</h2>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>String</td>
+            <td>Represents a sequence of characters.</td>
+            <td><code>let name = 'John';</code></td>
+        </tr>
+        <tr>
+            <td>Number</td>
+            <td>Represents both integers and floating-point numbers.</td>
+            <td><code>let age = 30; let height = 5.9;</code></td>
+        </tr>
+        <tr>
+            <td>BigInt</td>
+            <td>Represents integers with arbitrary precision.</td>
+            <td><code>let bigNumber = 123456789012345678901234567890n;</code></td>
+        </tr>
+        <tr>
+            <td>Boolean</td>
+            <td>Represents a logical value, either true or false.</td>
+            <td><code>let isAdmin = true;</code></td>
+        </tr>
+        <tr>
+            <td>Null</td>
+            <td>Represents the intentional absence of any object value.</td>
+            <td><code>let data = null;</code></td>
+        </tr>
+        <tr>
+            <td>Undefined</td>
+            <td>Represents an uninitialized variable or a non-existent property.</td>
+            <td><code>let x; console.log(x); // undefined</code></td>
+        </tr>
+        <tr>
+            <td>Symbol</td>
+            <td>Represents a unique identifier.</td>
+            <td><code>let id = Symbol('id');</code></td>
+        </tr>
+    </table>
+
+    <h2>Reference Types</h2>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>Object</td>
+            <td>Represents a collection of key-value pairs.</td>
+            <td><code>let person = { name: 'John', age: 30 };</code></td>
+        </tr>
+        <tr>
+            <td>Array</td>
+            <td>A special type of object representing a collection of elements.</td>
+            <td><code>let numbers = [1, 2, 3, 4, 5];</code></td>
+        </tr>
+        <tr>
+            <td>Function</td>
+            <td>A special type of object that can be invoked.</td>
+            <td><code>function add(a, b) { return a + b; }</code></td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td>Represents a date and time.</td>
+            <td><code>let now = new Date();</code></td>
+        </tr>
+        <tr>
+            <td>RegExp</td>
+            <td>Represents a regular expression.</td>
+            <td><code>let regex = /hello/;</code></td>
+        </tr>
+    </table>
+</body>
+</html>

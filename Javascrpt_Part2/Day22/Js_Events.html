@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Events</title>
+</head>
+<body>
+    <h1>JavaScript Events</h1>
+    <p>JavaScript Events are actions or occurrences that happen in the browser. They can be triggered by various user interactions or by the browser itself.</p>
+    <button onclick="myFun()">Click me</button>
+    <p id="gfg"></p>
+
+    <script>
+        function myFun() {
+            document.getElementById("gfg").innerHTML = "GeeksforGeeks";
+        }
+    </script>
+
+    <h2>Event Types</h2>
+    <ul>
+        <li>Mouse Events: click, dblclick, mousemove, mouseover, mouseout</li>
+        <li>Keyboard Events: keydown, keypress, keyup</li>
+        <li>Form Events: submit, change, focus, blur</li>
+        <li>Window Events: load, resize, scroll</li>
+    </ul>
+
+    <h2>Common JavaScript Events</h2>
+    <table border="1">
+        <tr>
+            <th>Event Attribute</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>onclick</td>
+            <td>Triggered when an element is clicked.</td>
+        </tr>
+        <tr>
+            <td>onmouseover</td>
+            <td>Fired when the mouse pointer moves over an element.</td>
+        </tr>
+        <tr>
+            <td>onmouseout</td>
+            <td>Occurs when the mouse pointer leaves an element.</td>
+        </tr>
+        <tr>
+            <td>onkeydown</td>
+            <td>Fired when a key is pressed down.</td>
+        </tr>
+        <tr>
+            <td>onkeyup</td>
+            <td>Fired when a key is released.</td>
+        </tr>
+        <tr>
+            <td>onchange</td>
+            <td>Triggered when the value of an input element changes.</td>
+        </tr>
+        <tr>
+            <td>onload</td>
+            <td>Occurs when a page has finished loading.</td>
+        </tr>
+        <tr>
+            <td>onsubmit</td>
+            <td>Fired when a form is submitted.</td>
+        </tr>
+        <tr>
+            <td>onfocus</td>
+            <td>Occurs when an element gets focus.</td>
+        </tr>
+        <tr>
+            <td>onblur</td>
+            <td>Fired when an element loses focus.</td>
+        </tr>
+    </table>
+
+    <h2>JavaScript Event Handlers</h2>
+    <p>Event handlers can be used to handle and verify user input, user actions, and browser actions:</p>
+    <ul>
+        <li>Things that should be done every time a page loads</li>
+        <li>Things that should be done when the page is closed</li>
+        <li>Action that should be performed when a user clicks a button</li>
+        <li>Content that should be verified when a user inputs data</li>
+    </ul>
+
+    <h2>Event Handling Methods</h2>
+    <ol>
+        <li>Inline HTML Handlers</li>
+        <li>DOM Property Handlers</li>
+        <li>addEventListener() (Preferred)</li>
+    </ol>
+
+    <h2>Event Propagation</h2>
+    <p>JavaScript events propagate in two phases:</p>
+    <ul>
+        <li>Capturing Phase: Event travels from the root to the target element.</li>
+        <li>Bubbling Phase: Event travels from the target element back to the root.</li>
+    </ul>
+
+    <h2>Event Delegation</h2>
+    <p>Event delegation allows you to handle events efficiently by attaching a single listener to a parent element.</p>
+
+    <h2>Preventing Default Behavior</h2>
+    <p>Certain elements have default actions (e.g., links navigating to URLs). Use preventDefault() to override them.</p>
+
+    <h2>Practical Applications</h2>
+    <ul>
+        <li>Form Validation</li>
+        <li>Dynamic Content</li>
+        <li>Interactive Lists</li>
+    </ul>
+
+    <h2>Examples</h2>
+    <h3>Form Validation</h3>
+    <form id="example">
+        <input type="text" placeholder="Enter something" id="formInput" />
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        document.querySelector("#example").addEventListener("submit", (e) => {
+            let input = document.querySelector("#formInput");
+            if (!input.value) {
+                e.preventDefault();
+                alert("Input cannot be empty");
+            }
+        });
+    </script>
+
+    <h3>Dynamic Content</h3>
+    <button id="button">Add Element</button>
+    <script>
+        document.querySelector("#button").addEventListener("click", () => {
+            let newDiv = document.createElement("div");
+            newDiv.textContent = "New Element Added";
+            newDiv.style.margin = "10px 0";
+            document.body.appendChild(newDiv);
+        });
+    </script>
+
+    <h3>Interactive Lists</h3>
+    <ul id="lists">
+        <li>Interactive Item 1</li>
+        <li>Interactive Item 2</li>
+        <li>Interactive Item 3</li>
+    </ul>
+    <script>
+        let ul = document.querySelector("#lists");
+
+        ul.addEventListener("click", (e) => {
+            if (e.target.tagName === "LI") {
+                e.target.style.backgroundColor = "yellow";
+            }
+        });
+    </script>
+</body>
+</html>
