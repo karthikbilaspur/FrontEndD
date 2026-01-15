@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TypeScript Examples</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+}
+h1, h2 {
+color: #333;
+}
+code {
+background-color: #f0f0f0;
+padding: 2px 4px;
+border-radius: 4px;
+}
+pre {
+background-color: #f0f0f0;
+padding: 10px;
+border-radius: 4px;
+overflow-x: auto;
+}
+</style>
+</head>
+<body>
+<h1>TypeScript Examples</h1>
+Code
+<h2>Hello World Example</h2>
+<pre><code>// hello.ts
+function greet(name: string) {
+console.log(Hello, ${name}!);
+}
+greet("John");</code></pre>
+Code
+<h2>Saving the File</h2>
+<p>Save this file with a <code>.ts</code> extension, e.g., <code>hello.ts</code>.</p>
+
+<h2>Compiling the File</h2>
+<p>To compile the TypeScript file, run the following command in your terminal:</p>
+<pre><code>tsc hello.ts</code></pre>
+<p>This will generate a <code>hello.js</code> file that you can run with Node.js:</p>
+<pre><code>node hello.js</code></pre>
+
+<h2>TypeScript Configuration</h2>
+<p>Create a <code>tsconfig.json</code> file to configure the TypeScript compiler:</p>
+<pre><code>{
+"compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "build"
+},
+"include": ["src/**/*"]
+}</code></pre>
+<p>This configuration tells TypeScript to:</p>
+<ul>
+<li>Target ES6 syntax</li>
+<li>Use CommonJS modules</li>
+<li>Output compiled files to the <code>build</code> directory</li>
+<li>Include files in the <code>src</code> directory and its subdirectories</li>
+</ul>
+Code
+<h2>Example Directory Structure</h2>
+<pre><code>project/
+|--- src/
+| |--- hello.ts
+|--- tsconfig.json
+|--- build/
+| |--- hello.js</code></pre>
+Code
+<h2>Running the Compiler with Configuration</h2>
+<p>To compile the TypeScript files using the <code>tsconfig.json</code> configuration, run:</p>
+<pre><code>tsc</code></pre>
+<p>This will compile all files in the <code>src</code> directory and output the compiled JavaScript files to the <code>build</code> directory.</p>
+
+<h2>Example with Classes and Interfaces</h2>
+<pre><code>// person.ts
+interface Person {
+name: string;
+age: number;
+}
+class Employee implements Person {
+name: string;
+age: number;
+employeeId: number;
+Code
+constructor(name: string, age: number, employeeId: number) {
+    this.name = name;
+    this.age = age;
+    this.employeeId = employeeId;
+}
+
+greet() {
+    console.log(`Hello, my name is ${this.name} and I'm ${this.age} years old.`);
+}
+}
+const emp = new Employee("John Doe", 30, 123);
+emp.greet();</code></pre>
+Code
+<h2>Example with Type Inference</h2>
+<pre><code>// type-inference.ts
+let name = "John"; // inferred type: string
+let age = 30; // inferred type: number
+// Error: Type 'string' is not assignable to type 'number'.
+age = "thirty";</code></pre>
+</body>
+</html>

@@ -1,0 +1,76 @@
+// Your code goes here<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>http Module</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/dist/dark.min.css">
+</head>
+<body>
+  <h1>http Module</h1>
+
+  <p>The http module is a built-in Node.js module that allows you to create an HTTP server and handle HTTP requests.</p>
+
+  <h2>What is HTTP?</h2>
+  <p>HTTP (Hypertext Transfer Protocol) is a protocol used for transferring data over the web. It's a request-response protocol, where a client (usually a web browser) sends a request to a server, and the server responds with the requested data.</p>
+
+  <h2>Creating an HTTP Server</h2>
+  <p>To create an HTTP server using the http module, you can use the createServer() method:</p>
+  <pre><code>const http = require('http');
+
+const server = http.createServer((req, res) => {
+  // Handle HTTP requests here
+});
+
+server.listen(3000, () => {
+  console.log('Server listening on port 3000');
+});</code></pre>
+
+  <h2>Handling HTTP Requests</h2>
+  <p>The createServer() method takes a callback function that handles HTTP requests. This function receives two arguments: req (the request object) and res (the response object).</p>
+  <pre><code>const http = require('http');
+
+const server = http.createServer((req, res) => {
+  console.log(`Request method: ${req.method}`);
+  console.log(`Request URL: ${req.url}`);
+
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello, World!');
+});
+
+server.listen(3000, () => {
+  console.log('Server listening on port 3000');
+});</code></pre>
+
+  <h2>HTTP Request Methods</h2>
+  <ul>
+    <li><strong>GET:</strong> Retrieve data from the server</li>
+    <li><strong>POST:</strong> Send data to the server</li>
+    <li><strong>PUT:</strong> Update data on the server</li>
+    <li><strong>DELETE:</strong> Delete data from the server</li>
+  </ul>
+
+  <h2>HTTP Response Status Codes</h2>
+  <ul>
+    <li><strong>200 OK:</strong> The request was successful</li>
+    <li><strong>404 Not Found:</strong> The requested resource was not found</li>
+    <li><strong>500 Internal Server Error:</strong> An error occurred on the server</li>
+  </ul>
+
+  <h2>Example Use Case</h2>
+  <p>Here's an example of a simple HTTP server that responds to GET requests:</p>
+  <pre><code>const http = require('http');
+
+const server = http.createServer((req, res) => {
+  if (req.method === 'GET' && req.url === '/') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, World!');
+  } else {
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Not Found');
+  }
+});
+
+server.listen(3000, () => {
+  console.log('Server listening on port 3000');
+});</code></pre>
+</body>
+</html>

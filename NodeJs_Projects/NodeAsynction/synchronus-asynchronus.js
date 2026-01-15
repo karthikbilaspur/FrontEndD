@@ -1,0 +1,87 @@
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+    res.send(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Sync vs Async</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    text-align: center;
+                }
+                button {
+                    margin: 10px;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                }
+                #output {
+                    margin-top: 20px;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    width: 50%;
+                    margin: 20px auto;
+                    text-align: left;
+                }
+                .sync {
+                    color: #00698f;
+                }
+                .async {
+                    color: #4CAF50;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Sync vs Async Example</h1>
+            <button onclick="syncFunction()">Sync Function</button>
+            <button onclick="asyncFunction()">Async Function</button>
+            <button onclick="resetOutput()">Reset Output</button>
+            <div id="output"></div>
+
+            <script>
+                function syncFunction() {
+                    logOutput('Sync started...', 'sync');
+                    // simulate a time-consuming task
+                    const startTime = new Date().getTime();
+                    for (let i = 0; i < 1000000000; i++) {}
+                    const endTime = new Date().getTime();
+                    logOutput('Sync finished! Took ' + (endTime - startTime) + 'ms', 'sync');
+                    logOutput('Sync is blocking, so next task will only execute after this.', 'sync');
+                }
+
+                function asyncFunction() {
+                    logOutput('Async started...', 'async');
+                    const startTime = new Date().getTime();
+                    setTimeout(() => {
+                        const endTime = new Date().getTime();
+                        logOutput('Async finished! Took ' + (endTime - startTime) + 'ms', 'async');
+                    }, 2000); // simulate a delayed task
+                    logOutput('Async is non-blocking, so next task executes immediately.', 'async');
+                    logOutput('This is useful for tasks like API calls or file uploads.', 'async');
+                }
+
+                function logOutput(message, type) {
+                    const outputDiv = document.getElementById('output');
+                    const className = type === 'sync' ? 'sync' : 'async';
+                    outputDiv.innerHTML += '<p class="' + className + '">' + message + '</p>';
+                    outputDiv.scrollTop = outputDiv.scrollHeight; // scroll to bottom
+                }
+
+                function resetOutput() {
+                    document.getElementById('output').innerHTML = '';
+                }
+            </script>
+        </body>
+        </html>
+    `);
+});
+
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+    console.log(`Open http://localhost:${port} in your browser`);
+});

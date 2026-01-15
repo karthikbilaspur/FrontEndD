@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>http Module</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/dist/dark.min.css">
+</head>
+<body>
+  <h1>http Module</h1>
+
+  <h2>What is HTTP?</h2>
+  <p>HTTP (Hypertext Transfer Protocol) is a protocol used for transferring data over the web.</p>
+
+  <h2>Creating an HTTP Server</h2>
+  <p>To create an HTTP server, use the <code>createServer()</code> method:</p>
+  <pre><code>const http = require('http');
+const server = http.createServer((req, res) => {
+  // Handle HTTP requests here
+});
+server.listen(3000, () => {
+  console.log('Server listening on port 3000');
+});</code></pre>
+
+  <h2>Handling HTTP Requests</h2>
+  <p>The <code>createServer()</code> method takes a callback function that handles HTTP requests:</p>
+  <pre><code>const http = require('http');
+const server = http.createServer((req, res) => {
+  console.log(`Request method: ${req.method}`);
+  console.log(`Request URL: ${req.url}`);
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello, World!');
+});
+server.listen(3000, () => {
+  console.log('Server listening on port 3000');
+});</code></pre>
+</body>
+</html>

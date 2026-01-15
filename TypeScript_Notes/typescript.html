@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TypeScript Overview</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+}
+h1, h2 {
+color: #333;
+}
+code {
+background-color: #f0f0f0;
+padding: 2px 4px;
+border-radius: 4px;
+}
+pre {
+background-color: #f0f0f0;
+padding: 10px;
+border-radius: 4px;
+overflow-x: auto;
+}
+</style>
+</head>
+<body>
+<h1>What is TypeScript?</h1>
+<p>TypeScript is a statically typed, multi-paradigm programming language developed by Microsoft. It's a superset of JavaScript, meaning it adds optional static typing and other features to improve the development experience.</p>
+Code
+<h2>Key Features:</h2>
+<ul>
+    <li><strong>Statically typed</strong>: catches type-related errors at compile-time rather than runtime</li>
+    <li><strong>Object-oriented</strong>: supports classes, interfaces, inheritance, and generics</li>
+    <li><strong>Compatible with existing JavaScript code</strong>: can be used with popular frameworks like React, Angular, and Vue</li>
+</ul>
+
+<h2>History of TypeScript</h2>
+<p>TypeScript was developed by Microsoft and released in 2012. It was designed to overcome some of the limitations of JavaScript, particularly in large-scale projects. The language has gained significant popularity and is now regarded by many as the future of JavaScript development.</p>
+
+<h2>Advantages of TypeScript</h2>
+<ul>
+    <li><strong>Static Typing</strong>: TypeScript introduces optional static typing, allowing developers to catch type-related errors during development, even before the code is executed.</li>
+    <li><strong>Improved Code Quality</strong>: With type annotations, developers can express the intentions and contracts of functions and classes more clearly, promoting better collaboration and code maintainability.</li>
+    <li><strong>Enhanced Tooling Support</strong>: TypeScript has excellent integration with popular IDEs like Visual Studio Code, providing features like autocompletion, inline documentation, error checking, and intelligent code navigation.</li>
+    <li><strong>Scalability</strong>: TypeScript's modularity and strong typing make it ideal for complex systems involving multiple developers.</li>
+    <li><strong>Future-Proofing</strong>: TypeScript often introduces support for new ECMAScript features before they are fully implemented in browsers.</li>
+</ul>
+
+<h2>Disadvantages of TypeScript</h2>
+<ul>
+    <li><strong>Learning Curve</strong>: TypeScript may present an initial learning curve for developers accustomed exclusively to JavaScript.</li>
+    <li><strong>Compilation Time</strong>: TypeScript needs to be compiled to JavaScript before it can run in the browser, introducing delays in the development workflow.</li>
+    <li><strong>Limited Library Support</strong>: Some niche or less maintained libraries may lack TypeScript definitions.</li>
+    <li><strong>Verbose Code</strong>: In some cases, TypeScript's requirement to annotate types can feel verbose and add visual overhead to the code.</li>
+</ul>
+
+<h2>Getting Started with TypeScript</h2>
+<h3>Installation</h3>
+<pre><code>npm install -g typescript</code></pre>
+
+<h3>Basic Example</h3>
+<pre><code>// hello.ts
+function greet(name: string) {
+console.log(Hello, ${name}!);
+}
+greet("John");</code></pre>
+Code
+<h3>Compilation</h3>
+<pre><code>tsc hello.ts</code></pre>
+<p>This will generate a <code>hello.js</code> file that you can run with Node.js:</p>
+<pre><code>node hello.js</code></pre>
+
+<h2>TypeScript Configuration</h2>
+<p>Create a <code>tsconfig.json</code> file to configure the TypeScript compiler:</p>
+<pre><code>{
+"compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "build"
+},
+"include": ["src/**/*"]
+}</code></pre>
+<p>This configuration tells TypeScript to:</p>
+<ul>
+<li>Target ES6 syntax</li>
+<li>Use CommonJS modules</li>
+<li>Output compiled files to the <code>build</code> directory</li>
+<li>Include files in the <code>src</code> directory and its subdirectories</li>
+</ul>
+</body>
+</html>
