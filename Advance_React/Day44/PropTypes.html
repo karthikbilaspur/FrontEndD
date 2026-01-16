@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<head>
+  <title>PropTypes in React</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>PropTypes in React</h1>
+
+<p>PropTypes are the property that is mainly shared between the parent components to the child components. It is used to solve the type validation problem.</p>
+
+<h2>Benefits of PropTypes:</h2>
+<ul>
+  <li><strong>Type Safety:</strong> When the wrong data type is passed in the component, PropTypes help find the issues.</li>
+  <li><strong>Better Debugging:</strong> During development, they give warning messages in the console, which makes it easier to find the bugs.</li>
+  <li><strong>Improved Documentation:</strong> It acts as self-documentation for your components, showing the expected types of props.</li>
+  <li><strong>Prevents Runtime Errors:</strong> We can avoid errors caused by unexpected data types during the execution of the application, by enforcing prop types.</li>
+</ul>
+
+<h2>Common PropTypes Validators:</h2>
+<table>
+  <tr>
+    <th>PropType</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>PropTypes.string</td>
+    <td>Confirms the prop is a string.</td>
+  </tr>
+  <tr>
+    <td>PropTypes.number</td>
+    <td>Confirms the prop is a number.</td>
+  </tr>
+  <tr>
+    <td>PropTypes.bool</td>
+    <td>Confirms the prop is a boolean (true or false).</td>
+  </tr>
+  <tr>
+    <td>PropTypes.func</td>
+    <td>Confirms the prop is a function.</td>
+  </tr>
+  <tr>
+    <td>PropTypes.array</td>
+    <td>Confirms the prop is an array.</td>
+  </tr>
+  <tr>
+    <td>PropTypes.object</td>
+    <td>Confirms the prop is an object.</td>
+  </tr>
+  <tr>
+    <td>PropTypes.node</td>
+    <td>Confirms the prop can be anything that can be rendered (e.g., numbers, strings, elements, or an array of elements).</td>
+  </tr>
+  <tr>
+    <td>PropTypes.element</td>
+    <td>Confirms the prop is a React element.</td>
+  </tr>
+  <tr>
+    <td>PropTypes.instanceOf(Class)</td>
+    <td>Confirms the prop is an instance of a particular class.</td>
+  </tr>
+  <tr>
+    <td>PropTypes.oneOf([value1, value2])</td>
+    <td>Confirms the prop matches one of the provided values.</td>
+  </tr>
+  <tr>
+    <td>PropTypes.oneOfType([type1, type2])</td>
+    <td>Confirms the prop matches one of the provided types.</td>
+  </tr>
+  <tr>
+    <td>PropTypes.arrayOf(type)</td>
+    <td>Confirms the prop is an array of a specific type.</td>
+  </tr>
+  <tr>
+    <td>PropTypes.objectOf(type)</td>
+    <td>Confirms the prop is an object where all values are of a specific type.</td>
+  </tr>
+  <tr>
+    <td>PropTypes.shape({})</td>
+    <td>Confirms the prop is an object with a specific shape.</td>
+  </tr>
+</table>
+
+<h2>Comparison with TypeScript:</h2>
+<table>
+  <tr>
+    <th>Feature</th>
+    <th>PropTypes</th>
+    <th>TypeScript</th>
+  </tr>
+  <tr>
+    <td>Type Checking</td>
+    <td>Runtime type-checking.</td>
+    <td>Compile-time type-checking.</td>
+  </tr>
+  <tr>
+    <td>Integration with React</td>
+    <td>Built into React (for JavaScript).</td>
+    <td>Fully integrates into the development environment.</td>
+  </tr>
+  <tr>
+    <td>Type Checking Scope</td>
+    <td>Validates prop types for React components.</td>
+    <td>Validates props, variables, functions, and more.</td>
+  </tr>
+  <tr>
+    <td>Use Case</td>
+    <td>Ideal for small or legacy JavaScript projects.</td>
+    <td>Ideal for large-scale, TypeScript-enabled projects with advanced type safety.</td>
+  </tr>
+  <tr>
+    <td>Default Values</td>
+    <td>Uses defaultProps to define default values.</td>
+    <td>Supports default values directly within types.</td>
+  </tr>
+</table>
+
+</body>
+</html>

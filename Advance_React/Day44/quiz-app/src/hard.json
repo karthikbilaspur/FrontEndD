@@ -1,0 +1,52 @@
+ [
+{
+"question": "What is the term for the study of the structure, behavior, and evolution of the universe?",
+"options": ["Cosmology", "Astronomy", "Astrophysics", "Quantum Mechanics"],
+"answer": "Cosmology"
+},
+{
+"question": "Who is the author of the influential philosophical work 'Being and Time'?",
+"options": ["Martin Heidegger", "Jean-Paul Sartre", "Immanuel Kant", "Friedrich Nietzsche"],
+"answer": "Martin Heidegger"
+},
+{
+"question": "What is the process by which a liquid transforms into a gas?",
+"options": ["Evaporation", "Condensation", "Melting", "Sublimation"],
+"answer": "Evaporation"
+},
+{
+"question": "Who is the main character in the novel 'Ulysses'?",
+"options": ["Leopold Bloom", "Stephen Dedalus", "Molly Bloom", "Buck Mulligan"],
+"answer": "Leopold Bloom"
+},
+{
+"question": "What is the term for the study of the origin, evolution, and distribution of living organisms?",
+"options": ["Biogeography", "Paleontology", "Ecology", "Evolutionary Biology"],
+"answer": "Biogeography"
+},
+{
+"question": "Who is the author of the influential economic work 'The Wealth of Nations'?",
+"options": ["Adam Smith", "Karl Marx", "John Maynard Keynes", "Thomas Malthus"],
+"answer": "Adam Smith"
+},
+{
+"question": "What is the term for the study of the nature of reality, including the relationship between mind and matter?",
+"options": ["Metaphysics", "Epistemology", "Ontology", "Axiology"],
+"answer": "Metaphysics"
+},
+{
+"question": "Who is the main character in the novel 'The Stranger'?",
+"options": ["Meursault", "Ramsay", "Antoine Roquentin", "Félix de Vaux"],
+"answer": "Meursault"
+},
+{
+"question": "What is the term for the study of the structure and function of the human body?",
+"options": ["Anatomy", "Physiology", "Biology", "Kinesiology"],
+"answer": "Anatomy"
+},
+{
+"question": "Who is the author of the influential scientific work 'The Origin of Species'?",
+"options": ["Charles Darwin", "Gregor Mendel", "Alfred Russel Wallace", "Richard Dawkins"],
+"answer": "Charles Darwin"
+}
+]

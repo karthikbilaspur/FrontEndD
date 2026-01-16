@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Component Composition</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    code {
+      background-color: #f0f0f0;
+      padding: 2px 4px;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h1>React Component Composition</h1>
+  <p>Component composition is a powerful technique in React that allows you to break down complex UI components into smaller, reusable pieces.</p>
+
+  <h2>When to use Component Composition?</h2>
+  <ul>
+    <li>When you have a complex UI component that can be broken down into smaller, reusable pieces.</li>
+    <li>When you want to reuse a component with different content or styles.</li>
+    <li>When you want to manage state and props more efficiently.</li>
+  </ul>
+
+  <h2>How to use Component Composition?</h2>
+  <p>There are several techniques for component composition in React, including:</p>
+  <ul>
+    <li><code>Containment (Children Props)</code>: Used for building reusable wrapper components.</li>
+    <li><code>Specialization (Props-based Composition)</code>: Create specialized versions of components by passing props.</li>
+    <li><code>Higher-Order Components (HOCs)</code>: Functions that take a component as input and return an enhanced component.</li>
+    <li><code>Render Props</code>: Pass a function as a prop to give more control over rendering.</li>
+  </ul>
+
+  <h2>Example</h2>
+  <p>Let's take a look at an example of component composition using Containment (Children Props):</p>
+  <code>
+    <pre>
+// Card.js
+const Card = ({ children, style }) => {
+  return (
+    &lt;div style={{ ...style, border: '1px solid #ddd', padding: 20, borderRadius: 10 }}&gt;
+      {children}
+    &lt;/div&gt;
+  );
+};
+
+export default Card;
+    </pre>
+  </code>
+
+  <code>
+    <pre>
+// App.js
+import Card from './Card.js';
+
+const App = () => {
+  return (
+    &lt;div&gt;
+      &lt;Card style={{ backgroundColor: 'lightblue' }}&gt;
+        &lt;h2&gt;Card Title&lt;/h2&gt;
+        &lt;p&gt;This is a card component.&lt;/p&gt;
+      &lt;/Card&gt;
+      &lt;Card style={{ backgroundColor: 'lightgreen' }}&gt;
+        &lt;h2&gt;Another Card&lt;/h2&gt;
+        &lt;p&gt;This is another card component.&lt;/p&gt;
+      &lt;/Card&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default App;
+    </pre>
+  </code>
+
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://unpkg.com/react@17/umd/react.development.js",
+        "react-dom": "https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      }
+    }
+  </script>
+  <script type="module">
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import App from './App.js';
+
+    ReactDOM.render(
+      React.createElement(App),
+      document.getElementById('root')
+    );
+  </script>
+  <div id="root"></div>
+</body>
+</html>

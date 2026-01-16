@@ -1,0 +1,52 @@
+[
+{
+"question": "What is the capital of France?",
+"options": ["Paris", "London", "Berlin", "Rome"],
+"answer": "Paris"
+},
+{
+"question": "Which planet is known as the Red Planet?",
+"options": ["Earth", "Mars", "Jupiter", "Saturn"],
+"answer": "Mars"
+},
+{
+"question": "Who painted the Mona Lisa?",
+"options": ["Leonardo da Vinci", "Michelangelo", "Raphael", "Caravaggio"],
+"answer": "Leonardo da Vinci"
+},
+{
+"question": "What is the largest mammal?",
+"options": ["Blue whale", "Fin whale", "Humpback whale", "Sperm whale"],
+"answer": "Blue whale"
+},
+{
+"question": "What is the chemical symbol for gold?",
+"options": ["Ag", "Au", "Hg", "Pb"],
+"answer": "Au"
+},
+{
+"question": "Who wrote Romeo and Juliet?",
+"options": ["William Shakespeare", "Jane Austen", "Charles Dickens", "George Orwell"],
+"answer": "William Shakespeare"
+},
+{
+"question": "What is the largest planet in our solar system?",
+"options": ["Earth", "Saturn", "Jupiter", "Uranus"],
+"answer": "Jupiter"
+},
+{
+"question": "Who was the first President of the United States?",
+"options": ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "Franklin D. Roosevelt"],
+"answer": "George Washington"
+},
+{
+"question": "What is the smallest country in the world?",
+"options": ["Vatican City", "Monaco", "Nauru", "Tuvalu"],
+"answer": "Vatican City"
+},
+{
+"question": "Who invented the light bulb?",
+"options": ["Thomas Edison", "Nikola Tesla", "Albert Einstein", "Marie Curie"],
+"answer": "Thomas Edison"
+}
+] 

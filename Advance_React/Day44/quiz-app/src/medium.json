@@ -1,0 +1,52 @@
+ [
+{
+"question": "What is the process by which plants make their own food?",
+"options": ["Respiration", "Photosynthesis", "Decomposition", "Fermentation"],
+"answer": "Photosynthesis"
+},
+{
+"question": "Who is the author of the famous novel 'To Kill a Mockingbird'?",
+"options": ["Harper Lee", "Jane Austen", "J.K. Rowling", "F. Scott Fitzgerald"],
+"answer": "Harper Lee"
+},
+{
+"question": "What is the largest organ in the human body?",
+"options": ["Brain", "Heart", "Lungs", "Skin"],
+"answer": "Skin"
+},
+{
+"question": "What is the chemical symbol for silver?",
+"options": ["Ag", "Au", "Hg", "Pb"],
+"answer": "Ag"
+},
+{
+"question": "Who is the main character in the novel 'The Catcher in the Rye'?",
+"options": ["Holden Caulfield", "Huckleberry Finn", "Heathcliff", "Sherlock Holmes"],
+"answer": "Holden Caulfield"
+},
+{
+"question": "What is the process by which water moves through a plant?",
+"options": ["Respiration", "Photosynthesis", "Transpiration", "Evaporation"],
+"answer": "Transpiration"
+},
+{
+"question": "Who is the author of the famous painting 'The Starry Night'?",
+"options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
+"answer": "Vincent van Gogh"
+},
+{
+"question": "What is the largest mammal on land?",
+"options": ["Elephant", "Giraffe", "Hippopotamus", "Rhinoceros"],
+"answer": "Elephant"
+},
+{
+"question": "Who is the main character in the novel 'The Great Gatsby'?",
+"options": ["Jay Gatsby", "Nick Carraway", "Daisy Buchanan", "Tom Buchanan"],
+"answer": "Jay Gatsby"
+},
+{
+"question": "What is the process by which the Earth rotates on its axis?",
+"options": ["Revolution", "Rotation", "Orbit", "Spin"],
+"answer": "Rotation"
+}
+]

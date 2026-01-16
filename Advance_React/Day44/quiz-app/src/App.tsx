@@ -1,0 +1,12 @@
+import React from 'react';
+import QuizApp from './QuizApp';
+
+const App: React.FC = () => {
+  return (
+    <div>
+      <QuizApp />
+    </div>
+  );
+};
+
+export default App;

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TSConfig: The Heart of TypeScript Configuration</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+}
+h1 {
+color: #3498db;
+}
+h2 {
+color: #2ecc71;
+}
+pre {
+background-color: #f1f1f1;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+overflow-x: auto;
+}
+ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+li {
+margin-bottom: 10px;
+}
+.container {
+max-width: 800px;
+margin: 0 auto;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>TSConfig: The Heart of TypeScript Configuration</h1>
+<p>A <b>tsconfig.json</b> file is used to configure the TypeScript compiler, specifying how your TypeScript code should be compiled to JavaScript.</p>
+Code
+    <h2>What does it look like?</h2>
+    <pre>
+{
+"compilerOptions": {
+"target": "es6",
+"module": "commonjs",
+"strict": true,
+"outDir": "build",
+"rootDir": "src",
+"esModuleInterop": true
+},
+"include": ["src/*/"],
+"exclude": ["node_modules"]
+}
+</pre>
+Code
+    <h2>Key Configuration Options:</h2>
+    <ul>
+        <li><b>compilerOptions</b>: specifies the compiler options</li>
+        <li><b>target</b>: specifies the JavaScript version to compile to (e.g., es5, es6, es2020)</li>
+        <li><b>module</b>: specifies the module system (e.g., commonjs, es6, amd)</li>
+        <li><b>strict</b>: enables strict type checking</li>
+        <li><b>outDir</b>: specifies the output directory for compiled JavaScript files</li>
+        <li><b>rootDir</b>: specifies the root directory of your TypeScript project</li>
+        <li><b>include</b>: specifies files or directories to include in compilation</li>
+        <li><b>exclude</b>: specifies files or directories to exclude from compilation</li>
+    </ul>
+
+    <h2>Common Use Cases:</h2>
+    <ul>
+        <li>Compiling TypeScript code for Node.js or browser environments</li>
+        <li>Enabling strict type checking for better code quality</li>
+        <li>Configuring output directories for compiled JavaScript files</li>
+    </ul>
+
+    <p>Want to know more about a specific configuration option? 🤔</p>
+</div>
+</body>
+</html>
